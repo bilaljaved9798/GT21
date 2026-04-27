@@ -1,0 +1,378 @@
+/*
+    DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+.left-panel {
+    position: fixed;
+    left: -400px; /* Initially hidden outside the viewport */
+    top: 0;
+    width: 300px;
+    height: 90%;
+    background-color: #f8f9fa;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 0px;
+    margin-top: 60px;
+}
+
+    /* When the panel is open */
+    .left-panel.open {
+        left: 0; /* Brings the panel into the viewport */
+    }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .left-panel {
+        width: 80%; /* Take 80% of the screen width on mobile devices */
+        left: -80%; /* Initially hidden off-screen */
+    }
+
+        .left-panel.open {
+            left: 0; /* Bring it into view when open */
+        }
+}
+
+/* Optional: You can fine-tune for very small devices */
+@media (max-width: 480px) {
+    .left-panel {
+        width: 100%; /* Full width on very small devices */
+        left: -100%;
+    }
+
+        .left-panel.open {
+            left: 0; /* Full width when open */
+        }
+}
+
+
+
+p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.7em;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+i, span {
+    display: inline-block;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 75%;
+    max-width: 100%;
+    background: linear-gradient(to bottom, #00ff8a, #000000) !important;
+    color: #fff;
+    transition: all 0.1s;
+    height: 1273.5px !important;
+    margin-top: -1px;
+}
+
+
+
+
+    #sidebar.active {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+    }
+
+        #sidebar.active .sidebar-header h3, #sidebar.active .CTAs {
+            display: none;
+        }
+
+        #sidebar.active .sidebar-header strong {
+            display: block;
+        }
+
+    #sidebar ul li a {
+        text-align: left;
+    }
+
+    #sidebar.active ul li a {
+        padding: 20px 10px;
+        text-align: center;
+        font-size: 0.85em;
+    }
+
+        #sidebar.active ul li a i {
+            margin-right: 0;
+            display: block;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+    #sidebar.active ul ul a {
+        padding: 10px !important;
+    }
+
+    #sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
+        top: auto;
+        bottom: 5px;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+    }
+
+    #sidebar .sidebar-header {
+        padding: 20px;
+        background: linear-gradient(to bottom, #00ff8a, #000000) !important;
+    }
+
+        #sidebar .sidebar-header strong {
+            display: none;
+            font-size: 1.8em;
+        }
+
+    #sidebar ul.components {
+        padding: 20px 0;
+        border-bottom: 1px solid #47748b;
+    }
+
+    #sidebar ul li a {
+        padding: 7px;
+        font-size: 1.0em;
+        display: block;
+        font-style: normal;
+        font-weight: 500;
+    }
+
+        #sidebar ul li a:hover {
+            color: black;
+            background: #fff;
+            text-shadow: 0px 1px #000000;
+        }
+
+        #sidebar ul li a i {
+            margin-right: 10px;
+            font-style: normal;
+            font-size: 20px;
+            font-weight: 500;
+            text-shadow: 1px 1px black;
+        }
+
+    #sidebar ul li.active > a, a[aria-expanded="true"] {
+        color: #fff;
+        background: linear-gradient(to bottom, #00ff8a, #000000) !important;
+    }
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 0.75em !important;
+    padding-left: 18px !important;
+    background: white;
+    color: black;
+    text-shadow: 0.2px 0.2px black;
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px, rgba(200, 255, 250, 0.25) 0px -12px 30px, rgba(255, 255, 255, 0.2) 0px 4px 6px, rgba(150, 255, 240, 0.3) 0px 12px 13px, rgba(255, 255, 255, 0.15) 0px -3px 5px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+    ul.CTAs a {
+        text-align: center;
+        font-size: 0.9em !important;
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article, a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+
+
+
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #00000080;
+        z-index: 5000;
+    }
+
+        .overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+
+    p {
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 1.7em;
+    }
+
+    #sidebar {
+        background: linear-gradient(to bottom, #00ff8a, #000000) !important;
+        position: absolute;
+        top: 4px;
+        left: 0;
+        height: 1500px;
+        z-index: 5000;
+        padding: 0px 0 0;
+        margin-top: -10px;
+        min-width: 10%;
+        max-width: 170px;
+    }
+
+    a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+        top: auto;
+        bottom: 5px;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+    }
+
+
+
+    #sidebar.active {
+        margin-left: 0 !important;
+    }
+
+    #sidebar .sidebar-header h3, #sidebar .CTAs {
+        display: none;
+    }
+
+    #sidebar .sidebar-header strong {
+        display: block;
+    }
+
+    #sidebar ul li a {
+        padding: 3px 5px;
+        /*text-shadow: 0.4px 0.35px #ffffff !important;*/
+    }
+
+        #sidebar ul li a span {
+            font-size: 0.85em;
+        }
+
+        #sidebar ul li a i {
+            margin-right: 0;
+            display: block;
+        }
+
+    #sidebar ul ul a {
+        padding: 10px !important;
+    }
+
+    #sidebar ul li a i {
+        font-size: 1em;
+        font-style: normal;
+        font-weight: 500;
+        text-shadow: 0 0 4px #000000, 0 0 5px #000000, 0 0 7px #00ff8a, 0 0 17px #62ff00, 0 0 26px #00ff40;
+        color: #fff;
+        /* animation-name: love;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;*/
+    }
+
+    @keyframes love {
+        from {
+            text-shadow: 0px 0px 5px #fff,0px 0px 5px #614ad3;
+        }
+
+        to {
+            text-shadow: 0px 0px 20px #fff,0px 0px 20px #614ad3;
+        }
+    }
+
+
+
+    #sidebar {
+        margin-left: 0;
+        margin-top:9px;
+    }
+
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+

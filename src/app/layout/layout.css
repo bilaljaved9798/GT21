@@ -1,0 +1,88 @@
+.navbar {
+  height: 56px;
+  background: linear-gradient(to bottom, #000,#35c483);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  justify-content: space-between;
+}
+
+.menu-btn, .logout-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 56px);
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 240px;
+  background: linear-gradient(to bottom, #35c483, #000);
+  color: white;
+  transition: 0.3s;
+  height: 100vh;
+  padding: 10px;
+  overflow: hidden;
+}
+
+/* Desktop collapse */
+.sidebar.closed {
+  width: 60px;
+}
+
+/* Mobile behavior */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .sidebar.closed {
+    transform: translateX(-100%);
+    width: 240px; /* keep full width but hidden */
+  }
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.menu-item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.submenu {
+  padding-left: 40px;
+}
+
+.submenu a {
+  display: block;
+  padding: 6px 0;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.submenu a:hover {
+  color: #fff;
+}
+
+.content {
+  flex: 1;
+  padding: 10px;
+}

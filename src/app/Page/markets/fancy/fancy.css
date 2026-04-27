@@ -1,0 +1,94 @@
+.backitemf{
+width: 25%;
+text-align: center;
+}
+.price {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.size {
+  font-size: 11px;
+}
+.layitemf{
+width: 25%;
+text-align: center;
+}
+.backitemf {
+  background-color: #b3d9ff;
+}
+.layitemf {
+  background-color: #ffb3b3;
+}
+.price {
+  font-weight: bold;
+  font-size: 18px;
+}
+.size {
+  font-size: 12px;
+}
+.prices-group {
+  display: inline-flex;
+  gap: 2px;
+}
+.price-box {
+  width: 66px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 12px;
+}
+/* back color */
+.back-box {
+  background: #b3d9ff;
+}
+
+/* lay color */
+.lay-box {
+  background: #ffb3b3;
+}
+.runner-name {
+  font-weight: 600;
+  font-size: 14px;
+    display: flex;
+  flex-direction: column;
+}
+
+  .runner-info {
+    width:  64%;
+  }
+@media (max-width: 768px) {
+  .runner-info {
+    width:  57%;
+  }
+  .price-width{
+   width: 41%;
+  }
+}
+.runner-name {
+  max-width: 170px;   /* adjust as needed */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.pnl {
+  min-width: 60px;
+  text-align: right;
+}
+
+.price-box {
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.back-box {
+      background: rgb(179, 217, 255);
+}
+
+.lay-box {
+     background: rgb(255, 179, 179);
+}

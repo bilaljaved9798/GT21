@@ -1,0 +1,95 @@
+<div>
+  <h3>LINE/FANCY MARKET</h3>
+<!-- Markets -->
+<div *ngFor="let item of marketBooks" class="marketbook" [attr.data-marketid]="item.marketId">
+
+  <!-- Runners -->
+  <div  class="runner-row col-md-12 col-lg-12" 
+ *ngFor="let runner of item?.runners; let valueid = index"
+  [id]="'selection' + runner.selectionId.replace(' ', '')"
+  style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
+
+    <!-- Runner Name -->
+     <!-- RUNNER INFO -->
+  <div class="runner-info col-md-6 col-lg-6">
+    <div class="runner-name">
+      {{ runner.runnerName }}
+      <div 
+    class="pnl"
+    [ngClass]="{
+      'profit': runner.profitandLoss > 0,
+      'loss': runner.profitandLoss < 0
+    }"
+  >
+    {{ runner.profitandLoss }}
+      </div>
+    </div>
+
+    <!-- Last Price -->
+     <div class="runner-price-box">
+      <div class="last-price">
+        {{ runner.lastPriceTraded }}
+      </div>
+      <div class="total-matched">
+        {{ runner.totalMatched }}
+      </div>
+    </div>
+
+  </div>
+
+    <!-- Back / Lay -->
+   <div class="col-md-6 col-lg-6 margin" >
+  
+<div class="prices-group back-group">
+  <div class="price-box back-box"      
+      *ngFor="let back of (isMobile ? (getBackPrices(runner).slice().reverse() | slice:0:1) : getBackPrices(runner).slice().reverse()); let i = index"
+       [class.empty]="!back"
+       (click)="back && showBetSlip(
+         runner.selectionId,
+         runner.runnerName,
+         'back',
+         back.price,
+         2000,
+         item?.marketId ?? '',
+         item?.marketBookName ?? '',
+         back.size,
+         i
+       )">
+
+    <ng-container *ngIf="back">
+      <div class="price">{{ back.price }}</div>
+      <div class="size">{{ back.size | numberFormat }}</div>
+    </ng-container>
+
+  </div>
+</div>
+
+  <!-- LAY -->
+<div class="prices-group lay-group" style="margin-left: 2px;">
+  <div class="price-box lay-box"
+       *ngFor="let lay of (isMobile ? (getLayPrices(runner) | slice:0:1) : getLayPrices(runner)); let i = index"
+       [class.empty]="!lay"
+       (click)="lay && showBetSlip(
+         runner.selectionId,
+         runner.runnerName,
+         'lay',
+         lay.price,
+         2000,
+         item?.marketId ?? '',
+         item?.marketBookName ?? '',
+         lay.size,
+         i
+       )">
+
+    <ng-container *ngIf="lay">
+      <div class="price">{{ lay.price }}</div>
+      <div class="size">{{ lay.size | numberFormat }}</div>
+    </ng-container>
+
+  </div>
+</div>
+
+    </div>
+   </div>
+  </div>
+  </div>

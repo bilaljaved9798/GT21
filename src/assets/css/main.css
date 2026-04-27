@@ -1,0 +1,412 @@
+/* Coded with love by Shaharyar */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    
+    background-repeat: no-repeat;
+  
+  
+}
+
+.spani1 {
+    width: 101%;
+    background: -webkit-linear-gradient(bottom,#3b9f71,#0a0a0a) !important;
+    margin-left: -2px;
+}
+
+.error {
+    margin-left: -100px;
+    color: #f01e29;
+}
+
+
+
+@keyframes rotate-bg {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+   @keyframes gradientBackground {
+            0% {
+                background: -webkit-linear-gradient(bottom, #35c483, #000000);
+            }
+            50% {
+                background: -webkit-linear-gradient(bottom, #000000, #35c483);
+            }
+            100% {
+                background: -webkit-linear-gradient(bottom, #35c483, #000000);
+            }
+        }
+@keyframes gradientBackground {
+    0% {
+        background: -webkit-linear-gradient(bottom, #35c483, #000000);
+    }
+
+    50% {
+        background: -webkit-linear-gradient(bottom, #000000, #35c483);
+    }
+
+    100% {
+        background: -webkit-linear-gradient(bottom, #35c483, #000000);
+    }
+}
+
+h9 {
+    font-size: 2.25rem;
+    margin-top: 45vh;
+    color: white;
+    line-height: 1.6;
+    font-family: fantasy;
+    animation-name: glow;
+    animation-duration: 5s;
+    letter-spacing:1px; animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0px 0px 5px #fff,0px 0px 5px #614ad3;
+    }
+
+    to {
+        text-shadow: 0px 0px 20px #fff,0px 0px 20px #614ad3;
+    }
+}
+
+
+.user_card {
+    height: 85%;
+    width: 63%;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #e5e5e5cf;
+    position: inherit;
+    display: grid;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0px;
+}
+
+.brand_logo_container {
+    position: absolute;
+    height: 60px;
+    width: 236px;
+    top: 0px;
+    border-radius: 0%;
+    padding: 0px;
+    text-align: center;
+}
+
+.brand_logo {
+    height: 30px;
+    width: 108px;
+    margin: 16px;
+    border-radius: 0%;
+    border: 0px solid white;
+    display: table-cell;
+}
+
+.form_container {
+    margin-top: 40px;
+}
+
+.login_btn {
+    width: 100%;
+    background: #075E54 !important;
+    color: white !important;
+}
+
+    .login_btn:focus {
+        box-shadow: 1px !important;
+        outline: 1px !important;
+    }
+
+.login_container {
+    padding: 0 0rem;
+}
+
+.input-group-text {
+    background: -webkit-linear-gradient(bottom,#35c483,#000000); color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.input_user,
+.input_pass:focus {
+    box-shadow: 2px !important;
+    outline: 0px !important;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #c0392b !important;
+}
+
+.input-field {
+    border: 1px;
+    width: 150%;
+    padding: 10px;
+    text-align: center;
+    margin-left: -60px;
+}
+
+.icon {
+    padding: 15px;
+    color: green;
+    min-width: 50px;
+    text-align: center;
+    margin-left: -50px;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+
+
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: white !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .form_container {
+        margin-top: -172px;
+    }
+
+
+
+    .spani1 {
+        width: 101%;
+        background: -webkit-linear-gradient(bottom,#3b9f71,#0a0a0a) !important;
+        margin-left: -1px;
+        margin-top: -40px;
+        height: 60px;
+    }
+
+    h9 {
+        font-size: 2.5rem;
+        line-height: 1.09;
+        color: white;
+        font-family: fantasy;
+        animation-name: glow;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0px 0px 5px #fff,0px 0px 5px #614ad3;
+    }
+
+    to {
+        text-shadow: 0px 0px 20px #fff,0px 0px 20px #614ad3;
+    }
+}
+
+
+.error {
+    margin-left: -28px;
+    color: #f01e29;
+}
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .spani1 {
+        width: 102%;
+        background: -webkit-linear-gradient(bottom,#3b9f71,#0a0a0a) !important;
+        margin-left: -3px;
+        margin-top: 0px;
+        height: 60px;
+    }
+
+    h9 {
+        font-size: 2.25rem;
+        margin-top: 45vh;
+        color: white;
+        font-family: fantasy;
+        animation-name: glow;
+        line-height: 1.6;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes glow {
+        from {
+            text-shadow: 0px 0px 5px #fff,0px 0px 5px #614ad3;
+        }
+
+        to {
+            text-shadow: 0px 0px 20px #fff,0px 0px 20px #614ad3;
+        }
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .spani1 {
+        width: 100.3%;
+        background: -webkit-linear-gradient(bottom,#3b9f71,#0a0a0a) !important;
+        margin-left: -1px;
+        height: 60px;
+    }
+
+    h9 {
+        font-size: 2.25rem;
+        line-height: 1.6;
+        margin-top: 45vh;
+        color: white;
+        font-family: fantasy;
+        animation-name: glow;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes glow {
+        from {
+            text-shadow: 0px 0px 5px #fff,0px 0px 5px #614ad3;
+        }
+
+        to {
+            text-shadow: 0px 0px 20px #fff,0px 0px 20px #614ad3;
+        }
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .spani1 {
+        width: 100.3%;
+        background: -webkit-linear-gradient(bottom,#3b9f71,#0a0a0a) !important;
+        margin-left: -1px;
+        height: 60px;
+    }
+
+    h9 {
+        font-size: 2.25rem;
+        margin-top: 45vh;
+        line-height: 1.6;
+        color: white;
+        font-family: fantasy;
+        animation-name: glow;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes glow {
+        from {
+            text-shadow: 0px 0px 5px #fff,0px 0px 5px #614ad3;
+        }
+
+        to {
+            text-shadow: 0px 0px 20px #fff,0px 0px 20px #614ad3;
+        }
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .spani1 {
+        width: 100.3%;
+        background: -webkit-linear-gradient(bottom,#3b9f71,#0a0a0a) !important;
+        margin-left: -1px;
+        height: 60px;
+    }
+
+    h9 {
+        line-height: 1.6;
+        font-size: 2.25rem;
+        margin-top: 45vh;
+        color: white;
+        font-family: fantasy;
+        animation-name: glow;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes glow {
+        from {
+            text-shadow: 0px 0px 5px #fff,0px 0px 5px #614ad3;
+        }
+
+        to {
+            text-shadow: 0px 0px 20px #fff,0px 0px 20px #614ad3;
+        }
+    }
+}
+
+
+
+
+
+@media (max-width: 576px) {
+    .login-card {
+        max-width: 90vw;
+        padding: 30px 30px 50px 30px;
+    }
+}
+
+
+
+
+@media(max-width:768px) {
+
+    .icon {
+        padding: 15px;
+        color: green;
+        min-width: 50px;
+        text-align: center;
+        margin-left: 0px;
+    }
+
+
+
+    .input-field {
+        border: 1px;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        margin-left: 0px;
+    }
+
+
+
+
+    .user_card {
+       
+        width: 100%;
+        margin-top: 12px;
+        background-color: #e5e5e5cf;
+        position: inherit;
+        display: grid;
+        height: 600px;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0px;
+    }
+    }

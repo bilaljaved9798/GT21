@@ -1,0 +1,7461 @@
+
+html,
+body {
+    height: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+body {
+    background-color: #eeeeee;
+}
+
+.hideer {
+    display: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.error-message {
+    position: fixed;
+    bottom: -100px; /* start hidden below screen */
+    left: 0;
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    padding: 14px 50px 14px 20px;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    border-top: 3px solid #c0392b;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+    .close-btn:hover {
+        color: #000;
+    }
+
+
+
+
+
+/* --- Fix datetimepicker width & position on small screens --- */
+.bootstrap-datetimepicker-widget {
+    width: 100% !important;
+    max-width: 320px;
+    font-size: 14px;
+}
+
+    .bootstrap-datetimepicker-widget.dropdown-menu {
+        padding: 8px !important;
+        border-radius: 10px !important;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .bootstrap-datetimepicker-widget table td,
+    .bootstrap-datetimepicker-widget table th {
+        padding: 5px !important;
+    }
+
+    /* Center the popup inside parent */
+    .bootstrap-datetimepicker-widget.bottom {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+/* On mobile screens */
+@media (max-width: 600px) {
+    .bootstrap-datetimepicker-widget {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        font-size: 13px;
+        max-width: 95% !important;
+    }
+
+        .bootstrap-datetimepicker-widget table {
+            width: 100%;
+        }
+}
+
+buttonslip {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+    buttonslip:active {
+        color: #666;
+        box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+    }
+
+
+#fancy-market-container {
+    min-height: 200px; /* Adjust based on expected content */
+    overflow: hidden;
+}
+
+#divfooter {
+    display: none;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+h9 {
+    text-shadow: 1px 1px black !important;
+    font-size: 2.6rem;
+    margin-top: 45vh;
+    color: white;
+    font-family: fantasy;
+    animation-name: glow;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes glow {
+    from {
+        text-shadow: 0px 0px 5px #fff,0px 0px 5px #614ad3;
+    }
+
+    to {
+        text-shadow: 0px 0px 20px #fff,0px 0px 20px #614ad3;
+    }
+}
+
+
+.buttonlove {
+    color: White;
+    border-radius: 0px;
+    border-right: 0px
+}
+
+
+    .buttonlove:hover {
+        flex: 1 0 auto;
+        
+        color: black;
+        Background: white;
+        color:black;
+        text-align: center;
+        border-top: 3px solid #f41e44;
+        
+        border-left: 0px white solid !important;
+    }
+
+
+.buttonlove1 {
+    color: white;
+    border-right: black;
+    border-right: 0px;
+    border-left: 0px
+}
+
+.usracenumber {
+    position: relative;
+    width: 28px;
+    margin-left: 2px;
+    margin-top: 13px;
+    color: white;
+    float: left;
+    font-size: 20px;
+}
+
+.Greyoundnumber {
+    position: relative;
+    width: 23px;
+    margin-left: 6px;
+    margin-top: 7px;
+    float: left;
+    font-size: 20px;
+    
+
+}
+
+.buttonlove1:hover {
+    flex: 1 0 auto;
+   
+    background-color: white;
+    color: black;
+    background-color: #068b7c;
+    text-align: center;
+    border-top: 3px solid #f41e44;
+    border-right: 0px white solid !important;
+    border-left: 1px white solid !important;
+}
+
+
+.loveoflives {
+   
+   
+    animation: blinker 4s linear infinite;
+  
+}
+
+
+
+.loveforcric {
+    width: 100% !important;
+    margin-top: 0px !important;
+    float: left !important;
+    margin-left: 15px !important;
+    text-align: left !important;
+    font-size: 16px !important;
+}
+
+
+.winthetossmarket {
+    font-size: 22px !important;
+    font-weight: 900 !important;
+}
+
+.lforsoccer {
+    margin-top: 10px !important;
+}
+
+
+.buttonner {
+    position: relative;
+    padding: 8px 16px !important;
+    background: #04AA6D;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+    .buttonner:active {
+        background: #04AA6D;
+    }
+
+.buttonner__text {
+    color: #ffffff;
+    transition: all 0.2s;
+}
+
+.buttonner--loading .buttonner__text {
+    visibility: visible;
+    opacity: 0.7;
+}
+
+.buttonner--loading::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 6px solid transparent;
+    border-top-color: red;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+
+
+
+.twoToneCenter {
+    text-align: center;
+    margin: 1em 0;
+}
+
+.twoToneButton {
+    display: inline-block;
+    outline: none;
+    padding: 10px 20px;
+    line-height: 1.4;
+    background: #04AA6D;
+    background: #04AA6D;
+    border-radius: 4px;
+    color: white;
+    position: relative;
+    transition: padding-right .3s ease;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+    .twoToneButton:hover {
+        /*box-shadow: 0 0 10px #080808 inset, 0px 1px 0 #3b3b3b;*/
+        color: #f3f3f3;
+    }
+
+    .twoToneButton:active {
+        /*box-shadow: 0 0 10px #90EE90 inset, 0px 1px 0 #3b3b3b;*/
+        color: #ffffff;
+        background: #90EE90;
+        background: #90EE90;
+    }
+
+    .twoToneButton.spinning {
+        background-color: #90EE90;
+        padding-right: 40px;
+    }
+
+        .twoToneButton.spinning:after {
+            content: '';
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            animation: rotate360 .5s infinite linear, exist .1s forwards ease;
+        }
+
+        .twoToneButton.spinning:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            border-radius: 50%;
+            right: 30px;
+            top: 50%;
+            position: absolute;
+            border: 5px solid red;
+            border-right: 3px solid #ffffff;
+            animation: rotate360 .5s infinite linear, exist .1s forwards ease;
+        }
+
+@keyframes rotate360 {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes exist {
+    100% {
+        width: 15px;
+        height: 15px;
+        margin: -8px 5px 0 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.teno {
+    font-size: 15px !important;
+}
+
+.football-timeline {
+}
+
+.team-1,
+.team-2 {
+    font-size: 14px;
+    font-weight: 700;
+    min-height: 28px;
+    margin-bottom: 8px;
+    width: 100%;
+    text-align: center;
+    padding-left: 2px;
+    overflow: hidden;
+    /*white-space: nowrap;*/
+    text-overflow: ellipsis;
+}
+
+.score-team-info {
+    overflow: hidden;
+    padding-right: 0px;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.team-score {
+    font-size: 18px;
+    color: forestgreen;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+    .team-score a {
+        color: #000;
+    }
+
+.score-goal-home {
+    z-index: 3;
+    width: 8px;
+    font-size: 13px;
+    margin-top: -17px;
+    position: absolute;
+}
+
+.score-red-card-home {
+    z-index: 3;
+    width: 8px;
+    height: 13px;
+    margin-top: -18px;
+    position: absolute;
+    background-color: #ff0000;
+}
+
+.score-yellow-card-home {
+    z-index: 3;
+    width: 8px;
+    height: 12px;
+    margin-top: -14.5px;
+    position: absolute;
+    background-color: #ffbf00;
+}
+
+.score-goal-away {
+    z-index: 3;
+    width: 8px;
+    color: #828282;
+    font-size: 13px;
+    margin-top: -3px;
+    position: absolute;
+}
+
+.score-red-card-away {
+    z-index: 3;
+    width: 8px;
+    height: 13px;
+    margin-top: 0px;
+    position: absolute;
+    background-color: #ae0000;
+}
+
+.score-yellow-card-away {
+    z-index: 3;
+    width: 8px;
+    height: 12px;
+    margin-top: 0px;
+    position: absolute;
+    background-color: #ffbf00;
+}
+
+.score-timeline {
+    height: 2.5px;
+    position: relative;
+}
+
+.timeline-bg {
+    position: relative;
+    background: -o-linear-gradient(bottom, #9c9c9c, #fff);
+    background: -webkit-gradient( linear, left bottom, left top, from(#9c9c9c), to(#fff) );
+    background: linear-gradient(0deg, #9c9c9c, #fff);
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#9c9c9c', GradientType=0);
+}
+
+.time-football {
+    color: black;
+    font-size: 17px;
+    font-weight: 700;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    border-left: 2px solid #7d7d7d;
+}
+
+    .time-football div:first-child {
+        color: #333;
+        padding: 0 5px;
+    }
+
+.score-first-half {
+    width: 100%;
+}
+
+.score-second-half {
+    width: 100%;
+}
+
+.score-space {
+    width: 10px;
+}
+
+.score-football {
+    /*overflow: hidden;*/
+    padding-bottom: 0px;
+    background-color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.score-star {
+    width: 16px;
+    height: 16px;
+    color: #696969;
+}
+
+.score-star,
+.sets-time,
+.team-score,
+.team-name-1,
+.team-name-2,
+.time-football,
+.score-team-info {
+    display: inline;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.score-first-half,
+.score-second-half {
+    margin: 15px 0;
+}
+
+.score-highlight,
+.score-highlight span {
+    color: #2bcc20;
+}
+
+@media only screen and (max-width: 640px) {
+    .team-2 {
+        min-height: 0;
+    }
+}
+
+.buttonmain3 {
+    background-color: #075e54;
+    color: white !important;
+    padding: 2px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 2px;
+    margin: 03px 4px;
+    float: right;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+    .buttonmain3:hover {
+        background-color: #109081;
+        color: white !important;
+    }
+
+.glub {
+    margin-top: 40% !important;
+}
+
+.glub1 {
+    margin-top: 18% !important;
+}
+
+.moleucule {
+    font-size: 18px;
+    margin-top: 13px;
+}
+
+.En {
+    width: 45%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.od {
+    width: 20.5%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.one1 {
+    width: 12%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.exce {
+    width: 13%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.two2 {
+    width: 13%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.suspendbann {
+    font-size: 29px !important;
+    color: #dc143c;
+    opacity: 10;
+    text-align: center;
+    margin-top: 22px;
+    border: 0px solid;
+}
+
+.cardsscore {
+    width: 33.1%;
+    margin-top: 0px;
+    display: none;
+}
+
+
+.sr-bb .sr-lmt-plus__footer-wrapper {
+    visibility: hidden;
+}
+
+.headingsrules {
+    color: black;
+    text-align: center;
+    font-family: Times New Roman, Times, serif;
+    text-align: center;
+    font-size: 24px
+}
+
+
+
+.inplaytime {
+    float: right;
+    width: 189px;
+    font: icon;
+    
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.inplaytimet21 {
+    float: right;
+    width: 189px;
+    font: icon;
+    margin-top: 5px;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+
+.footerlove {
+    font-size: 20px;
+}
+
+
+
+.c-dashboardInfo {
+    margin-bottom: 15px;
+}
+
+    .c-dashboardInfo .wrap {
+        background: #ffffff;
+        box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 7px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+    }
+
+.c-dashboardInfo__title,
+.c-dashboardInfo__subInfo {
+    color: #000000;
+    font-size: 1.4em;
+}
+
+.c-dashboardInfo span {
+    display: block;
+}
+
+.c-dashboardInfo__count {
+    font-weight: 400;
+    font-size: 1.1em;
+    line-height: 18px;
+    color: #323c43;
+}
+
+.c-dashboardInfo .wrap:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    content: "";
+}
+
+.c-dashboardInfo:nth-child(1) .wrap:after {
+    background: linear-gradient(82.59deg, #00c48c 0%, #00a173 100%);
+}
+
+.c-dashboardInfo:nth-child(2) .wrap:after {
+    background: linear-gradient(81.67deg, #0084f4 0%, #1a4da2 100%);
+}
+
+.c-dashboardInfo:nth-child(3) .wrap:after {
+    background: linear-gradient(69.83deg, #0084f4 0%, #00c48c 100%);
+}
+
+.c-dashboardInfo:nth-child(4) .wrap:after {
+    background: linear-gradient(81.67deg, #ff647c 0%, #1f5dc5 100%);
+}
+
+.c-dashboardInfo__title svg {
+    color: #d7d7d7;
+    margin-left: 5px;
+}
+
+.MuiSvgIcon-root-19 {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 24px;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+
+
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 250px;
+    color: red;
+}
+
+.cta {
+    width: 140px;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+
+.cta-8 {
+    border: 3px solid red;
+    text-align: center;
+    perspective: 100px;
+}
+
+cta-8:hover {
+    animation-name: cta-8;
+    border-style: ridge;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+
+
+
+
+@keyframes cta-8 {
+
+    0% {
+        box-shadow: 0px 0px 10px red;
+        border-style: inset;
+        opacity: .5
+    }
+
+    25% {
+    }
+
+    50% {
+        box-shadow: 0px 0px 30px red;
+        opacity: 1;
+    }
+
+    75% {
+    }
+
+    100% {
+        box-shadow: 0px 0px 10px red;
+        opacity: .5
+    }
+}
+
+
+.love134 {
+    float: left;
+}
+
+
+.chkboxforaccc {
+    margin-top: 35px;
+    margin-left: 16px;
+}
+
+
+
+
+.btnacc1 {
+    text-align: center;
+    margin-top: 53px;
+    margin-left: 7px;
+}
+
+.glow-on-hover1 {
+    margin: 5px;
+    width: 190px;
+    font-size: 18px !important;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: -webkit-linear-gradient(bottom, #1D9BF0, #0a0a0a) !important;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+    .glow-on-hover1:before {
+        content: '';
+        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    .glow-on-hover1:active {
+        color: #000
+    }
+
+        .glow-on-hover1:active:after {
+            background: transparent;
+        }
+
+    .glow-on-hover1:hover:before {
+        opacity: 1;
+    }
+
+    .glow-on-hover1:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: -webkit-linear-gradient(bottom, #1D9BF0, #0a0a0a) !important;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+.btnacc {
+    float: left;
+    margin-left: 4%;
+}
+
+.glow-on-hover {
+    margin: 5px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    /* background: -webkit-linear-gradient(bottom,#35c483,#000000) !important; */
+    background: #263238;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+    .glow-on-hover:before {
+        content: '';
+        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        text-shadow: 2px 2px #5f3f3f;
+        /*box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px 0px, rgba(0, 0, 0, 0.6) 0px 6px 20px 0px;*/
+        transition: opacity .3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    .glow-on-hover:active {
+        color: #000
+    }
+
+        .glow-on-hover:active:after {
+            background: transparent;
+        }
+
+    .glow-on-hover:hover:before {
+        opacity: 1;
+    }
+
+    .glow-on-hover:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-shadow: 2px 2px #5f3f3f;
+        /*box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px 0px, rgba(0, 0, 0, 0.6) 0px 6px 20px 0px ;*/
+        /* background: -webkit-linear-gradient(bottom,#35c483,#000000) !important; */
+        background: #263238;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+
+.cool {
+    float: right;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.ipshead {
+    font-weight: 600;
+    font-size: 21px;
+}
+
+
+.btn0983 {
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+    /* Darker background on mouse-over */
+    .btn0983:hover {
+        background-color: #f41e44;
+    }
+
+
+.thirteen h1 {
+    position: relative;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    width: 210px;
+    text-align: center;
+    margin: auto;
+    white-space: nowrap;
+    border: 2px solid #222;
+    padding: 5px 11px 3px 11px;
+}
+
+    .thirteen h1:before, .thirteen h1:after {
+        background-color: #c50000;
+        position: absolute;
+        content: '';
+        height: 7px;
+        width: 7px;
+        border-radius: 50%;
+        bottom: 12px;
+    }
+
+    .thirteen h1:before {
+        left: -20px;
+    }
+
+    .thirteen h1:after {
+        right: -20px;
+    }
+
+
+.floatreset {
+    float: right
+}
+
+.bh5 {
+    margin-left: -8px;
+}
+
+.btntvcard {
+    background: -webkit-linear-gradient(top, rgb(53, 196, 131), rgb(0, 0, 0)) !important;
+    height: 33px;
+}
+
+.reletedeventbackground {
+    /* background: linear-gradient(to top, #00ff8a, #000000) !important; */
+    background: #263238;
+}
+
+.love12 {
+    font-size: 16px !important;
+}
+
+.bh2 {
+    margin-left: -11px;
+}
+
+#matchscores {
+    padding: 0px;
+}
+
+.scroll {
+    height: 809px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#matchscoresTen {
+    padding: 0px;
+}
+
+#matchscores label {
+    text-align: left;
+}
+
+.backgroundimageforSuspended {
+    float: right;
+    width: 46.5%;
+    position: absolute;
+    z-index: 530 !important;
+    right: 0px;
+    margin-top: 70px;
+    text-align: right;
+    display: none;
+}
+
+.love {
+    margin-left: 80% !important;
+}
+
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 0px;
+    padding-right: 0px;
+    min-height: 88%;
+    width: 100% !important;
+    max-width: 100% !important;
+   
+}
+
+.mediaplayer {
+    width: 16%;
+}
+
+
+
+.relatedspan {
+    float: right;
+}
+
+.relatedtime {
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 4px;
+    width: 33%;
+    float: right;
+}
+
+.relatedname {
+    background: white;
+    width: 99%;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 95%;
+    left: 50%;
+    /* float: left; */
+    margin-left: -165px;
+    transition: opacity 0.3s;
+}
+
+    .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.Maintime {
+    font-size: 20px;
+    font-weight: 100;
+    text-shadow: 0.3px 0.25px #ffffff;
+}
+
+.figselectionheight {
+    height: 44px;
+}
+
+
+
+.labelup {
+    font-size: 22px !important;
+    font-weight: 900 !important;
+    font-family: 'Oswald', sans-serif !important;
+}
+
+.labeldown {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+
+
+.scorecard {
+    margin-bottom: -15px;
+}
+
+.scorecard123 {
+    margin-bottom: 0px;
+}
+
+
+.soc1 {
+    width: 50%;
+}
+
+.soc2 {
+    width: 30%;
+}
+
+.soc3 {
+    float: right;
+    margin-top: 9px;
+}
+
+.Update {
+    margin-top: -15px;
+    font-size: 25px;
+    font-weight: bolder;
+    margin-left: 5%;
+    float: right;
+}
+
+/*.tennisScore {
+	width: 22%;
+}*/
+
+.tennisser {
+    width: 40%
+}
+
+.teamscore {
+    width: 25%;
+}
+
+.runrate {
+    margin-left: 12%;
+    width: 30%;
+}
+
+.Lastball {
+    margin-left: 18%;
+    width: 35%;
+}
+
+.need {
+    margin-left: 18%;
+}
+
+
+.colsebtn112 {
+    color: white;
+    background: red;
+    width: 100%;
+    height: 24px;
+    margin-top: -5px;
+    margin-bottom: 1px;
+}
+
+.inplaydash {
+    color: white !important;
+    font-size: 15px;
+    font-weight: 200;
+    float: right;
+    /* background: white; */
+    padding: 3px;
+    margin-top: -4.5px;
+}
+
+
+
+.runner-disabled {
+    color: #f00;
+    text-align: center;
+    background: white;
+    text-transform: uppercase;
+}
+
+.runnerfavorite .runnersname, .runnerfavorite .runnersnameHorse, .runnerfavorite .runnersnamenotrace {
+    /*color: #FF0000 !important;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;*/
+  /*  text-transform: uppercase;*/
+}
+
+.suspended {
+    color: #dc143c;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px !important;
+    background: #ffffffe6
+}
+
+.suspendedForRace {
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px !important;
+    display: none;
+}
+
+.suspendedAdd {
+    color: red;
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size: 17px !important;
+    margin-left: 3px !important;
+}
+
+.suspended234 {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px !important;
+    font-weight: 700;
+}
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long vto fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 380px;
+}
+
+.logo {
+    width: 51%;
+}
+
+.logonew {
+    margin-left: 25px;
+    margin-top: 11px;
+}
+
+.logo-img {
+    height: 30px;
+    width: 100px;
+    padding-top: 0px;
+    margin-top: 14px;
+    margin-left: 0px;
+}
+
+.sidebar-collapse {
+    float: left;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+    .sidebar-collapse .collapse-icon {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 18px;
+        color: #fff;
+        padding: 3px 5px;
+        line-height: 22px;
+        position: relative;
+        -webkit-transition: background-color .218s ease;
+        -moz-transition: background-color .218s ease;
+        -o-transition: background-color .218s ease;
+        transition: background-color .218s ease;
+        -webkit-transition: -webkit-box-shadow .218s ease;
+        -moz-transition: -moz-box-shadow .218s ease;
+        -o-transition: box-shadow .218s ease;
+        transition: box-shadow .218s ease;
+        -webkit-transition: color .318s ease;
+        -moz-transition: color .318s ease;
+        -o-transition: color .318s ease;
+        transition: color .318s ease;
+        font-family: fantasy;
+        animation-name: glow;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    .sidebar-collapse:hover {
+        /*outline: 5px auto -webkit-focus-ring-color;*/
+        -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, .2);
+        -moz-box-shadow: 0 0 0px rgba(0, 0, 0, .2);
+        box-shadow: 0 0 0px rgba(0, 0, 0,0.2);
+        font-family: fantasy;
+        animation-name: glow;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+
+    .sidebar-collapse.active .collapse-icon {
+        font-size: 14px;
+        -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+        -moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+        box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+        padding: 11px;
+    }
+
+.balanceandliabailitynew {
+}
+
+
+
+.innerbodycontent {
+    padding: 0px 0px;
+    /*background: #00ffdc0f;*/
+    float: left;
+    margin-top: 59px;
+    width: 100%;
+}
+
+.navmain {
+    padding: 0px;
+    margin-top: 16px;
+}
+
+.navmain1 {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    right: 1px;
+    border: 1px solid #ccc !important;
+    -webkit-border-radius: 2px !important;
+    -webkit-background-clip: padding-box !important;
+    -moz-border-radius: 2px !important;
+    -moz-background-clip: padding !important;
+    border-radius: 2px !important;
+    background-clip: padding-box !important;
+    -webkit-box-shadow: 0 2px 40px rgba(0, 0, 0, .4);
+    -moz-box-shadow: 0 2px 40px rgba(0, 0, 0, .4);
+    box-shadow: 0 2px 40px rgba(0, 0, 0, .4);
+    -webkit-transition: opacity .218s;
+    -moz-transition: opacity .218s;
+    -o-transition: opacity .218s;
+    transition: opacity .218s;
+    margin: 1px 0 0;
+    min-width: 170px;
+    width: 250px;
+    z-index: 500000000000;
+}
+
+    .navmain1 li a {
+        font-size: 12px !important;
+        padding: 10px 2px !important;
+        color: black;
+        display: inline-block;
+        width: 100%;
+        float: left;
+        line-height: 16px;
+        text-align: left;
+        background-color: white;
+    }
+
+
+#maineventtypediv {
+    float: left;
+    padding: 0 0px 0 0px !important;
+    min-height: 700px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+}
+
+.markettimernoofwinnersliablity {
+    font-size: 14px;
+    font-weight: 500;
+    color: white !important;
+    float: left;
+    width: 100%;
+    background: #075E54;
+    margin-top: 1px;
+}
+
+
+.runnerselectedhorse {
+    background: -moz-linear-gradient(top, #fbd150 0%, #faff8e 63%, #faff8e 42%) !important;
+    background: -webkit-linear-gradient(top, #fbd150 0%,#faff8e 63%,#faff8e 42%) !important;
+    border: 1px solid white;
+    background: linear-gradient(to bottom, #fbd150 0%,#faff8e 63%,#faff8e 42%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFC000', endColorstr='#feffe8',GradientType=0 );
+}
+
+.divwithpadding {
+    border-right: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    .divwithpadding:nth-child(3) {
+        border-right: 0px solid #ccc;
+    }
+
+.markettype {
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+    padding: 5px 10px !important;
+    border-top: 0px;
+    color: white !important;
+    background: #075E54;
+    font-size: 18px;
+    font-weight: Normal;
+    margin-top: 2px !important;
+    float: left;
+    width: auto !important;
+    margin-left: 0px;
+}
+
+
+.runnersprofitlossredHorse {
+    color: Red !important;
+    width: 30% !important;
+    margin-top: 30px;
+    float: right;
+    font-size: 12px !important;
+}
+
+#rulescontent {
+    letter-spacing: 2px;
+    padding: 5px;
+    background: white;
+}
+
+.marketstatusC {
+    padding: 5px 10px !important;
+    border-top: 1.65px solid Red;
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+    margin-top: -5px !important;
+    float: right;
+    width: auto !important;
+}
+
+
+.marketstatusS {
+    padding: 5px 10px !important;
+    border-top: 1.65px solid Red;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: -5px !important;
+    float: right;
+    width: auto !important;
+}
+
+.marketstatusG {
+    padding: 5px 4px !important;
+    border-top: 1.65px solid #2dc3e8;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: -5px !important;
+    float: right;
+    width: auto !important;
+}
+
+.marketstatusI {
+    padding: 5px 10px !important;
+    border-top: 1.65px solid Green !important;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: -5px !important;
+    float: right;
+    width: auto !important;
+}
+
+.rule2 {
+    padding: 5px 10px !important;
+    color: white;
+    text-shadow: 2px 2px #5f3f3f;
+   /* background: -webkit-linear-gradient(bottom,#35c483,#000000);*/
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    margin-top: -5px !important;
+    float: left;
+    width: 101% !important;
+}
+
+.lableupgoals {
+    font-size: 22px !important;
+    font-weight: 900 !important;
+}
+
+.winnerno {
+    font-size: 17px;
+    font-weight: 700
+}
+
+.rule1 {
+    padding: 5px 10px !important;
+    border-top: 3px solid #075E54;
+    font-size: 17px !important;
+    font-weight: 700;
+    margin-top: -5px !important;
+    float: left;
+    width: auto;
+}
+
+.rule {
+    padding: 5px 10px !important;
+    border: 0px solid white;
+    border-radius: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 3px !important;
+    float: right;
+    width: auto !important;
+}
+
+.marketstatusrulesandmarkettype {
+    margin-bottom: 0px;
+    float: left;
+    width: 99%;
+    margin-left: 0px;
+    margin-top: 0px;
+    border-bottom: 1px black;
+}
+
+.marketstatusrulesandmarkettype1 {
+    float: left;
+    width: 23%;
+    margin-left: 1px;
+    color: white;
+    background: #075E54;
+    font-size: 20px;
+}
+
+
+.marquee {
+    width: 80%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    line-height: 1;
+    height: 20px;
+    vertical-align: -webkit-baseline-middle;
+}
+
+    .marquee span {
+        text-shadow: 1px 1px black;
+        display: inline-block;
+        padding-left: 100%;
+        text-indent: 0;
+        height: 15px;
+        color: #ffffff;
+        font-size: 15px;
+        /* letter-spacing: 0.5px; */
+        /* font-family: fantasy; */
+        font-weight: 600;
+        /* border: 1px red solid; */
+        animation: marquee 10s linear infinite;
+    }
+
+
+.marqueediv {
+    position: relative;
+    background: #f3f3f3;
+    /*min-height: 40px;*/
+    line-height: 39px;
+    height: 28px;
+    padding: 0;
+    display: block;
+    z-index: 1;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
+}
+
+#backandlaydiv {
+    display: inline-flex;
+    float: right;
+    left: -9.9px;
+    width: 36.2%;
+}
+
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+.upperlinks {
+    top: -21px;
+    position: relative;
+    margin: 0;
+    padding-bottom: 1px;
+    padding-left: 12px;
+    background-image: -webkit-linear-gradient(left, #fff, #f3f3f3);
+    background-image: -moz-linear-gradient(left, #fff, #f3f3f3);
+    background-image: -o-linear-gradient(left, #fff, #f3f3f3);
+    background-image: linear-gradient(to right, #fff, #f3f3f3);
+    z-index: 0;
+    min-height: 36px;
+    border-bottom: 1px solid #e5e5e5;
+    height: 36px;
+}
+
+    .upperlinks a {
+        position: relative;
+        vertical-align: middle;
+        display: inline-block;
+        z-index: 1029;
+        height: 40px;
+        /* width: 36px; */
+        margin-right: 5px;
+        padding: 8px 10px;
+        color: #444444;
+        -webkit-transition: all .218s ease;
+        -moz-transition: all .218s ease;
+        -o-transition: all .218s ease;
+        transition: all .218s ease;
+        border-bottom: 4px solid #2dc3e8;
+    }
+
+        .upperlinks a:hover {
+            -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+            color: #2dc3e8;
+            text-decoration: none;
+        }
+
+.logoutlink {
+    padding: 2px;
+    border-top: 2px solid black;
+    
+    text-align: center;
+}
+
+.navmain1 li a:hover {
+    /*text-decoration: none;*/
+    font-size: 17px;
+}
+
+.navmain1 li {
+    display: block;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 0px 5px;
+    margin-bottom: 0px;
+    float: left;
+    width: 100%;
+    background-color: white;
+}
+
+.navmainli {
+    display: inline-block;
+    text-shadow: 0px 0.4px #ffffff !important;
+}
+
+.navbar-label, .navbar-header a {
+    font-size: 14px !important;
+    padding: 2px 2px 2px !important;
+    color: white;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.navbar-header {
+    margin-top: 0px;
+}
+
+
+
+.errordivfixed {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #f44336;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    cursor: default;
+}
+
+    .errordivfixed .close-btn {
+        margin-left: 12px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+.modalpopuploader {
+    position: fixed;
+    z-index: 1999;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: rgba(222, 212, 212, 0.75);
+    filter: alpha(opacity=60);
+    opacity: 1;
+    -moz-opacity: 1;
+    display: none;
+}
+
+.centerdiv img {
+    margin: 10px auto;
+    width: 220px;
+}
+
+.centerdiv {
+    z-index: 1000;
+    margin: 150px auto;
+    padding: 0px;
+    width: 150px;
+    background-color: #ffffff08;
+    border-radius: 10px;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -moz-opacity: 1;
+    text-align: center;
+}
+
+.center img {
+    height: 128px;
+    width: 128px;
+}
+
+.maincategory-sports li {
+    display: block !important;
+    float: left;
+    width: 100%;
+    white-space: nowrap;
+    background-color: transparent;
+}
+
+
+
+.maincategory-sports {
+    display: block;
+    margin-top: 36px;
+}
+
+    .maincategory-sports a {
+        font-size: 13px !important;
+        color: black !important;
+        padding: 0 5px 0 5px !important;
+        line-height: 22px !important;
+        font-weight: 500 !important;
+        border-bottom: 1px solid #f3f3f3;
+    }
+
+.marqueeui {
+    width: 100%;
+    background-color: transparent;
+    display: inline-block;
+    line-height: 19px;
+    margin: 0 0px 0 0px;
+    height: 4px;
+    padding: 0;
+    font-size: 13px;
+    color: black;
+    border-radius: 0;
+    z-index: 1000;
+    position: relative;
+    list-style: none;
+}
+
+    .marqueeui li {
+        display: inline-block;
+        margin-left: 29px;
+        margin-right: 2px;
+        font-size: 20px;
+        color: white;
+        position: relative;
+        top: -42px;
+    }
+
+.maincategory-sports a:hover {
+    /*color: black !important;*/
+    font-size: 150%;
+    color: black !important;
+    border-bottom: 1px solid #f3f3f3;
+    /*background-color: #0a0a0f !important;*/
+    background-color: #F8F8F8 !important;
+}
+
+
+
+.competitions, .events, .marketcatalogue {
+}
+
+    .competitions a, .events a, .marketcatalogue a {
+    }
+
+    .competitions li a {
+    }
+
+    .events li a {
+    }
+
+    .marketcatalogue li a {
+    }
+
+#detailsselecteditem {
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    padding: 5px;
+    display: none;
+}
+
+.breadcrumbeventname {
+    margin-left: 15px;
+    float: left;
+}
+
+.breadcrumbmarkettypename {
+    margin-left: 25px;
+    float: left;
+}
+
+a:hover {
+}
+
+.acidjs-css3-treeview,
+.acidjs-css3-treeview * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+    .acidjs-css3-treeview label[for]::before,
+    .acidjs-css3-treeview label span::before {
+        content: "\25b6";
+        display: inline-block;
+        margin: 2px 0 0;
+        width: 13px;
+        height: 13px;
+        vertical-align: top;
+        text-align: center;
+        color: black;
+        font-size: 12px;
+        line-height: 13px;
+    }
+
+    .acidjs-css3-treeview .lastlevelspan::before {
+        content: "" !important;
+    }
+
+    .acidjs-css3-treeview li ul {
+        margin: 0 0 0 22px;
+    }
+
+    .acidjs-css3-treeview * {
+        vertical-align: middle;
+    }
+
+.acidjs-css3-treeview {
+    font: normal 11px/16px "Segoe UI", Arial, Sans-serif;
+}
+
+    .acidjs-css3-treeview li {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    .acidjs-css3-treeview input[type="checkbox"] {
+        display: none;
+    }
+
+    .acidjs-css3-treeview label {
+        cursor: pointer;
+    }
+
+        .acidjs-css3-treeview label[for]::before {
+            -webkit-transform: translatex(-24px);
+            -moz-transform: translatex(-24px);
+            -ms-transform: translatex(-24px);
+            -o-transform: translatex(-24px);
+            transform: translatex(-24px);
+        }
+
+        .acidjs-css3-treeview label span::before {
+            -webkit-transform: translatex(16px);
+            -moz-transform: translatex(16px);
+            -ms-transform: translatex(16px);
+            -o-transform: translatex(16px);
+            transform: translatex(16px);
+        }
+
+    .acidjs-css3-treeview input[type="checkbox"][id]:checked ~ label[for]::before {
+        content: "\25bc";
+    }
+
+    .acidjs-css3-treeview input[type="checkbox"][id]:not(:checked) ~ ul {
+        display: none;
+    }
+
+.plhide {
+    display: none;
+}
+
+.acidjs-css3-treeview label:not([for]) {
+    margin: 0 8px 0 0;
+}
+
+.acidjs-css3-treeview label span::before {
+    content: "";
+    border: solid 1px #1375b3;
+    color: #1375b3;
+    opacity: .50;
+}
+
+.acidjs-css3-treeview label input:checked + span::before {
+    content: "\2714";
+    box-shadow: 0 0 2px rgba(0, 0, 0, .25) inset;
+    opacity: 1;
+}
+
+.acidjs-css3-treeview label input:indeterminate + span::before {
+    content: "\268A";
+    box-shadow: 0 0 2px rgba(0, 0, 0, .25) inset;
+    opacity: 1;
+}
+
+.createuser {
+    float: left;
+    width: 100%;
+}
+
+.favoriteitem {
+    width: 12px;
+    margin-left: 10px;
+}
+
+.mymarketitems {
+    float: left;
+    width: 100%;
+}
+
+#myModalContent {
+    color: white;
+}
+
+.mymarketitems .srnum, .mymarketitems .nameandimg, .mymarketitems .liability {
+    float: left;
+    background-color: white;
+    color: #b0d087;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.mymarketitems .srnum {
+    width: 15%;
+}
+
+.mymarketitems .nameandimg {
+    width: 64%;
+    float: left;
+    margin-bottom: 5px;
+}
+
+    .mymarketitems .nameandimg label {
+        margin-bottom: 0;
+    }
+
+.mymarketitems .liability {
+    width: 15%;
+}
+
+#txtAdminPassword {
+    width: 258px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#myModalPassword .modal-dialog {
+    width: 280px !important;
+}
+
+.no-padding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    min-height: 0px;
+}
+
+#marketbook, #betslipcontent, #fancymarketbook, #Indianfancymarketbook1, #marketbookTWT, #KJfancymarketbook, #Figurefancymarketbook, #SFigfancymarketbook, #marketbooksoccer {
+    text-align: center;
+    padding: 0px;
+}
+
+#marketbook, #marketbookTWT {
+    float: left;
+    margin-top: -4.87px;
+    margin-left: 0px;
+    padding: 02px;
+    width: 100%;
+}
+
+#fancymarketbook {
+    width: 99.50%;
+    background: white;
+    margin-left: 2px;
+    float: left;
+    margin-top: 0px;
+}
+
+#marketbooksoccer {
+    width: 98%;
+    background: white;
+    margin-left: 0px;
+    float: left;
+    margin-top: 10px;
+}
+
+#Indianfancymarketbook1 {
+    /*width: 98.50%;*/
+    width: 49.50%;
+    background: white;
+    margin-left: 3px;
+    float: left;
+    margin-top: 15px;
+}
+
+#KJfancymarketbook {
+    width: 49.5%;
+    background: white;
+    margin-left: 4px;
+    float: right;
+    margin-top: 15px;
+}
+
+
+#SFigfancymarketbook {
+    width: 48.50%;
+    background: white;
+    margin-left: 7px;
+    float: left;
+    margin-top: 15px;
+}
+
+.betors {
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 1px 0px inset, rgb(23, 23, 23) 0px 0px 0px inset;
+}
+
+#Figurefancymarketbook {
+    width: 49.5%;
+    background: white;
+    margin-left: 5px;
+    float: right;
+    margin-top: 20px !important;
+}
+
+
+
+#BetSlipSection {
+    text-align: left;
+    float: left;
+    max-height: 400px;
+    overflow: hidden;
+    box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    margin: 0px 0px;
+    background-color: white;
+    width: 100%;
+}
+
+#TV {
+    text-align: left;
+    float: left;
+    max-height: 390px;
+    overflow: auto;
+    box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    margin: 20px 10px;
+    background-color: #190e30;
+    width: 95%;
+}
+
+.user-betsagents-wrapper {
+    background: #075E54;
+    width: 100%;
+}
+
+
+.backhead {
+    border-bottom: 2px solid #2797e6;
+    margin-left: 1px;
+    margin-top: 2px;
+}
+
+.layhead {
+    border-bottom: 2px solid #f994a9;
+    Margin-top: 2px;
+}
+
+.layheadFancy {
+    border-bottom: 2px solid #f994a9;
+    width: 49.75% !important;
+    Margin-top: 2px;
+}
+
+.layheadIN {
+    border-bottom: 2px solid #f994a9;
+}
+
+#betslipcontent label, #marketbooksoccer label, #fancymarketbook label {
+    margin-bottom: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif !important;
+    /*font-size:16px*/
+}
+
+#marketbookTWT label {
+    margin-bottom: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif !important;
+    /*font-size:16px*/
+}
+
+#marketbook label {
+    margin-bottom: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif !important;
+    /*font-size:16px*/
+}
+
+#Indianfancymarketbook1 .runnerprofitandlossdivMobile {
+    width: 49% !important;
+    margin-top: 0px;
+}
+
+#Figurefancymarketbook .runnerprofitandlossdivMobile {
+    width: 50% !important;
+    margin-top: 0px;
+}
+
+#KJfancymarketbook .runnerprofitandlossdivMobile {
+    width: 50% !important;
+    margin-top: 0px;
+}
+
+
+#SFigfancymarketbook .runnerprofitandlossdivMobile {
+    width: 50% !important;
+    margin-top: 0px;
+}
+
+#KJfancymarketbook label, #Figurefancymarketbook label, #SFigfancymarketbook label, #Indianfancymarketbook1 label {
+    margin-bottom: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 800;
+    /*font-size:16px*/
+}
+
+.runnerswrapperf {
+    padding: 0px;
+    /*float: left;
+	width: 103%;*/
+    /*border-bottom: 1px solid #ccc;
+        border-top: 0px solid;*/
+    border-left: 0px solid;
+    border-right: 0px solid;
+    Height: 45px;
+}
+
+.no-paddingf {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    min-height: 8.6222222px;
+    /*width: 100%;*/
+    display: inherit;
+}
+
+.backheadf {
+    border-bottom: 3px solid #2797e6;
+    margin-top: -8px;
+    margin-left: 1px;
+    width: 50%;
+}
+
+#BackDivf {
+    display: inline-grid;
+}
+
+runnerwrapperheadf {
+    background: #243876;
+}
+
+.runnerswrapperf:last-child {
+}
+
+.runnerswrapperf:nth-child(1) {
+    margin-bottom: 0px;
+}
+
+#lastpricedivvalf {
+    display: none;
+}
+
+#backandlaydivthirdf {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
+#nameProfitandlossdivf {
+    width: 60%;
+    float: left;
+}
+
+#lastpricebackandlaydivf {
+    /*margin-bottom:-5px;*/
+    width: 40%;
+    display: inline-block;
+}
+
+.backitemf {
+    /*border-bottom: 1px solid black;*/
+    border-left: 0px solid black;
+    border-right: 2px solid white;
+    border-top: 0px solid black;
+    margin: 0px 0px 0px 1px;
+    width: 100%;
+    height: 43px;
+    background-color: #72bbef;
+}
+
+.layitemf {
+    /*border-bottom: 1px solid black;*/
+    border-left: 0px solid black;
+    border-right: 0px solid black;
+    border-top: 0px solid black;
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+    height: 43px;
+    background-color: #FF8A8E;
+}
+
+
+    .backitemf label, .layitemf label {
+        border-left: 0px solid;
+        border-right: 0px solid;
+        border-bottom: 0px solid;
+        border-top: 0px solid;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+.runnerslastprice {
+}
+
+.runnersnamef {
+    width: 85% !important;
+    text-align: left;
+    text-overflow: ellipsis;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+#rname {
+    margin-bottom: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    /*font-size:16px*/
+}
+
+
+
+
+#lbllayprice {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.runnerswrapper {
+    /*margin: 1px 0 0 0;*/
+}
+
+.runnerwrapperhead:hover {
+    background-color: white !important;
+}
+
+.runnerswrapper:hover {
+    background-color: transparent;
+}
+
+.runnerswrapper:last-child {
+}
+
+.runnerswrapper:nth-child(1) {
+    /*border-top: 1px solid;*/
+}
+
+.layitem:nth-child(1) {
+    /*background: #f994ba;*/
+    background: #FF8A8E;
+    min-height: 0px;
+    margin-left: 0px !important;
+}
+
+.backitem:nth-child(3) {
+    /*background-color: #72bbef;*/
+    background-color: #72bbef;
+    min-height: 0px;
+    margin-right: 0px !important;
+}
+
+.backitem label, .layitem label {
+    border-left: 0px solid;
+    border-right: 0px solid;
+    border-bottom: 0px solid;
+    border-top: 0px solid;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.runnerslastprice {
+}
+
+.runnersname {
+    width: 94% !important;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.jockeyname {
+    /*float: left;*/
+    font-size: 12px;
+    text-align: left;
+    margin-left: 0px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.clothnumandstallnum {
+    float: left;
+    width: 20px;
+}
+
+.runnerinfo {
+    float: left;
+    width: 60%;
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+.runnersnameHorse {
+    text-align: left;
+    white-space: nowrap;
+}
+
+audio {
+    display: none !important;
+}
+
+.runnerwearing {
+    float: left;
+    margin-left: 0px;
+    margin-top: 1px;
+}
+
+.amountbutton input[type="button"], .amountbuttonmultiple input[type="button"] {
+    /*width: 31%;
+    padding: 4px;
+    margin: 2px;
+    font-weight: bold;*/
+   /* box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.6);*/
+    padding: 0px 0px;
+    
+    font-size: 17px;
+    width: 23.5%;
+    height: 46px;
+    border-radius: 0px;
+}
+
+#betslipmultiple .amounts {
+    width: 100% !important;
+    text-align: center;
+}
+
+.amounts {
+    width: 50%;
+    float: left;
+}
+
+#betslipmultiple .amountarea {
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-top: 0px !important;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+#betslipbackmultiple {
+    border: 2px solid rgb(48, 37, 37);
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 25px;
+    line-height: 50px;
+    height: 56px;
+    width: 76px;
+    background-color: #84b8dc;
+}
+
+#betsliplaymultiple {
+    border: 2px solid rgb(48, 37, 37);
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 25px;
+    line-height: 50px;
+    height: 56px;
+    width: 76px;
+    background-color: #f994ba;
+}
+
+.amounts input[type="number"] {
+    width: 90%;
+    padding: 4px;
+    text-align: center;
+}
+
+.amounts input[type="text"] {
+    width: 70%;
+    padding: 4px;
+    text-align: center;
+    float: left;
+    margin-left: 10px;
+}
+
+.plusminus {
+    float: left;
+    width: 17%;
+    text-align: left;
+    margin-left: 5px;
+    height: 10px;
+    font-size: 11px;
+}
+
+.amountarea {
+    border-top: 1px solid;
+    float: left;
+    margin-top: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: white;
+}
+
+#betslipoddlabel, #betslipoddlabelmultiple, #betslipoddlabelmob #betslipamountmob {
+    color: green !important;
+}
+
+/*#betslipamountlabelmob, #betslipamountlabelmultiple {
+    color: red !important;
+}*/
+
+
+
+.betslipselections {
+    float: left;
+    width: 100%;
+    margin-top: -26px;
+}
+
+.selectionprice {
+    font-size: 20px;
+    font-weight: 900;
+    color: black !important;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+    .selectionprice:hover {
+        cursor: pointer;
+    }
+
+.selectionsize {
+    font-size: 14px !important;
+    color: black;
+    font-weight: 500 !important;
+    font-family: Tahoma, sans-serif;
+}
+
+    .selectionsize:hover {
+        cursor: pointer;
+    }
+
+.dropdown-menu {
+    padding: 0px !important;
+    margin-left: -35px;
+}
+
+.dropdown-menu1 {
+    padding: 0px !important;
+    margin-left: -15px;
+}
+
+.matchstatus {
+    padding: 5px;
+    text-align: right;
+    width: 100%;
+    font-size: 16px;
+}
+
+.marketstattusdiv {
+    font-size: 55px;
+    color: red;
+}
+
+.highlighted {
+    background-color: #fff50a !important;
+}
+
+#betslipcontent label {
+    font-size: 18px;
+}
+
+#lblCounter {
+    font-size: 55px;
+}
+
+#userbets {
+    text-align: left;
+    float: left;
+    max-height: 420px;
+    overflow: hidden;
+    margin-top: 0px;
+    box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    background-color: white;
+    width: 100%;
+}
+
+#betslipnew1 {
+    text-align: left;
+    float: left;
+    max-height: 360px;
+    overflow: auto;
+    box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    margin: 20px 10px;
+    background-color: white;
+}
+
+label {
+    margin-bottom: 0px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+    label:hover {
+        /*font-size:20px*/
+    }
+
+.unmatched-bets .selection {
+    width: 42% !important;
+}
+
+.selection {
+    float: left;
+    text-align: left;
+    font-weight: bold;
+  
+}
+
+.Odd {
+    width: auto;
+    float: left;
+    font-weight: bold;
+   
+}
+
+.Amount {
+    width: 11%;
+    float: left;
+    font-weight: bold;
+    
+}
+
+.bets-items {
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    border-top: 1px solid white;
+}
+
+
+
+.bets-header {
+    background-color: #eee;
+    float: left;
+    width: 100%;
+    background-image: -webkit-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+    background-image: -moz-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+    background-image: -o-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+    background-image: linear-gradient(to bottom, #f2f2f2 0, #fafafa 100%);
+    font-size: 12px;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+}
+
+.bets-headeruser {
+    background-color: #eee;
+    float: left;
+    width: 100%;
+    background-image: -webkit-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+    background-image: -moz-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+    background-image: -o-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+    background-image: linear-gradient(to bottom, #f2f2f2 0, #fafafa 100%);
+    font-size: 12px;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+}
+
+
+.unmatched-bets, .matched-bets {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.bets-items label {
+    font-weight: 400;
+    font-size: 17px;
+    padding: 7px;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+#userbets h4 {
+    padding: 13px 11px;
+    border-bottom: 5px solid #11a9cc;
+    
+    margin: 0;
+    color: white !important;
+    font-family: fantasy;
+
+    text-align: left;
+    margin-bottom: 10px;
+   letter-spacing:1px;
+    font-size: 20px;
+}
+
+.matched-unmatched-heading {
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+    background-image: -moz-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+    background-image: -o-linear-gradient(top, #f2f2f2 0, #fafafa 100%);
+    background-image: linear-gradient(to bottom, #f2f2f2 0, #fafafa 100%);
+    font-size: 12px;
+}
+
+.unmatched-bets .back, .matched-bets .back {
+    background-color: rgb(141, 210, 240) !important;
+}
+
+.unmatched-bets .lay, .matched-bets .lay {
+    background-color: rgb(254, 175, 178) !important;
+}
+
+.Editcancel {
+    float: left;
+    width: 8%;
+}
+
+.unmatched-bets .Amount {
+    width: 11%;
+}
+
+.unmatched-bets span {
+    padding: 5px 0px;
+}
+
+.runnersprofitlossgreen {
+    color: #00b181 !important;
+}
+
+.runnersprofitlossgreengrey {
+    color: #00b181 !important;
+}
+
+.runnersprofitlossred {
+    color: #dc143c !important;
+}
+
+.runnersprofitlossredgrey {
+    color: #dc143c !important;
+}
+
+.marketinfo {
+    float: left;
+    width: 100% !important;
+    margin-left: 0px !important;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+}
+
+#marketbookdataforshow {
+    float: left;
+    margin-top: 15px;
+    background: white;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+
+#marketbookdataforshowFancy, marketbookTWT {
+    float: left;
+    margin-top: 15px;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+#marketbooksoccer {
+    float: left;
+    margin-top: 17px;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+#marketbooksoccer {
+    float: left;
+    margin-top: 15px;
+    background-color: white;
+    width: 99.6%;
+    margin-left: 2px;
+}
+
+.suspended {
+    color: #dc143c !important;
+    border-top: 3px solid #dc143c;
+}
+
+
+.suspended2 {
+    color: red !important;
+}
+
+
+.inplay {
+    color: #359623 !important;
+    background-color: white !important;
+    text-align: center;
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.completed {
+    color: red !important;
+}
+
+.marketname {
+    float: left;
+    color: white;
+    background: linear-gradient(to bottom, #000, #35c483) !important; 
+    width: 100% !important;
+    text-align: center;
+    border:1px solid black;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 10px !important;
+    /*height: 100px;*/
+}
+
+    .marketname:hover {
+        font-size: 23px;
+        font-weight: 500;
+    }
+
+.timerimg {
+    display: none;
+}
+
+.marketbooksul {
+    padding: 0;
+    width: 100%;
+    display: none;
+}
+
+    .marketbooksul li {
+        display: table-cell;
+        width: auto;
+        text-align: left;
+        float: none !important;
+        vertical-align: top;
+        padding: 5px;
+    }
+
+        .marketbooksul li:hover {
+            background-color: #eeeeee;
+        }
+
+        .marketbooksul li a {
+            float: left;
+            max-width: 73%;
+            height: 29px;
+            padding: 5px !important;
+            margin-right: 0px !important;
+            word-wrap: break-word;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .marketbooksul li.active {
+            border: 1px solid #dddddd;
+            background: #45484d; /* Old browsers */
+            background: -moz-linear-gradient(top, #45484d 0%, #000000 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #45484d 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #45484d 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 );
+        }
+
+        .marketbooksul li a:hover {
+        }
+
+        .marketbooksul li.active a {
+            background-color: rgba(0, 0, 0, 0) !important;
+            color: white !important;
+            border: none !important;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+    .marketbooksul .close {
+        padding: 3px;
+        max-width: 26%;
+        text-align: right;
+        color: white !important;
+    }
+
+.ledgerwraper {
+    float: left;
+    width: 100%;
+}
+
+#ledgerdetails {
+}
+
+.favoriteselection {
+    display: none;
+    float: left;
+    width: 100%;
+    padding: 0px !important;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
+    border-radius: 3px;
+}
+
+.favoriteselectionname {
+    font-size: 20px;
+    float: left;
+    width: 61%;
+    margin-top: 14px;
+}
+
+    .favoriteselectionname label {
+    }
+
+.favoritepricebackandlay {
+    float: left;
+    width: 39%;
+}
+
+    .favoritepricebackandlay label {
+    }
+
+.favoritebackprice {
+    width: 50%;
+    float: left;
+    height: 53px;
+    margin: 0px 0 0 0;
+    font-size: 11px;
+    padding: 12px;
+    /* border: 1px solid; */
+    background-color: #72bbef;
+    color: black;
+   
+}
+
+    .favoritebackprice label {
+    }
+
+.favoritelayprice {
+    width: 50%;
+    float: left;
+    height: 53px;
+    margin: 0px 0 0 0;
+    font-size: 11px;
+    padding: 12px;
+    /* border: 1px solid; */
+    background-color: #FF8A8E !important;
+    color: black;
+    border-left: 1px solid white;
+}
+
+    .favoritelayprice label {
+    }
+
+.favoritesizebackandlay {
+    float: left;
+    width: 100%;
+    display: none;
+}
+
+.favoritebacksize {
+    width: 50%;
+    float: left;
+    border: 1px solid;
+    margin: 3px 0px 0 0;
+    font-size: 12px;
+}
+
+    .favoritebacksize label {
+        font-size: 12px;
+    }
+
+.favoritelaysize {
+    width: 49%;
+    float: right;
+    margin: 3px 0px 0 0;
+    font-size: 12px;
+    border: 1px solid;
+}
+
+    .favoritelaysize label {
+        font-size: 12px;
+    }
+
+.markettime {
+    text-align: center;
+    width: auto !important;
+    font-weight: 700;
+}
+
+#lbltimer {
+    font-weight: 700;
+}
+
+.userproile li {
+    display: block !important;
+}
+
+.userproile {
+    width: 100%;
+}
+
+.mainheaderdiv {
+    margin-bottom: 10px;
+    /*border-bottom: 1px solid;*/
+    width: 95%;
+    display: none;
+}
+
+.navbar-header li {
+    padding: 0px 5px;
+}
+
+    .navbar-header li label {
+    }
+
+    .navbar-header li a {
+    }
+
+#inplayul li:hover > ul {
+    /*visibility: visible;*/
+}
+
+#allsportsul li:hover > ul {
+}
+
+.ledgerdebit {
+    color: #069b06 !important;
+}
+
+.ledgercredit {
+    color: red !important;
+}
+
+.ledgerbalance {
+}
+
+#ledgerdetails {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.user-betsagents-wrapper .Amount {
+    width: 20% !important;
+    border-right: 1px solid black;
+}
+
+.user-betsadmin-wrapper .bets-header .Amount {
+    width: 15% !important;
+    border-right: 1px solid;
+}
+
+.user-betsadmin-wrapper .Amount {
+    width: 15% !important;
+    border-right: 1px solid;
+    /*border-right: 1px solid;
+    background-color:#190e30;*/
+}
+/*.user-betsagents-wrapper .unmatched-bets .back,.matched-bets .back
+{
+      background-color: #f994ba  !important;
+}
+.user-betsagents-wrapper .unmatched-bets .lay,.matched-bets .lay
+{
+     background-color:#72bbef !important;
+     
+}*/
+.user-bets-wrapper {
+    background: #075E54;
+}
+
+    .user-bets-wrapper .bets-header .selection {
+        width: 42% !important;
+        border-right: 1px solid white;
+    }
+
+    .user-bets-wrapper .bets-header .Amount {
+        width: 25% !important;
+        border-right: 1px solid white;
+    }
+
+    .user-bets-wrapper .selection {
+        width: 42%;
+        border-right: 1px solid black;
+    }
+
+    .user-bets-wrapper .Odd {
+        width: 25%;
+        border-right: 1px solid black;
+    }
+
+
+
+
+
+.user-betsagents-wrapper .selection {
+    width: 35% !important;
+    border-right: 1px solid white;
+    color: white !important;
+}
+
+.user-betsagents-wrapper .Odd {
+    width: 20% !important;
+    border-right: 1px solid black;
+}
+
+.user-betsadmin-wrapper .selection {
+    width: 31% !important;
+    border-right: 1px solid black;
+    font-size: 9px;
+}
+
+.bets-header .selection {
+    background: #075E54;
+    width: 31% !important;
+    border-left: 1px solid white;
+    font-size: 9px;
+}
+
+.bets-headeruser .selection {
+    background: #075E54;
+    width: 50% !important;
+    border-right: 1px solid #fff;
+    font-size: 9px;
+}
+
+.bets-headeruser .Amount {
+    background: #075E54;
+    width: 30% !important;
+    border-right: 1px solid #fff;
+    font-size: 9px;
+}
+
+.bets-headeruser .amount {
+    background: #075E54;
+    width: 30% !important;
+    border-right: 1px solid #fff;
+    font-size: 9px;
+}
+
+
+.bets-header .Amount {
+    background: #075E54;
+    width: 20% !important;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    font-size: 9px;
+}
+
+.bets-header .odd {
+    background: #075E54;
+    width: 15% !important;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+
+.bets-header .customername {
+    background: #075E54;
+    width: 20%;
+    float: left;
+    border-right: 1px solid #fff;
+    /*border-right: 1px solid;*/
+}
+
+
+
+
+.user-betsadmin-wrapper .Odd {
+    width: 10% !important;
+    border-right: 1px solid black;
+}
+
+.user-betsagents-wrapper .selection {
+    width: 40% !important;
+    border-right: 1px solid white;
+}
+
+.customername {
+    float: left;
+    width: 20%;
+}
+
+.user-betsadmin-wrapper .customername {
+    float: left;
+    width: 17%;
+    border-right: 1px solid black;
+    border-left: 1px solid #fff;
+}
+
+
+
+.dealername {
+    width: 15%;
+    float: left;
+    border-left: 1px solid #fff;
+}
+
+.user-betsagents-wrapper .bets-items label {
+    font-weight: normal !important;
+}
+
+.matchedbetsheading {
+    color: Black;
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+}
+
+.user-betsadmin-wrapper {
+    font-size: 11px;
+    background: #075E54;
+}
+
+.footer-bfimg {
+    float: right;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    display: none;
+}
+
+#mainuserbetdivAdmin {
+    float: left;
+    width: 100%;
+}
+
+.checkboxrunnername {
+    float: left;
+    margin-left: 4px !important;
+}
+
+.runnerbackandlaydiv {
+    width: 46.185%;
+}
+
+.runnerbackandlaydivf {
+    width: 100%;
+}
+
+.runnerwrapperhead .runnerprofitandlossdiv {
+    border-top: 0px solid #ccc !important;
+}
+
+.runnerprofitandlossdiv {
+    width: 9%;
+    border-top: 1px solid #ccc;
+}
+
+.runnerwrapperhead .runnerlastpricediv {
+    width: 62px;
+    background-color: white !important;
+    margin: 0px 0px !important;
+    border: 0px solid #c4d4e1 !important;
+}
+
+.runnerlastpricediv {
+    width: 7%;
+    background-color: white;
+    margin: 0px 1px;
+    border-bottom: 0px solid black;
+    border-left: 1px solid black;
+    border-right: 0px solid black;
+    /*border-top: 1px solid black;*/
+    display: inline-block;
+    height: 45px;
+}
+
+.runnernamediv {
+    width: 46.5%;
+    /*border-top: 1px solid black;*/
+}
+
+.runnernamedivf {
+    width: 100%;
+}
+
+
+.runnerwrapperhead .runnernamediv {
+    border-top: 0px solid #ccc !important;
+}
+
+.backgroundimageforSuspended {
+    float: right;
+    width: 46.5%;
+    position: absolute;
+    z-index: 10 !important;
+    right: -3px;
+    margin-top: 70px;
+    text-align: right;
+    display: none;
+}
+
+.backgroundsuspended {
+    background-position-x: 33px;
+    background-size: 60% 100%;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.4);
+    /*border-top: 2px dotted red;
+	 border-left: 2px dotted red;
+	  border-right: 2px dotted red;
+	   border-bottom: 2px dotted red;*/
+}
+
+.backgroundclosed {
+    background-position-x: 33px;
+    background-size: 60% 100%;
+    background-repeat: no-repeat;
+    background-image: url("/assets/images/Suspend.png");
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.averagerates {
+    text-align: center;
+    font-size: 20px;
+    width: 80px;
+    font-weight: bold;
+    border: 1px solid;
+}
+
+.averagecalculations {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.ddlaveragerunners {
+    font-size: 15px;
+    margin-bottom: 6px;
+    padding: 6px 0px;
+    width: 90%;
+}
+
+.averageLateover1 {
+}
+
+.averageLateover2 {
+}
+
+.greenclass {
+    color: #05bb05 !important;
+    font-size: 23px;
+}
+
+.redclass {
+    color: red !important;
+    font-size: 23px;
+}
+
+#todayhorseraceui, #todaygrayhoundraceui {
+    max-height: 350px;
+    overflow: auto;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: inherit;
+}
+
+#inplayulT {
+    max-height: 350px;
+    overflow: auto;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: inherit;
+}
+
+#inplayulC {
+    max-height: 350px;
+    overflow: auto;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: inherit;
+}
+
+#inplayulF {
+    max-height: 350px;
+    overflow: auto;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: inherit;
+}
+
+.runnerwinner {
+    background: linear-gradient(to bottom, #039221 0%,#22cd5c 100%);
+    background-size: cover;
+    min-height: 38px;
+    color: white !important;
+    width: 46.5%;
+}
+
+.runnersclothnumber {
+    margin-top: 2px;
+    font-size: 14px;
+    float: left;
+}
+
+.markettotalmatched {
+    font-size: 14px !important;
+    text-align: left;
+    margin-top: 8px;
+}
+
+.tobeplacedcount {
+    float: left;
+    width: 630px;
+    margin-top: 17px;
+    font-size: 25px;
+}
+
+.runnersStallDraw {
+    float: left;
+    font-weight: normal;
+}
+
+.refreshbutton {
+    margin-left: 25px;
+    padding: 1px 12px !important;
+}
+
+.adminrunners {
+    float: left;
+    width: 26%;
+}
+
+.adminodds {
+    float: left;
+    width: 10%;
+}
+
+.adminamount {
+    float: left;
+    width: 20%;
+}
+
+.adminbettype {
+    float: left;
+    width: 11%;
+}
+
+.admincuttingusers {
+    float: left;
+    width: 12%;
+}
+
+.adminamount input[type="text"], .adminodds input[type="text"] {
+    width: 90% !important;
+}
+
+.adminaddbutton {
+    float: left;
+    width: 10%;
+}
+
+.runnerfavorite {
+    /*background-color: bisque;
+    background-size: cover;
+    min-height: 49px;*/
+}
+
+.usernameandliablity {
+}
+
+.headerdiv {
+    float: left;
+}
+
+.runnerprofitandlossdivMobile {
+}
+
+.runnersprofitlossgreenFancy {
+    width: 50% !important;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    float: right;
+    margin-left: 0px;
+    color: #00b181 !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+.runnersprofitlossgreen {
+    width: 50% !important;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    float: right;
+    margin-left: 0px;
+    color: #00b181 !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -20px;
+}
+
+.runnersprofitlossgreengrey {
+    width: 50% !important;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    float: right;
+    margin-left: 0px;
+    color: #00b181 !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -20px;
+}
+
+.runnersprofitlossgreen1 {
+    width: 50% !important;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    float: right;
+    margin-left: 0px;
+    color: #00b181 !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 23px;
+}
+
+
+.runnersprofitlossred {
+    width: 50%;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    /*overflow: hidden;*/
+    white-space: nowrap;
+    float: right;
+    margin-left: 0px;
+    color: #dc143c !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+
+.runnersprofitlossredgrey {
+    width: 50% !important;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    /*overflow: hidden;*/
+    white-space: nowrap;
+    float: right;
+    margin-left: 0px;
+    color: #dc143c !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+.runnersprofitlossredKali {
+    width: 50% !important;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    /*overflow: hidden;*/
+    white-space: nowrap;
+    float: left;
+    margin-left: 0px;
+    color: #dc143c !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -20px;
+}
+
+.runnersprofitlossredfig {
+    width: 50% !important;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    /*overflow: hidden;*/
+    white-space: nowrap;
+    float: right;
+    margin-left: 0px;
+    color: #dc143c !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.runnersprofitlossred23 {
+    width: 50% !important;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    /*overflow: hidden;*/
+    white-space: nowrap;
+    float: right;
+    margin-left: 0px;
+    color: #dc143c !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+.runnersprofitlossred1 {
+    width: 50% !important;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    /*overflow: hidden;*/
+    white-space: nowrap;
+    float: right;
+    margin-left: 0px;
+    color: #dc143c !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 23px;
+}
+
+.runnersaveragegreen {
+    float: right;
+    width: 30% !important;
+    color: #078f07 !important;
+    font-weight: bold;
+}
+
+.runnersaveragered {
+    float: right;
+    width: 30% !important;
+    color: red !important;
+    font-weight: bold;
+}
+
+.betslipbuttons {
+    background: #9fd2be;
+    color: black !important;
+    border: 1px solid white;
+}
+
+    .betslipbuttons:hover {
+        background-color: #2fa774;
+    }
+
+.cancelbetbutton {
+}
+
+/*#btncancelUnmatchedBets {
+    background-color: #FF0000 !important;
+    border-color: #e74b37 !important;
+    padding: 0px 0px !important;
+    float: right;
+    width: 85px;
+	font-size:17px;
+    margin: 0px 2px;
+    color: white;
+}*/
+
+.buttonviewall {
+    border-radius: 4px;
+    float: right;
+    background: -webkit-linear-gradient(bottom, #38b736, #1c3615) !important;
+    /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .6); */
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 02px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0px;
+    width: 78px;
+}
+
+
+
+.btncancelUnmatchedBets {
+    border-radius: 4px;
+    float: right;
+    /* background: -webkit-linear-gradient(bottom, #ff031c, #000000) !important; */
+    background: #263238;
+    /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .6); */
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 1px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0px;
+    width: 76px;
+}
+
+    .btncancelUnmatchedBets span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .btncancelUnmatchedBets span:after {
+            content: '\00D7';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+    .btncancelUnmatchedBets:hover span {
+        padding-right: 1px;
+        background-color: #f41e44;
+    }
+
+        .btncancelUnmatchedBets:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+
+
+
+
+
+
+.loadingimg {
+    display: none;
+}
+
+.mainheaderdivstatic {
+    float: left;
+    width: 100%;
+    height: 60px;
+    /* background: linear-gradient(to top, #00ff8a, #000000) !important; */
+    background: #263238;
+}
+
+#position {
+    float: left;
+    /*width: 100%;*/
+    height: 30px;
+    /*background-color: #2dc3e8;*/
+    /*background-color: #190e30;*/
+    background: linear-gradient(to bottom, #0e0e39 56%, #02020e 85%)
+}
+
+.runnerwrapperhead {
+    border: 0px solid !important;
+    padding: 0px !important;
+}
+
+.plhide {
+    display: none;
+}
+
+.checkboxrunnername {
+    display: none;
+}
+
+.checkboxrunnernameavg {
+    display: none;
+    float: left;
+}
+
+.backcircle {
+    color: #72bbef;
+}
+
+.laycircle {
+    color: #f994ba;
+}
+
+.runnersnamenotrace {
+    width: 84% !important;
+    text-align: left;
+    margin-top: 3px !important;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+    margin-left: 0px;
+    color: black !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+.runnersnamenotrace1 {
+    width: 84% !important;
+    text-align: left;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+    margin-left: 0px;
+    color: black !important;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 0px;
+    color: green;
+}
+
+
+.backitem {
+    /*border-bottom: 1px solid black;*/
+   /* border-left: 1px solid black;*/
+    border-right: 0px solid black;
+    border-top: 0px solid black;
+    margin: 0px 0px 0px 1px;
+    width: 32.8%;
+    height: 45px;
+}
+
+.layitem {
+    /*border-bottom: 1px solid black;*/
+    border-left: 1px solid white;
+    border-right: 0px solid black;
+    border-top: 0px solid black;
+    margin: 0px 0px 0px 0px;
+    width: 32.8%;
+    height: 45px;
+}
+
+.graph {
+    margin-top: 2.5px;
+    float: left;
+    color: #337ab7;
+    margin-left: -0.5px;
+}
+
+.runnerslastprice {
+    font-size: 11px;
+}
+
+.runnertotalmatch {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.bookbutton {
+    /*background: -webkit-linear-gradient(bottom,#35c483,#000000);*/
+    color: white;
+    padding: 0px 0px;
+    /*box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 0px -6px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;*/
+    border-radius: 3px;
+    width: 65px;
+    margin-top: 1px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 0px;
+    float: left;
+}
+
+    .bookbutton:hover {
+        color:white;
+        background: -webkit-linear-gradient(bottom,#ff0000,#b40000) !important;
+     /*   box-shadow: 0 5px #666;*/
+        transform: translateX(4px);
+    }
+
+#otherdata {
+    padding-left: 05px;
+    padding-right: 05px;
+    padding-bottom: 05px;
+    padding-top: 05px;
+    background: #00ffdc;
+}
+
+.allhorsercedefault {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .allhorsercedefault li {
+        display: inline;
+        font-size: 17px;
+        font-weight: normal;
+        border-right: 2px solid white;
+        padding: 0 .5em;
+        color: Red;
+    }
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.welcomemsgouter {
+}
+
+#welcomemessagediv {
+    height: 170px;
+    overflow: hidden;
+    Display: none;
+    padding-top: 20px;
+    text-align: center;
+    color: #23527C;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px rgba(255,255,255, 1);
+    background: #02A4F5;
+    background-color: rgba(255,255,255,0.8);
+}
+
+    #welcomemessagediv p {
+        line-height: 15px;
+        font-weight: 400;
+        Display: none;
+    }
+
+    #welcomemessagediv h3 {
+        margin-top: 0px;
+        Display: none;
+    }
+
+.headingdiv {
+    position: relative;
+    min-height: 35px;
+    background: white;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    color: black;
+    padding-left: 12px;
+    text-align: right;
+    border-bottom: 3px solid #00ff9a;
+
+}
+
+.headingdivagent {
+    position: relative;
+    min-height: 35px;
+    background: linear-gradient(to top, #00ff8a, #000000) !important;-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .3); 
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    color: White;
+    padding-left: 12px;
+    text-align: right;
+    border-bottom: 3px solid #11a9cc;
+}
+
+.headingcaption {
+    line-height: 34px;
+    text-shadow: 1px 1px #000000 !important;
+    padding: 0;
+    margin: 0;
+    float: left;
+    text-align: left;
+    font-weight: 700 !important;
+    font-size: 20px;
+}
+
+.bodydata {
+    background-color: #075E54;
+    -webkit-box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    padding: 3px;
+}
+
+.inplayhorserace {
+    margin-bottom: 4px;
+}
+
+.inplaydatabycategory {
+    background-color: White !important;
+    float: left;
+    width: 100%;
+    max-height: 374px;
+    overflow: auto;
+}
+
+.activelink, .activelink:hover {
+    border: 1px solid #17f311;
+    border-top: 2px solid #2dc3e8 !important;
+    background-color: #00ffdc0f !important;
+    margin-top: -2px !important;
+    color: Black;
+    text-decoration: none;
+}
+
+.nav-tabs.nav-justified > li > a:hover {
+}
+
+.inplaymatchheading li {
+    display: table-cell;
+    width: 1%;
+}
+
+    .inplaymatchheading li a {
+        padding: 10px 15px;
+        width: 100%;
+        float: left;
+        text-align: center;
+    }
+
+.inplaymatchheading {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3px;
+    margin-left: 0;
+    border: 0;
+    top: 2px;
+    background-color: #eee;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+}
+
+    .inplaymatchheading > li > a {
+        padding: 10px 15px !important;
+    }
+
+.sporthighlightsuldiv {
+    height: auto;
+    padding: 0px;
+    /* padding: 16px 12px; */
+    position: relative;
+    -webkit-box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    float: left;
+    width: 100%;
+}
+
+.sporthighlightsuldiv2 {
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0px;
+    /* padding: 16px 12px; */
+    position: relative;
+    -webkit-box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+    float: left;
+    width: 100%;
+}
+
+.inplaydatarow {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #e2e1e1;
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px,rgba(200, 255, 250, 0.25) 0px -12px 30px,rgba(255, 255, 255, 0.2) 0px 4px 6px,rgba(150, 255, 240, 0.3) 0px 12px 13px,rgba(255, 255, 255, 0.15) 0px -3px 5px;
+    width: 100%;
+    margin-bottom: 0px;
+    background-color: white;
+}
+
+    .inplaydatarow a:hover {
+        color: red;
+    }
+
+.inplaymatchname {
+    float: left;
+    width: 60%;
+    padding: 4px;
+    margin-right: 2px;
+}
+
+
+.inplaymatchname1 {
+    float: left;
+    width: 90%;
+    padding: 8px;
+    margin-right: 2px;
+}
+
+.inplaymatchname12 {
+    float: left;
+    width: 60%;
+    padding: 4px;
+    margin-right: 2px;
+}
+
+.inplaymatchnamerelated {
+    font-size: 15px;
+    font-weight: 400;
+    float: left;
+    width: 55%;
+    margin-right: 2px;
+    padding: 7px;
+}
+
+
+
+.inplaymatchname1 a {
+    padding: 5px 0px;
+    margin-left: 4px;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+    color: black;
+}
+
+    .inplaymatchname1 a:hover {
+        color: Red !important;
+    }
+
+
+.inplaymatchname12 a {
+    padding: 5px 0px;
+    margin-left: 4px;
+    width: 74%;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+    color: black;
+}
+
+    .inplaymatchname12 a:hover {
+        color: Red !important;
+    }
+
+.inplaymatchname a {
+    padding: 5px 0px;
+    margin-left: 4px;
+    width: 97%;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+    color: black;
+}
+
+    .inplaymatchname a:hover {
+        color: Red !important;
+    }
+
+.inplaymatchmama a {
+    padding: 5px 0px;
+    margin-left: 4px;
+    width: 45%;
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+    color: black;
+}
+
+    .inplaymatchmama a:hover {
+        color: Red !important;
+    }
+
+
+
+
+.inplaymatchbackandlay {
+    float: left;
+    margin-top: 1px;
+}
+
+.inplaymatchbackandlay1 {
+    float: left;
+    width: 165px;
+    margin-top: 1px;
+}
+
+.inplaymatchbackandlay2 {
+    float: left;
+    width: 165px;
+    margin-top: 1px;
+}
+
+
+
+
+
+.inplayrunner1 {
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.inplayback {
+    float: left;
+    width: 75px;
+    background-color: #72bbef;
+    height: 48px;
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+    margin: 0px 2px 0px 0px;
+}
+
+.inplaylay {
+    float: left;
+    width: 75px;
+    background-color: #f994ba;
+    height: 48px;
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+    margin: 0px 0px 0px 1px;
+}
+
+
+
+
+.powerdby {
+    font-size: 11px;
+    color: white;
+    font-weight: bold;
+}
+
+#partialviews {
+    min-height: 800px;
+    background: #00ffdc0f;
+}
+
+.inplaycompetition {
+    background: #075E54 !important;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    font-size: initial;
+}
+
+.navbar-brandacc {
+    font-size: 24px !important;
+    color: black;
+    font-size: 24px;
+    -webkit-text-shadow: none;
+    text-shadow: none;
+    padding: 10px 0px;
+    font-weight: 200;
+    height: 45px;
+}
+
+.seven h2 {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+    .seven h2:after, .seven h2:before {
+        content: " ";
+        display: block;
+        border-bottom: 1px solid #c50000;
+        border-top: 1px solid #c50000;
+        height: 5px;
+        background-color: #f8f8f8;
+    }
+
+.seven h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+    .seven h1:after, .seven h1:before {
+        content: " ";
+        display: block;
+        border-bottom: 1px solid #c50000;
+        border-top: 1px solid #c50000;
+        height: 5px;
+        background-color: #f8f8f8;
+    }
+
+
+.navbaraccounts {
+    background-color: linear-gradient(to bottom, #0e0e39 56%, #02020e 85%);
+    padding: 0;
+    margin: 0;
+    border: none;
+    height: 45px;
+    min-height: 45px;
+    z-index: 200;
+}
+
+.pagecontent {
+    float: left;
+    width: 100%;
+    /*padding: 18px 20px 24px;*/
+}
+
+.sidebararea {
+    float: left;
+    width: 224px;
+    display: block;
+    background-color: white;
+    margin-left: 5px;
+}
+
+    .sidebararea a {
+        display: block;
+        height: 38px;
+        line-height: 36px;
+        margin: 0;
+        padding: 0 16px 0 7px !important;
+        -webkit-text-shadow: none !important;
+        text-shadow: none !important;
+        font-size: 13px;
+        text-decoration: none;
+        color: #737373;
+        z-index: 123;
+        border-top: 1px solid #f3f3f3;
+    }
+
+        .sidebararea a:hover {
+            border-color: #f3f3f3;
+            background-color: #fbfbfb !important;
+        }
+
+.sidebar-menu {
+}
+
+.sidebararea li a:before {
+    content: "";
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 0px;
+    position: absolute;
+    transition: all 0s ease 0s;
+    -webkit-transition: all 0s ease 0s;
+    z-index: -1;
+}
+
+.sidebararea li a:hover:before {
+    width: 2%;
+    background: #fb6e52;
+}
+
+.searchmarket {
+    cursor: pointer;
+    display: inline-block;
+    height: 12px;
+    left: 20px;
+    position: absolute;
+    top: 14px;
+    width: 12px;
+    color: #2dc3e8;
+    z-index: 124;
+}
+
+.searchmarketinput {
+    height: 41px;
+    z-index: 2;
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #fff;
+    padding-left: 40px;
+    width: 100%;
+}
+
+.eventtypesinplay, .eventtypesinplay ul {
+    margin-left: 5px;
+}
+
+.footer {
+    border-top: 6px solid #303030;
+    padding: 5px 0px 0px 0px;
+    margin: 0px 0px;
+    text-align: center;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+    .footer p {
+        font-size: 11px;
+    }
+
+.inplaygreencolor {
+    float: left;
+    padding: 7px 2px;
+    color: #97D504;
+    font-size: 13px;
+}
+
+.dropdownlinkbutton:before {
+    -webkit-transition: all .218s;
+    -moz-transition: all .218s;
+    -o-transition: all .218s;
+    transition: all .218s;
+    position: absolute;
+    right: 20px;
+    top: 8px;
+    font-family: 'FontAwesome';
+    font-size: 17px;
+    font-weight: bold;
+    color: #bebebe;
+}
+
+.dropdownlinkbutton {
+    background: #e5ffea !important;
+    color: black;
+    position: relative;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 1;
+    padding: 10px;
+    float: left;
+    width: 100%;
+   
+}
+
+
+.dropdownlinkbutton1:before {
+    -webkit-transition: all .218s;
+    -moz-transition: all .218s;
+    -o-transition: all .218s;
+    transition: all .218s;
+    position: absolute;
+    right: 20px;
+    top: 8px;
+    font-family: 'FontAwesome';
+    font-size: 17px;
+    font-weight: bold;
+    color: #bebebe;
+}
+
+.dropdownlinkbutton1 {
+    background: -webkit-linear-gradient(bottom, #1D9BF0, #0a0a0a) !important;
+    color: white;
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
+    padding: 10px;
+    float: left;
+    width: 100%;
+}
+
+
+
+.teamnamesnew {
+    float: left;
+    width: 35%;
+}
+
+.runrates {
+    float: left;
+    width: 20%;
+}
+
+.teamscoresandoversnew {
+    float: left;
+    width: 25%;
+}
+
+.balls {
+    width: 10%;
+}
+
+.teamsscoresonly {
+}
+
+.teamsovers {
+}
+
+.mainscorediv {
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    margin: 8px 5px;
+    position: relative;
+    color: black;
+}
+
+.pendding {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding-top: 10%;
+    display: none;
+    font-weight: bolder;
+}
+
+.danger {
+    color: #d73d32 !important;
+}
+
+#marketbooksoccer.runnerprofitandlossdivMobile {
+    width: 50% !important;
+    margin-top: 0px;
+}
+
+#fancymarketbook .runnerprofitandlossdivMobile {
+    width: 50% !important;
+    margin-top: 16px;
+}
+
+#Indianfancymarketbook1 .runnerprofitandlossdivMobile {
+    width: 50% !important;
+    margin-top: 0px;
+}
+
+#KJfancymarketbook .runnerprofitandlossdivMobile {
+    width: 50% !important;
+    margin-top: 0px;
+}
+
+#Figurefancymarketbook .runnerprofitandlossdivMobile {
+    width: 50% !important;
+    margin-top: 0px;
+}
+
+#SFigfancymarketbook .runnerprofitandlossdivMobile {
+    width: 50% !important;
+    margin-top: 0px;
+}
+
+#marketbookTWT .runnerprofitandlossdivMobile {
+    width: 50% !important;
+    margin-top: 0px;
+}
+
+
+
+
+
+#backheader {
+    display: inline-grid;
+    left: 30px;
+}
+
+#layheader {
+    display: inline-grid;
+    left: 30px;
+}
+
+
+.inplaytime {
+    float: left;
+    width: 189px;
+    font: icon;
+    vertical-align:middle;
+    margin-left: -264px;
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.inplaytimet21 {
+    float: left;
+    width: 189px;
+    font: icon;
+    vertical-align: middle;
+    margin-top: 15px;
+    margin-left: -816px;
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.inplaytimeU {
+    float: left;
+    width: 189px;
+    font: icon;
+    vertical-align: middle;
+    margin-top: 15px;
+    margin-left: -200px;
+    font-weight: 100;
+    font-size: 18px;
+}
+
+
+.namestyle {
+    font-size: 26px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: -6px;
+    text-shadow: 2px 2px #5f3f3f;
+}
+
+.Timer {
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+}
+
+
+
+.liveS {
+    color: White;
+    background: #075E54;
+    width: 45%;
+    font-size: 20px;
+    font-weight: 700;
+    height: 35px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 3px;
+}
+
+    .liveS:hover {
+        background: #139687;
+    }
+
+
+.if {
+    width: 16%;
+    height: 260px;
+}
+
+.commantry {
+    font-variant-caps: all-petite-caps;
+    font-weight: bold !important;
+    font-size: 31px;
+}
+
+.s23e {
+    font-size: 18px !important;
+}
+
+.mainslider {
+    width: 100%;
+    margin: auto auto;
+    height: 320px;
+}
+
+.sliderimg {
+    width: 99%;
+    height: 320px;
+}
+
+.bslipl {
+    margin-left: 50px;
+    width: 350px;
+    height: 180px;
+}
+
+.iluf {
+    display: none;
+}
+
+@media(max-width:1078px) {
+    .backgroundimageforSuspended {
+        float: right;
+        width: 44.5%;
+        position: absolute;
+        z-index: 530 !important;
+        right: 5px;
+        margin-top: 70px;
+        text-align: right;
+        display: none;
+    }
+}
+
+@media(max-width:768px) {
+
+
+    .iluf1 {
+    display:none
+    
+    }
+
+    .hideer {
+        display: none;
+    }
+
+    .loveoflives {
+        
+        font-size: 12.5px;
+        margin-top: 3%;
+        float: right;
+        animation: blinker 3slinear infinite;
+        margin-right: 2%;
+        border-radius: 1px;
+        width: 31px;
+        height: 16px;
+        justify-content: center;
+        /* padding: 3px 4px 4px 5px; */
+        visibility: visible;
+        color: white;
+        font-family: Quicksand, sans-serif;
+        font-weight: 700;
+    }
+    
+
+    div.scrollmenu {
+        margin-bottom: -44px;
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+        div.scrollmenu a {
+            display: inline-block;
+            box-shadow: rgba(255, 255, 255, 0.4) 0px 50px 100px -20px, rgb(255 255 255 / 35%) 0px 30px 60px -30px, rgba(120, 255, 220, 0.4) 0px -2px 6px 0px inset;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            text-shadow: 0px 1px #000000;
+            background: linear-gradient(to top, #ffee9300, #beffea33) !important;
+            border-bottom: 2px solid green;
+        
+        
+        }
+
+            div.scrollmenu a:hover {
+                background-color: white;
+            }
+
+
+    .upperlinks {
+        top: -44px;
+        position: relative;
+        margin: 0;
+        padding-bottom: 1px;
+        padding-left: 0px;
+        background: #00ffdc00 !important;
+        background-image: -moz-linear-gradient(left, #fff, #f3f3f3);
+        background-image: -o-linear-gradient(left, #fff, #f3f3f3);
+        background-image: linear-gradient(to right, #fff, #f3f3f3);
+        z-index: 0;
+        min-height: 46px;
+        border-bottom: 1px solid #e5e5e5;
+        height: 36px;
+    }
+
+        .upperlinks a {
+            position: relative;
+            vertical-align: middle;
+            display: inline-block;
+            z-index: 1029;
+            height: 40px;
+            /* width: 36px; */
+            margin-right: -2px;
+            padding: 8px 8px;
+            box-shadow: rgba(255, 255, 255, 0.4) 0px 50px 100px -20px, rgb(255 255 255 / 35%) 0px 30px 60px -30px, rgba(120, 255, 220, 0.4) 0px -2px 6px 0px inset;
+            -webkit-transition: all .218s ease;
+            -moz-transition: all .218s ease;
+            -o-transition: all .218s ease;
+            transition: all .218s ease;
+            border-bottom: 4px solid #075e54;
+            text-shadow: 2px 2px #f6ecec;
+        }
+
+            .upperlinks a:hover {
+                -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+                -moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+                box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+                color: red;
+                text-decoration: none;
+            }
+
+
+
+    .loveforcric {
+        width: 100% !important;
+        margin-top: -1px !important;
+        float: left !important;
+        margin-left: 0px !important;
+        text-align: left !important;
+        font-size: 16px !important
+    }
+
+
+
+    #Figurefancymarketbook {
+        width: 49.5%;
+        background: white;
+        margin-left: 5px;
+        float: right;
+        margin-top: 15px !important;
+    }
+
+    .lforsoccer {
+        margin-top: -2px !important;
+    }
+
+
+
+    .glow-on-hover1 {
+        margin: 5px;
+        width: 130px;
+        height: 50px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: -webkit-linear-gradient(bottom, #1D9BF0, #0a0a0a) !important;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+    }
+
+        .glow-on-hover1:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover1:active {
+            color: #000
+        }
+
+            .glow-on-hover1:active:after {
+                background: transparent;
+            }
+
+        .glow-on-hover1:hover:before {
+            opacity: 1;
+        }
+
+        .glow-on-hover1:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: -webkit-linear-gradient(bottom, #1D9BF0, #0a0a0a) !important;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+    @keyframes glowing {
+        0% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 400% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+
+
+
+
+
+    .winthetossmarket {
+        font-size: 20px !important;
+        font-weight: 900 !important;
+    }
+
+
+
+
+    .twoToneCenter {
+        text-align: center;
+        margin: 1em 0;
+    }
+
+    .twoToneButton {
+        display: inline-block;
+        outline: none;
+        padding: 10px 20px;
+        line-height: 1.4;
+        background: #04AA6D;
+        background: #04AA6D;
+        border-radius: 4px;
+        color: white;
+        position: relative;
+        transition: padding-right .3s ease;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+        .twoToneButton:hover {
+            /*box-shadow: 0 0 10px #080808 inset, 0px 1px 0 #3b3b3b;*/
+            color: #f3f3f3;
+        }
+
+        .twoToneButton:active {
+            /*box-shadow: 0 0 10px #90EE90 inset, 0px 1px 0 #3b3b3b;*/
+            color: #ffffff;
+            background: #90EE90;
+            background: #90EE90;
+        }
+
+        .twoToneButton.spinning {
+            background-color: #90EE90;
+            padding-right: 40px;
+        }
+
+            .twoToneButton.spinning:after {
+                display: table-cell;
+                content: '';
+                position: absolute;
+                right: 30px;
+                top: 50%;
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                animation: rotate360 .5s infinite linear, exist .1s forwards ease;
+            }
+
+            .twoToneButton.spinning:before {
+                display: table-cell;
+                content: "";
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                right: 30px;
+                top: 50%;
+                position: absolute;
+                border: 5px solid red;
+                border-right: 3px solid #ffffff;
+                animation: rotate360 .5s infinite linear, exist .1s forwards ease;
+            }
+
+    @keyframes rotate360 {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes exist {
+        100% {
+            width: 15px;
+            height: 15px;
+            margin: -8px 5px 0 0;
+        }
+    }
+
+
+
+
+
+
+    .score-first-half {
+        width: 51%;
+        float: left;
+        margin-left: -11px;
+    }
+
+    .score-second-half {
+        width: 51%;
+        float: right;
+        margin-top: 13.98px;
+        margin-right: -10.5px;
+    }
+
+
+
+    .teno {
+        font-size: 13px !important;
+    }
+
+
+    .glub {
+        margin-top: 100% !important;
+    }
+
+    .glub1 {
+        margin-top: 39% !important;
+    }
+
+
+
+    .En {
+        text-shadow: 1px 1px #000000;
+        width: 25%;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .od {
+        text-shadow: 1px 1px #000000;
+        width: 20.5%;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: end;
+    }
+
+    .one1 {
+        text-shadow: 2px 2px #5f3f3f;
+        display: none;
+        width: 0%;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .exce {
+        text-shadow: 2px 2px #5f3f3f;
+        display: none;
+        width: 0%;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .two2 {
+        text-shadow: 2px 2px #5f3f3f;
+        display: none;
+        width: 0%;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+
+
+    .moleucule {
+        font-size: 18px;
+        margin-top: -6px;
+        display:none;
+    }
+
+
+    .inplaymatchname1 a {
+        padding: 5px 0px;
+        margin-left: 4px;
+        float: left;
+        width: 75%;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+    }
+
+        .inplaymatchname1 a:hover {
+            color: Red !important;
+        }
+
+
+    .inplaymatchname12a {
+        padding: 5px 0px;
+        margin-left: 4px;
+        float: left;
+        width: 75%;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .inplaymatchname12 a:hover {
+        color: Red !important;
+    }
+
+
+    .soc3 {
+        float: right;
+        margin-top: 5px;
+    }
+
+
+    .scard {
+        margin-bottom: -20px;
+    }
+
+
+
+    .cardsscore {
+        width: 100%;
+        margin-top: -4px;
+        display: none;
+    }
+
+
+
+    #backandlaydivMain {
+        float: right !important;
+        width: 78.5%;
+        position: relative;
+    }
+
+
+
+    .suspendbann {
+        font-size: 25px !important;
+        color: #dc143c;
+        font-weight: 700 !important;
+        opacity: 10;
+        text-align: center;
+        margin-top: 38px;
+        border: 0px solid;
+        font-family: fantasy !important;
+        transform: rotate(24deg);
+    }
+
+
+
+    #backandlaydivsecondF {
+        width: 80%;
+        margin-left: 41px;
+        position: relative;
+    }
+
+    .backheadFancy {
+        border-bottom: 2px solid #2797e6;
+        Margin-top: -40px;
+        margin-left: -0.75px;
+    }
+
+
+    .layheadFancy {
+        border-bottom: 2px solid #f994a9;
+        width: 49.75% !important;
+        Margin-top: -40px;
+    }
+
+    .footerlove {
+        font-size: 13px;
+        font-family: 'Josefin Sans', sans-serif !important;
+    }
+
+
+
+    .love134 {
+        float: right;
+    }
+
+
+    .chkboxforaccc {
+        margin-top: 0px;
+        margin-left: 16px;
+    }
+
+
+
+
+
+
+
+    .btnacc {
+        float: initial;
+        text-align: center;
+        margin-top: 53px;
+        margin-left: 5px;
+    }
+
+
+
+
+
+
+    .glow-on-hover {
+        font-size: 18px;
+        margin: 5px;
+        width: 120px;
+        height: 60px;
+        border: none;
+        outline: none;
+        color: #fff;
+        /* background: -webkit-linear-gradient(bottom,#35c483,#000000) !important; */
+        background: #263238;
+        text-shadow: 0.35px 0.35px #ffffff !important;
+        /*box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px 0px, rgba(0, 0, 0, 0.6) 0px 6px 20px 0px;*/
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+    }
+
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:active {
+            color: #000
+        }
+
+            .glow-on-hover:active:after {
+                background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            }
+
+        .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+
+        .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* background: -webkit-linear-gradient(bottom,#35c483,#000000) !important; */
+            background: #263238;
+            text-shadow: 0.35px 0.35px #ffffff !important;
+            /*box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px 0px, rgba(0, 0, 0, 0.6) 0px 6px 20px 0px;*/
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+    @keyframes glowing {
+        0% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 400% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+
+
+
+    .btn0983 {
+        background-color: #f4511e;
+        border: none;
+        color: white;
+        padding: 6px 8px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+
+        /* Darker background on mouse-over */
+        .btn0983:hover {
+            background-color: #f41e44;
+        }
+
+    .floatreset {
+        float: inherit
+    }
+
+    .logo-img {
+        height: 27px;
+        width: 87px;
+        padding-top: 0px;
+        margin-top: 12px;
+        margin-left: -16px;
+    }
+
+    #KJfancymarketbook {
+        width: 49.50%;
+        background: white;
+        margin-left: 0px;
+        float: left;
+        margin-top: 15px;
+    }
+
+
+    #SFigfancymarketbook {
+        width: 48.50%;
+        background: white;
+        margin-left: 0px;
+        float: left;
+        margin-top: 15px;
+    }
+
+
+    #Figurefancymarketbook {
+        width: 49.50%;
+        background: white;
+        margin-left: 0px;
+        float: left;
+        margin-top: 18px !important;
+    }
+
+
+    #marketbook, #marketbookTWT {
+        float: left;
+        margin-top: -4.87px;
+        margin-left: 0px;
+        padding: 0px;
+        width: 100%;
+    }
+
+    #Indianfancymarketbook1 {
+        /*width: 98.50%;*/
+        width: 49.50%;
+        border-bottom: 1px solid #dddddd;
+        background: white;
+        margin-left: 0px;
+        float: left;
+        overflow-x:hidden;
+        margin-top: 0px;
+    }
+
+    .ipshead {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+
+    .cool {
+        margin-left: 0px;
+        font-weight: bold;
+        font-size: 13px;
+        margin-right: -18px;
+        margin-top: -1px;
+    }
+
+    .scroll {
+        height: unset;
+        overflow-y: clip;
+        /*border-bottom:15px solid white;*/
+        overflow-x: hidden;
+    }
+
+    .betslip-wrapper td.runner, td.oddsH, td.stake, td.profit {
+        text-align: left !important;
+    }
+
+    .betslip-wrapper input[type="text"], .betslip-wrapper input[type="number"] {
+        width: 70px !important;
+    }
+
+    .runnersprofitlossgreenkali {
+        width: 40% !important;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        float: right !important;
+        margin-left: 0px;
+        color: #00b181 !important;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 0px;
+    }
+
+    .runnersprofitlossredKali {
+        width: 50% !important;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        height: 20px;
+        /*overflow: hidden;*/
+        white-space: nowrap;
+        float: left;
+        margin-left: 0px;
+        color: #dc143c !important;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 0px;
+    }
+
+
+    .inplaydash {
+        color: white !important;
+        font-size: 15px;
+        font-weight: 200;
+        float: left;
+        /* background: white; */
+        padding: 3px;
+        margin-top: -4.5px;
+    }
+
+
+    .runnersprofitlossgreen1 {
+        width: 50% !important;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        float: right;
+        margin-left: 0px;
+        color: #00b181 !important;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 26px !important;
+    }
+
+    .runnersprofitlossred1 {
+        width: 50% !important;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        height: 20px;
+        /*overflow: hidden;*/
+        white-space: nowrap;
+        float: right;
+        margin-left: 0px;
+        color: #dc143c !important;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 26px;
+    }
+
+
+    .innerbodycontent1 {
+        margin-top: 47px;
+
+    }
+
+    .relatedtime {
+        font-size: 13.5px;
+        margin-top: 7px;
+        font-weight: 400;
+        width: 26%;
+        float: right;
+    }
+
+    .inplaydatarow {
+        border-bottom: 1px solid #e2e1e1;
+        /*  text-shadow: 0.3px 0.3px #000000;*/
+        float: left;
+        font-size: 13.5px;
+        font-weight: 500;
+        width: 100%;
+        margin-bottom: 1px;
+       
+    }
+
+    .bslipl {
+        margin-left: -10px;
+        width: 350px;
+        height: 180px
+    }
+
+
+
+
+    .sliderimg {
+        width: 100%;
+        height: 146px;
+    }
+
+    .mainslider {
+        width: 92%;
+        margin: auto auto;
+        height: 150px;
+    }
+
+    .backandlaydivsecond1122 {
+        width: 64% !important;
+        position: relative !important;
+        float: right !important;
+    }
+
+
+    .backandlaydivsecond12 {
+        width: 79% !important;
+        position: relative !important;
+        float: right !important;
+    }
+
+
+    .tvmbl {
+        width: 50.6%;
+        font-weight: 700;
+        margin-left: -1.29%;
+        text-shadow: 1px 1px #000000;
+        letter-spacing: 0.5px;
+    }
+
+    .inplaymatchheading > li > a {
+        padding: 0px 0px !important;
+    }
+
+
+    .inplaymatchheading li a {
+        text-shadow: 0px 0.5px #000000;
+        width: 100%;
+        box-shadow: rgba(255, 255, 255, 0.4) 0px 50px 100px -20px, rgb(255 255 255 / 35%) 0px 30px 60px -30px, rgba(120, 255, 220, 0.4) 0px -2px 6px 0px inset;
+        margin-right: 0% !important;
+        float: left;
+        font-size: 15px !important;
+        text-align: center !important;
+        font-weight: bolder !important;
+    }
+
+
+
+
+    .runnernamediv {
+        width: 37.5%;
+        border-bottom: 0px solid black;
+        border-top: 0px solid black;
+    }
+
+    #ledgerdetails {
+        width: 100% !important;
+        font-weight: bold;
+        overflow: auto;
+        font-size: 12px;
+    }
+
+    .tennisScore {
+        width: 22%;
+    }
+
+    .tennisser {
+        width: 24%
+    }
+
+    #BetSlipSection {
+        text-align: left;
+        float: left;
+        max-height: 433px;
+        overflow: hidden;
+        box-shadow: 1px 0 10px 1px rgba(0, 0, 0, .3);
+        margin: 0px 0px;
+        height: 100%;
+        background-color: white;
+        width: 100%;
+    }
+
+    .s23e {
+        font-size: 17px !important;
+    }
+
+    .love12 {
+        font-size: 14px !important;
+    }
+
+
+    .commantry {
+        font-variant-caps: all-petite-caps;
+        font-weight: normal !important;
+        font-size: 31px;
+    }
+
+    .labelup {
+        font-size: 20px !important;
+        font-weight: 900 !important;
+        font-family: 'Times New Roman', Times, serif !important;
+    }
+
+    .labeldown {
+        font-size: 13px !important;
+        font-weight: 500 !important;
+    }
+
+
+    .if {
+        width: 100%;
+        height: 260px;
+    }
+
+
+    .mediaplayer {
+        width: 100%;
+    }
+
+    .inplaymatchname12 a {
+        padding: 2px 0px;
+        margin-left: 4px;
+        float: left;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+    }
+
+        .inplaymatchname12 a:hover {
+            color: Red !important;
+        }
+
+
+    .inplaymatchname a {
+        padding: 5px 0px;
+        margin-left: 4px;
+        text-shadow: 0px 0.3px #000000;
+        float: left;
+        width: 55%;
+        font-size: 15px;
+        font-weight: 700;
+        color: black;
+    }
+
+        .inplaymatchname a:hover {
+            color: Red !important;
+        }
+
+
+
+
+         .inplaymatchmama a {
+        padding: 5px 0px;
+        margin-left: 4px;
+        text-shadow: 0px 0.3px #000000;
+        float: left;
+        font-size: 16px;
+        font-weight: 500;
+        color: black;
+    }
+
+            .inplaymatchmama a:hover {
+                color: Red !important;
+            }
+
+
+
+    .scorecard {
+        margin-bottom: -26px;
+    }
+
+    .scorecardT {
+        margin-bottom: 2px;
+    }
+
+    .eleven {
+        font-size: 14px !important;
+    }
+
+    .Update {
+        margin-top: 5px;
+        font-size: 29px;
+        font-weight: bolder;
+        margin-left: 5%;
+        float: right;
+    }
+
+    .teamscore {
+        width: 48%;
+        margin-left: -14px;
+        font-size: 18px !important;
+    }
+
+    .runrate {
+        margin-left: -4%;
+        width: 58%;
+    }
+
+    .Lastball {
+        margin-left: 18%;
+        width: 35%;
+    }
+
+    .need {
+        margin-left: 18%;
+    }
+
+
+
+
+
+    .Maintime {
+        font-size: 15px;
+        font-weight: 100;
+        text-shadow: 0.3px 0.25px #ffffff;
+    }
+
+    .love {
+        margin-left: 53% !important;
+    }
+
+
+
+    .markettotalmatched {
+        font-size: 13px !important;
+        text-align: left;
+        margin-top: 10.5px;
+    }
+
+
+    .new112234 {
+        width: 60px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        display: inline-block;
+        margin-top: 2px !important;
+        margin-left: 1px !important;
+    }
+
+    .new112233 {
+        width: 130px !important;
+        height: 16px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        Display: inherit !important;
+    }
+
+    .graph {
+        margin-top: 2.5px;
+        float: left;
+        color: #337ab7;
+        margin-left: -0.5px;
+    }
+
+
+
+    .rule2 {
+        padding: 5px 10px !important;
+        color: white;
+      /*  background: -webkit-linear-gradient(bottom,#24e18a,#000000) !important;*/
+        font-size: 18px !important;
+        font-weight: 500 !important;
+        margin-top: -5px !important;
+        text-shadow: 2px 2px #5f3f3f !important;
+        float: left;
+        width: 101% !important;
+    }
+
+
+    .runnersprofitlossgreenFancy {
+        width: 50% !important;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        float: left !important;
+        margin-left: 0px;
+        color: #00b181 !important;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 0px;
+    }
+
+    .runnersprofitlossgreenKali {
+        width: 50% !important;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        float: left !important;
+        margin-left: 0px;
+        color: #00b181 !important;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 0px;
+    }
+
+    .runnersprofitlossgreen {
+        width: 50% !important;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        text-align: right;
+        height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        float: right !important;
+        margin-left: 0px;
+        color: #00b181 !important;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: -7px;
+    }
+
+    .runnersprofitlossgreengrey {
+        width: 50% !important;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        text-align: right;
+        height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        float: right !important;
+        margin-left: 0px;
+        color: #00b181 !important;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: -7px;
+    }
+
+
+    .rule {
+        padding: 5px 10px !important;
+        border: 0px solid white;
+        border-radius: 100%;
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: -5px !important;
+        float: right;
+        width: auto !important;
+    }
+
+    .winnerno {
+        font-size: 16px;
+        font-weight: 300
+    }
+
+
+    .lableupgoals {
+        font-size: 20px !important;
+        font-weight: 900 !important;
+    }
+
+    .rule1 {
+        text-shadow: 0.35px 0.35px #000000;
+        padding: 5px 3px !important;
+        border-top: 1.65px solid #075E54;
+        font-size: 16px;
+        font-weight: 300;
+        margin-top: -5px !important;
+        float: left;
+        width: 210px !important;
+        text-align: left;
+        /*overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;*/
+    }
+
+
+    .backgroundimageforSuspended {
+        float: right;
+        width: 99.4%;
+        position: absolute;
+        z-index: 10 !important;
+        right: 1px;
+        margin-top: 43px;
+        text-align: right;
+        display: none;
+    }
+
+
+    .amountbutton input[type="button"], .amountbuttonmultiple input[type="button"] {
+        /*width: 31%;
+    padding: 4px;
+    margin: 2px;
+    font-weight: bold;*/
+        /*box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.6);*/
+        padding: 0px 0px;
+        margin-top: 0px;
+       font-weight:bold;
+        font-size: 18px;
+        width: 23.5%;
+        height: 50px;
+        border-radius: 0px;
+    }
+
+
+
+    .betslipselectionname {
+        float: left;
+        width: 50%;
+    }
+
+    .betslipselectionnamemb {
+        float: left;
+        width: 50.45%;
+        padding: 0px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #betslipmultiplemb .amountsmb {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .betslipodd {
+        float: left;
+        width: 25%;
+    }
+
+    .betslipoddmb {
+        float: left;
+        margin-right: 4px;
+        width: 22.55%;
+        border-bottom:1px solid white;
+    }
+
+    .selectionprice {
+        font-size: 15px;
+        font-weight: bold;
+        color: black !important;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .liveS {
+        color: White;
+        background: #075E54;
+        width: 45%;
+        height: 30px;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border-radius: 3px;
+    }
+
+        .liveS:hover {
+            background: #139687;
+        }
+
+
+
+    .s2 {
+        top: 3.5px;
+    }
+
+    .backhead {
+        border-bottom: 2px solid #2797e6;
+        margin-top: -8px;
+        margin-left: -0.75px;
+    }
+
+
+    .namestyle {
+        font-size: 20px;
+        font-weight: 900;
+        margin-top: 0px;
+        text-shadow: 1px 1px black !important;
+        letter-spacing: 1px;
+    }
+
+    .Timer {
+        font-size: 15px;
+        font-weight: 500;
+        color: white;
+        padding: 4px;
+    }
+
+
+
+
+
+    .inplaytime {
+        float: right;
+        text-shadow: 0px 0.3px #000000;
+        width: 73px;
+        font: icon;
+        margin-top: 7px;
+        font-weight: 500;
+        font-size: 13px;
+    }
+
+    .inplaytimet21 {
+        float: right;
+        width: 73px;
+        font: icon;
+        margin-top: 7px;
+        font-weight: 500;
+        font-size: 13px;
+    }
+
+
+
+
+    .inplaytimeU {
+        float: right;
+        width: 93px;
+        font: icon;
+        margin-top: 6px;
+        font-weight: 500;
+        font-size: 13px;
+    }
+
+
+    #backandlaydiv {
+        display: inline-flex;
+        float: right;
+        left: 0px;
+        width: 36%;
+    }
+
+
+    .s1 {
+        margin-bottom: 3.3px;
+    }
+
+    .runnerprofitandlossdivMobile {
+        float: left;
+        width: 103%;
+        display: block;
+        margin-top: 0px;
+        text-align: left;
+        margin-left: 5px;
+    }
+
+
+    #backandlaydivMainINS {
+        width: 99%;
+    }
+
+    .layhead {
+        border-bottom: 2px solid #f994a9;
+        margin-top: 9px !important;
+        margin-left: 1px;
+    }
+
+    .layheadfancy {
+        border-bottom: 3px solid #f994a9;
+        margin-top: -40px !important;
+        margin-left: 1px;
+    }
+
+    .fa {
+        display: none;
+    }
+
+    #marketbook label, #betslipcontent label, #fancymarketbook label, #marketbooksoccer label, #Indianfancymarketbook1 label, #marketbookTWT label, #KJfancymarketbook label, #Figurefancymarketbook label, #SFigfancymarketbook label {
+        margin-bottom: 0px;
+       /* text-shadow: 0.1px 0.3px #000000;*/
+        padding: 0px;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 800;
+        cursor: cell;
+        /*font-size:16px*/
+    }
+
+    .runnerswrapper {
+        padding: 0px;
+        float: left;
+        width: 103%;
+        /*border-bottom: 1px solid #ccc;
+        border-top: 0px solid;*/
+        border-left: 0px solid;
+        border-right: 0px solid;
+        Height: 44px;
+    }
+
+    runnerwrapperhead {
+        background: #243876;
+    }
+
+    .runnerswrapper:last-child {
+    }
+
+    .runnerswrapper:nth-child(1) {
+        margin-bottom: 0px;
+    }
+
+    .layitem:nth-child(1) {
+        background: #FF8A8E;
+        float: right;
+        /*width: 49%;*/
+        text-align: center;
+        min-height: 45px;
+        border-top: 1px solid white;
+    }
+
+    .backitem:nth-child(3) {
+        background-color: #72bbef;
+        float: left;
+        /*width: 50%;*/
+        text-align: center;
+        min-height: 45px;
+        border-top:1px solid white;
+    }
+
+    .layitem:nth-child(2), .layitem:nth-child(3) {
+        display: none;
+    }
+
+    .backitem:nth-child(1), .backitem:nth-child(2) {
+        display: none;
+    }
+
+    .backitem label, .layitem label {
+        border-left: 0px solid;
+        border-right: 0px solid;
+        border-bottom: 0px solid;
+        border-top: 0px solid;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .runnerslastprice {
+    }
+
+    .runnersname {
+        text-align: left;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .errordivfixed {
+        width: 35%;
+        position: fixed;
+        top: 300px;
+        margin-left: 100px;
+        background-color: red;
+        text-align: center;
+        color: white;
+        display: none;
+        font-size: 21px;
+        z-index: 2500;
+        padding: 7px;
+        border-radius: 5px;
+    }
+
+    .jockeyname {
+        float: left;
+        font-size: 9px;
+        text-align: left;
+        margin-left: 0;
+        text-overflow: ellipsis;
+        font-weight: normal;
+        margin-top: 17px;
+        white-space: nowrap;
+        color: black !important;
+    }
+
+    .jockeynamepl {
+        float: left;
+        font-size: 14px !important;
+        text-align: left;
+        margin-left: 0;
+        text-overflow: ellipsis;
+        margin-top: 23px;
+        white-space: nowrap;
+        margin-right: -9px;
+    }
+
+
+    .runnersnameHorse {
+        margin-left: 2px;
+        margin-top: 6.23px;
+        text-align: left;
+        text-overflow: ellipsis;
+        height: 18px;
+        font-weight: bold;
+        font-size: 15px !important;
+        text-decoration: none;
+        white-space: nowrap;
+        color: black !important;
+        text-transform: capitalize;
+        float: left;
+    }
+
+
+
+    audio {
+        display: none !important;
+    }
+
+    .wearingdiv {
+        width: 27px;
+        float: left;
+        margin-left: -21px;
+     
+        margin-top: 10px;
+    }
+
+    .runnerwearing {
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    /*.runnersprofitlossgreen {
+    color: darkgreen !important;
+    width: 70% !important;
+    text-align: right;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+    margin-left: 0px;
+    
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 0px;
+    }*/
+
+    .runnersprofitlossred {
+        color: #dc143c !important;
+        width: 62%;
+        float: right;
+        margin-right: -23px;
+    }
+
+    .runnersprofitlossredgrey {
+        color: #dc143c !important;
+        width: 62% !important;
+        float: right;
+        margin-right: -23px;
+    }
+
+    .marketbooksul {
+        padding: 0;
+        width: 100%;
+        display: none;
+    }
+
+        .marketbooksul li {
+            display: table-cell;
+            width: auto;
+            text-align: left;
+            float: none !important;
+            vertical-align: top;
+            padding: 0px;
+        }
+
+            .marketbooksul li:hover {
+                background-color: #eeeeee;
+            }
+
+            .marketbooksul li a {
+                float: left;
+                max-width: 73%;
+                height: 27px;
+                padding: 3px !important;
+                margin-right: 0px !important;
+                word-wrap: break-word;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            .marketbooksul li.active {
+                background: #243876;
+                background: -moz-linear-gradient(top, #243876 0%,#122254 100%);
+                background: -webkit-linear-gradient(top, #243876 0%,#122254 100%);
+                background: linear-gradient(to bottom, #243876 0%,#122254 100%);
+                color: white;
+            }
+
+            .marketbooksul li a:hover {
+            }
+
+            .marketbooksul li.active a {
+                background-color: rgba(0, 0, 0, 0) !important;
+                color: white !important;
+                border: none !important;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+        .marketbooksul .close {
+            padding: 3px;
+            max-width: 26%;
+            text-align: right;
+            color: red !important;
+        }
+
+    .clothnumstalldrawimg {
+        border: 0px solid;
+        float: left;
+        width: 3%;
+        padding: 3px 0px;
+    }
+
+    .clothnumstalldrawimgempty {
+        border: 0px solid;
+        float: left;
+        width: 3%;
+        padding: 7px 0;
+    }
+
+    #fancymarketbook, #marketbookTWT {
+        margin-top: 0px;
+        float: left;
+        width: 100%;
+    }
+
+    #marketbooksoccer {
+        margin-top: 11px !important;
+        float: left;
+        margin-left: 0px;
+        width: 100%;
+        margin-bottom: -17px !important;
+    }
+
+    #Figurefancymarketbook {
+        margin-bottom: 20px;
+        float: left;
+        width: 100%;
+    }
+
+    #Indianfancymarketbook1 {
+        margin-top: 0px;
+        float: left;
+        width: 100%;
+        border-bottom: 1px solid #dddddd;
+        margin-bottom: 0px;
+    }
+
+
+    #KJfancymarketbook {
+        margin-top: 0px;
+        float: left;
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    #fancymarketbook h3 {
+        text-align: left;
+        font-weight: bold;
+        font-size: 18px;
+        color: black;
+        width: 83%;
+        float: left;
+        margin: 10px 0;
+    }
+
+    .bookbutton {
+        font-weight: bolder;
+        height: 16px;
+        margin-top: 2px;
+        /* text-shadow: 0.1px 0.35px #FFFFFF; */
+        float: left;
+        width: 43px;
+        /* background-color: #075E54; */
+        color: #00b181;
+        /* padding: 2px 2px; */
+        border-color: #d73d32;
+        cursor: pointer;
+        font-size: 14px;
+        display: inline-block;
+    }
+
+        .bookbutton:hover {
+            background: -webkit-linear-gradient(bottom,#ff0000,#b40000) !important;
+        }
+
+    #marketbooksoccer .runnersname {
+        width: 65% !important;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #444 !important;
+    }
+
+    .runnerprofitandlossdivMobile {
+        width: 50%
+    }
+
+    #marketbookTWT.runnersname {
+        width: 65% !important;
+        text-overflow: ellipsis;
+        height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #444 !important;
+    }
+
+    .runnerprofitandlossdivMobile {
+        width: 50%
+    }
+
+    #fancymarketbook .runnersname {
+        width: 80% !important;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #444 !important;
+    }
+
+    .runnerprofitandlossdivMobile {
+        width: 50%
+    }
+
+
+
+    #marketbooksoccer .runnerprofitandlossdivMobile {
+        /*width: 50% !important;*/
+        margin-top: 0px;
+    }
+
+
+    #marketbookTWT .runnerprofitandlossdivMobile {
+        width: 50% !important;
+        margin-top: 0px;
+    }
+
+
+    #fancymarketbook .runnerprofitandlossdivMobile {
+        width: 50% !important;
+        margin-top: 16px;
+    }
+
+    #Indianfancymarketbook1 .runnerprofitandlossdivMobile {
+        width: 50% !important;
+        margin-top: 0px;
+    }
+
+    #Figurefancymarketbook .runnerprofitandlossdivMobile {
+        width: 50% !important;
+        margin-top: 0px;
+    }
+
+    #KJfancymarketbook .runnerprofitandlossdivMobile {
+        width: 50% !important;
+        margin-top: 5px;
+    }
+
+
+    #SFigfancymarketbook .runnerprofitandlossdivMobile {
+        width: 50% !important;
+        margin-top: 0px;
+    }
+
+
+    .bookscoreandamount {
+        background: white;
+        float: left !important;
+        width: 100% !important;
+    }
+
+    .bookscore {
+        float: left !important;
+        width: 50% !important;
+    }
+
+    .bookamountred {
+        float: left !important;
+        width: 50% !important;
+        color: red !important;
+    }
+
+    .bookamountgreen {
+        float: left !important;
+        width: 50% !important;
+        color: darkgreen !important;
+    }
+
+
+
+
+
+    #completedmatcedbetscontentFancy {
+        float: left;
+        width: 100%;
+        text-align: center;
+        border: 1px solid;
+        margin: 0px 0 10px 0;
+    }
+
+        #completedmatcedbetscontentFancy .matched-unmatched-heading label {
+            text-align: center !important;
+        }
+
+        #completedmatcedbetscontentFancy .matched-bets {
+            background: white;
+            max-height: 100% !important;
+            overflow: auto !important;
+        }
+
+    #fancymarketbook .backitem:nth-child(3), #fancymarketbook .layitem:nth-child(1) {
+    }
+
+    .runnerselectedhorse {
+        background: -moz-linear-gradient(top, #fbd150 0%, #faff8e 63%, #faff8e 42%);
+        background: -webkit-linear-gradient(top, #fbd150 0%,#faff8e 63%,#faff8e 42%);
+        background: linear-gradient(to bottom, #fbd150 0%,#faff8e 63%,#faff8e 42%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFC000', endColorstr='#feffe8',GradientType=0 );
+    }
+
+    .clothnumstalldrawimgemptynotshow {
+        display: none;
+    }
+
+    .runnersnamenotrace {
+        width: 80% !important;
+        text-align: left;
+        margin-top: 5px !important;
+        height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        float: left;
+        margin-left: 5px;
+        color: black !important;
+    }
+
+    .closefancypanel {
+        margin: 6px 0px;
+        font-size: 18px;
+    }
+
+    .marketrulesfancy {
+        float: left;
+        width: 11% !important;
+        padding: 3px !important;
+        margin: 8px 0px;
+        color: white !important;
+        background: black;
+        text-decoration: underline;
+    }
+
+    .fancybackandlaydiv {
+        float: left;
+        width: 100%;
+    }
+
+    .fancyhead {
+        float: left;
+        width: 100%;
+        text-align: center;
+        font-size: 17px;
+        color: black;
+    }
+
+    .fancybackhead {
+        float: left;
+        width: 50%;
+    }
+
+        .fancybackhead label {
+            color: white !important;
+        }
+
+    .fancybackandlaydiv .runnerbackandlaydiv {
+        float: right;
+    }
+
+    .runnersaveragegreen {
+        float: right;
+        width: 30% !important;
+        color: #078f07 !important;
+        font-weight: bold;
+    }
+
+    .runnersaveragered {
+        float: right;
+        width: 30% !important;
+        color: red !important;
+        font-weight: bold;
+    }
+
+    .firstportion {
+        float: left;
+        width: 50%;
+    }
+
+    .checkboxrunnernameavg, .checkboxrunnernameavgTWT {
+        display: none;
+        float: left;
+    }
+
+    .marketnameheadlabel {
+        background-color: #243876;
+        color: white !important;
+        padding: 5px 10px !important;
+        width: auto !important;
+    }
+
+    #marketbookTWT {
+        float: left;
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .marketnamehead {
+        text-align: left !important;
+    }
+
+    /*#fulldisplay {
+        display: none;
+    }
+
+    
+
+    #mobiledisplay {
+        display: block !important;
+    }*/
+
+
+
+    .no-padding {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        min-height: 8.6222222px;
+        width: 100%;
+        display: inherit;
+    }
+
+    .loadingimg {
+        display: none;
+    }
+
+    .danger {
+        color: #d73d32 !important;
+    }
+
+    .runnerwinner {
+        background: linear-gradient(to bottom, #039221 0%,#22cd5c 100%);
+        background-size: cover;
+        min-height: 38px;
+        color: white !important;
+    }
+
+    #maineventtypediv {
+        display: none
+    }
+
+    .sidebar-collapse {
+        margin-left: 7px;
+    }
+
+    .logonew {
+        margin-left: 05px;
+    }
+
+    #marketbooksoccer {
+        width: 100%;
+    }
+
+    #fancymarketbook {
+        width: 100%;
+        background: white;
+        margin-left: 0px;
+        float: left;
+        margin-top: 10px;
+    }
+
+
+
+
+
+    #fancyopen {
+        width: 100%;
+    }
+
+    #backandlaydiv {
+        display: inline-flex;
+        float: right;
+        width: 50%;
+    }
+
+    #BookName {
+        width: 88%;
+        float: left;
+        display: inline-flex;
+    }
+
+    #bookbutton {
+        width: 0%;
+    }
+
+    #bookandbookname {
+        width: 50%;
+    }
+
+    #backandlayvalue {
+        width: 35%;
+        display: inline-flex;
+        float: right;
+    }
+
+    #backtext {
+        display: inline-grid;
+    }
+
+    #Laytext {
+        display: inline-grid;
+    }
+
+    #backheader {
+        display: inline-grid;
+        left: 4.5px;
+        bottom: -9px;
+    }
+
+
+    .height {
+        height: 29px;
+    }
+
+    .bh3 {
+        margin-top: -16px;
+    }
+
+    .bh5 {
+        margin-left: 0px;
+    }
+
+    .bh2 {
+        margin-left: -3px;
+        margin-top: -7px;
+    }
+
+
+
+    #layheader {
+        display: inline-grid;
+        left: 4.5px;
+    }
+
+    #TotalMatchedBackandlay {
+        display: inline-flex;
+    }
+
+    #profitandlossdiv {
+        width: 0%;
+    }
+
+    #BackDiv {
+        display: inline-grid;
+    }
+
+    #LayDiv {
+        display: inline-grid;
+    }
+
+    #nameProfitandlossdiv {
+        width: 50%;
+    }
+
+
+    #lastpricebackandlaydiv {
+        width: 50%;
+        display: inline-block;
+    }
+
+
+    #UpperDiv {
+        display: inline-flex;
+    }
+
+    #lastpricediv {
+        display: none;
+    }
+
+    #lastpricedivval {
+        display: none;
+    }
+
+    #profitloss {
+        padding-left: 0 !important;
+    }
+
+    #runnernamediv {
+    }
+
+    #backandlaydivsecond {
+        display: inline-flex;
+    }
+
+    #backandlaydivthird {
+        display: inline-block;
+    }
+
+    #ExchangePricesmain {
+        display: inline-block;
+    }
+
+    .fa {
+        display: none;
+    }
+
+    .inplaymatchbackandlay {
+        display: none;
+    }
+
+    .inplaymatchbackandlay1 {
+        display: none;
+    }
+
+    .inplaymatchbackandlay2 {
+        display: none;
+    }
+
+    .inplaymatchname {
+        float: left;
+        width: 93%;
+        margin-right: 2px;
+    }
+
+    .inplaymatchname1 {
+        float: left;
+        width: 65%;
+        margin-right: 2px;
+    }
+
+
+    .inplaymatchname12 {
+        float: left;
+        width: 65%;
+        margin-right: 2px;
+    }
+
+    .inplaymatchbackandlay {
+        width: 38%;
+    }
+
+    .inplayback {
+        float: left;
+        width: 48%;
+        background-color: #72bbef;
+        height: 45px;
+        margin: 0px 1px 0px 0px;
+    }
+
+    .inplaylay {
+        float: left;
+        width: 48%;
+        background-color: #f994ba;
+        height: 25px;
+        margin: 0px 0px 0px 1px;
+    }
+
+    #profitloss {
+        display: none;
+    }
+}
+
+@media(min-width:769px) {
+}
+
+.runnerinfo {
+    float: left !important;
+    width: 0% !important;
+    margin-left: 0px !important;
+    overflow: visible;
+}
+
+.pendding {
+    width: 77%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding-top: 10%;
+    display: none;
+    font-weight: bolder;
+}
+
+.danger {
+    color: #d73d32 !important;
+}
+
+#fancyopen {
+    width: 100%;
+}
+
+#backandlaydiv {
+    display: inline-flex;
+    float: right;
+}
+
+#BookName {
+    width: 28%;
+    float: left;
+    display: inline-block;
+}
+
+#bookbutton {
+    width: 0%;
+    float: right;
+}
+
+.bookscoreandamount {
+    float: left !important;
+    background: white;
+    width: 100% !important;
+}
+
+.bookscore {
+    float: left !important;
+    width: 50% !important;
+}
+
+.bookamountred {
+    float: left !important;
+    width: 50% !important;
+    color: red !important;
+}
+
+.bookamountgreen {
+    float: left !important;
+    width: 50% !important;
+    color: darkgreen !important;
+}
+
+#completedmatcedbetscontentFancy {
+    float: left;
+    width: 100%;
+    text-align: center;
+    border: 1px solid;
+    margin: 0px 0 10px 0;
+}
+
+#bookandbookname {
+    width: 100%;
+}
+
+#backandlayvalue {
+    width: 100%;
+    display: block;
+    float: none;
+}
+/*#runnerbacklaydive123 {
+        position: relative;
+    width: 100%;
+    }*/
+.runnernamediv {
+    float: left;
+    position: relative;
+}
+
+
+
+
+#profitloss {
+    float: left;
+    position: relative;
+}
+
+#lastpricedivval {
+    float: left;
+    position: relative;
+}
+
+.backandlaydivMain {
+    float: left;
+    position: relative;
+}
+
+#backandlaydivMainForStatus {
+    float: left;
+    position: relative;
+}
+
+#backandlaydivMainIN {
+    float: left;
+    position: relative;
+}
+
+#backandlaydivMainINS {
+    float: left;
+    position: relative;
+    margin: auto;
+    Height: 45px;
+    border-bottom: 0px solid black;
+    border-left: 0px solid black;
+    padding: 10px;
+}
+
+
+
+
+
+.bookbutton.hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+#backandlaydivsecond {
+    width: 100%;
+    position: relative;
+}
+
+#backandlaydivthird {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
+#backitemval {
+    float: left;
+    position: relative;
+}
+
+#backitemvalelse {
+    float: left;
+    position: relative;
+}
+
+#ExchangePricesmain {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
+#layitemmain {
+    float: left;
+    position: relative;
+}
+
+#layitemelse {
+    float: left;
+    position: relative;
+}
+
+@media(min-width:403px) {
+    .btnacc {
+        float: initial;
+        text-align: center;
+        margin-top: 53px;
+        margin-left: 0px;
+    }
+
+    .btnacc1 {
+        text-align: center;
+        margin-top: 53px;
+        margin-left: 0px;
+    }
+}
+
+.runner-price-box {
+  width: 80px;
+  height: 55px;
+  background-color: #f3f3f3;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.runner-price-box:hover {
+  background-color: #e6f2ff;
+  border-color: #66b3ff;
+}
+
+.last-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  line-height: 1.2;
+}
+
+.total-matched {
+  font-size: 12px;
+  color: #666;
+}
+.runner-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 2px 2px;
+  font-family: Arial, sans-serif;
+}
+
+/* Runner Info */
+.runner-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+.runner-name {
+  font-weight: 600;
+  font-size: 14px;
+    display: flex;
+  flex-direction: column;
+}
+
+/* Last Price Box */
+.runner-price-box {
+  width: 70px;
+  text-align: center;
+  background: #f3f3f3;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.last-price {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.total-matched {
+  font-size: 11px;
+  color: #777;
+}
+
+/* Price Columns */
+.price-column {
+  width: 70px;
+  margin-left: 4px;
+}
+
+/* Common Price Box */
+.price-box {
+  cursor: pointer;
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.size {
+  font-size: 11px;
+}
+
+/* BACK = Blue */
+.back-box {
+  background-color: #bde0ff;
+}
+
+.back-box:hover {
+  background-color: #8fd0ff;
+}
+
+/* LAY = Pink */
+.lay-box {
+  background-color: #ffc0d0;
+}
+
+.lay-box:hover {
+  background-color: #ff9ab3;
+}
+/* ROW LAYOUT */
+.runner-row {
+  grid-template-columns: 240px max-content max-content;
+  align-items: center;
+  column-gap: 6px;
+}
+
+.prices-group {
+  display: inline-flex;
+  gap: 2px;
+}
+
+/* 🔥 FIXED BOX SIZE */
+.price-box {
+  width: 66px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* back color */
+.back-box {
+  background: #b3d9ff;
+}
+
+/* lay color */
+.lay-box {
+  background: #ffb3b3;
+}
+/* empty placeholder */
+.price-box.empty {
+  background: #f3f3f3;
+  cursor: default;
+}
+.price-box:hover {
+  transform: scale(1.05);
+  transition: 0.15s ease;
+}
+.mobile-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  border-radius: 15px 15px 0 0;
+  padding: 12px;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .runner-price-box {
+    display: none;
+  }
+  .margin{
+   margin: auto;
+  }
+.runner-info {
+  width: 58%;
+}
+}
+
+
+.pnl {
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.profit {
+  color: green;
+  font-weight: 600;
+}
+
+.loss {
+  color: red;
+  font-weight: 600;
+}
+.status-box {
+  height: 100%;
+  background: #000000;
+  opacity: 0.98;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-text {
+  padding: 10px;
+}
+    .betslip-card {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  padding: 10px;
+}
+
+.betslip-header {
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  background: -webkit-linear-gradient(bottom, #35c483, #000000);
+  color: white;
+  text-align: center;
+}
+
+.selection-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.price-box {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.price-box.back {
+  background: #b3d9ff;
+}
+
+.price-box.lay {
+  background: #ffb3b3;
+}
+
+.form-row {
+  margin-top: 10px;
+}
+
+.profit-section {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.profit-value {
+  color: green;
+}
+
+.stake-buttons {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+ 
+}
+
+.stake-buttons button {
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+  background: #f3f3f3;
+  cursor: pointer;
+   background: -webkit-linear-gradient(bottom, #35c483, #000000);
+   color: white;
+}
+
+.actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-submit {
+  background: #3b9f71;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.btn-cancel {
+  background: #ccc;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.mobile-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  animation: fadeInScale 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.betslip-body.back {
+  background-color: #66b3ff; /* light blue */
+}
+
+.betslip-body.lay {
+  background-color: #ff9ab3; /* light red */
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+

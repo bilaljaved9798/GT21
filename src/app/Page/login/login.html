@@ -1,0 +1,54 @@
+<div class="login-wrapper">
+
+  <div class="login-card text-center">
+
+    <!-- LOGO -->
+    <img src="assets/logo.png" class="logo" alt="GT Exchange" />
+
+    <h4 class="title">GT Exchange</h4>
+    <p class="text-muted mb-4">Login to your account</p>
+
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+
+      <!-- Username -->
+      <div class="mb-3 text-start">
+        <label class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          [(ngModel)]="model.username"
+          required
+          placeholder="Enter username"
+        />
+      </div>
+
+      <!-- Password -->
+      <div class="mb-3 text-start">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="model.password"
+          required
+          placeholder="Enter password"
+        />
+      </div>
+
+      <!-- Button -->
+      <button type="submit" class="btn btn-primary w-100 btn-login"
+              [disabled]="loginForm.invalid">
+        Login
+      </button>
+
+      <!-- Error -->
+      <div class="mt-3 text-danger" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

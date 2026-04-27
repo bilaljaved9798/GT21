@@ -1,0 +1,81 @@
+<!-- <div class="row">
+     <div class="col-md-8 col-lg-8 runner-info">
+          <div>Fancy Market 2</div>
+     </div>
+
+     <div class="col-md-4 col-lg-4 margin price-width" style="display:inline-block; float:right;">
+    <div style="text-align: center;" class="col-md-6 col-lg-6 no-padding">
+      <label style="font-weight:700">Yes</label>
+      <i class="backcircle fa fa-arrow-circle-down"></i>
+    </div>         
+        <div style="text-align: center;" class="col-md-6 col-lg-6 no-padding">
+              <label style="font-weight:700">No</label>
+              <i class="laycircle fa fa-arrow-circle-down"></i>     
+    </div> 
+     </div>
+</div> -->
+
+  <div *ngFor="let runner of market" class="row align-items-center mb-2 runner-row ">
+
+  <!-- Runner Info (Mobile full width, Desktop 8 cols) -->
+  <div class="col-8 col-md-8 runner-info" style="float: left;">
+    
+    <div class="d-flex justify-content-between align-items-center">
+
+      <!-- Runner Name + Ellipsis -->
+      <div class="runner-name text-truncate">
+        {{ runner.RunnerName }}
+      </div>
+
+      <!-- PnL -->
+      <div 
+        class="pnl ms-2"
+        [ngClass]="{
+          'profit': runner.ProfitandLoss > 0,
+          'loss': runner.ProfitandLoss < 0
+        }"
+      >
+        {{ runner.ProfitandLoss }}
+      </div>
+
+      <!-- Button -->
+      <button class="btn btn-sm btn-primary ms-2">Book</button>
+
+    </div>
+
+  </div>
+
+  <!-- Prices / Status -->
+  <div class="col-4 col-md-4 price-width">
+
+    <!-- Status -->
+    <div 
+      *ngIf="runner?.MarketStatusStr === 'SUSPENDED' || runner?.MarketStatusStr === 'BALL_RUNNING'" 
+      class="status-box text-center"
+    >
+      <div class="status-text">
+        {{ runner?.MarketStatusStr === 'SUSPENDED' ? 'SUSPENDED' : 'BALL RUNNING' }}
+      </div>
+    </div>
+
+    <!-- Prices -->
+    <div *ngIf="runner?.MarketStatusStr !== 'SUSPENDED' && runner?.MarketStatusStr !== 'BALL_RUNNING'" 
+         class="d-flex justify-content-between mt-2">
+
+      <!-- Back -->
+      <div class="price-box back-box text-center flex-fill me-1" style="float: left;margin-right:2px">
+        <div class="price">{{ runner.Backprice }}</div>
+        <div class="size">{{ runner.BackSize }}</div>
+      </div>
+
+      <!-- Lay -->
+      <div class="price-box lay-box text-center flex-fill ms-1">
+        <div class="price">{{ runner.Layprice }}</div>
+        <div class="size">{{ runner.LaySize }}</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

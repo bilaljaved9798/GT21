@@ -1,0 +1,96 @@
+<header class="navbar">
+  <button class="menu-btn" (click)="toggleSidebar()">☰</button>
+  <span class="title">Global Sports</span>
+  <button class="logout-btn" (click)="logout()">Logout</button>
+</header>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" [class.closed]="!sidebarOpen">
+
+    <!-- SPORTS -->
+    <div class="menu-item" (click)="toggleMenu('sports')">
+      <img src="assets/images/ball-sport.png" width="30">
+      <span>Sports</span>
+    </div>
+
+    <div class="submenu" *ngIf="openMenu === 'sports'">
+
+      <!-- SPORT LIST -->
+      <a (click)="selectSport('Cricket')">Cricket</a>
+        <!-- MATCH LIST -->
+      <div *ngIf="selectedSport==='Cricket' && !loading">
+       <div *ngFor="let match of soccerMatches"
+         class="submenu-item"
+         (click)="openMarket(match)">
+
+      {{ match.todayHorseRace }}
+       </div>
+        </div>
+      <a (click)="selectSport('Soccer')">Soccer</a>
+      <div *ngIf="selectedSport==='Soccer' && !loading">
+       <div *ngFor="let match of soccerMatches"
+         class="submenu-item"
+         (click)="openMarket(match)">
+
+      {{ match.todayHorseRace }}
+       </div>
+        </div>
+      <a (click)="selectSport('Tennis')">Tennis</a>
+      <div *ngIf="selectedSport==='Tennis' && !loading">
+       <div *ngFor="let match of soccerMatches"
+         class="submenu-item"
+         (click)="openMarket(match)">
+
+      {{ match.todayHorseRace }}
+       </div>
+        </div>
+    </div>
+
+    <!-- HORSE RACING -->
+    <div class="menu-item" *ngIf="isHorseAllowed" (click)="toggleMenu('horse')">
+      <img src="assets/images/Horse.png" width="30">
+      <a (click)="loadHorse(7)">Today Race</a>
+    </div>
+
+    <div class="submenu" *ngIf="openMenu === 'horse'">
+       <div *ngFor="let match of soccerMatches"
+       class="submenu-item"
+       (click)="openMarket(match)">
+
+    {{ match.marketBookName }}
+
+  </div>
+    </div>
+
+    <!-- GREYHOUND -->
+    <div class="menu-item" *ngIf="isGreyhoundAllowed" (click)="loadGreyhound()">
+      <img src="assets/images/Greyhound.png" width="30">
+      <span>Greyhound</span>
+    </div>
+
+    <!-- OTHER ITEMS -->
+    <div class="menu-item" (click)="goTo('liability')">
+      <img src="assets/images/Liability1.png" width="30">
+      <span>Liability</span>
+    </div>
+
+    <div class="menu-item" (click)="goTo('reports')">
+      <img src="assets/images/reports1.png" width="30">
+      <span>Reports</span>
+    </div>
+
+    <div class="menu-item" (click)="goTo('rules')">
+      <img src="assets/images/rules.png" width="30">
+      <span>Rules</span>
+    </div>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

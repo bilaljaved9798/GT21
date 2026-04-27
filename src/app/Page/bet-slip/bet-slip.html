@@ -1,0 +1,53 @@
+<div class="betslip-card">
+
+  <div class="betslip-header">
+    <span>Bet Slip</span>
+  </div>
+  <div class="betslip-body">
+    <!-- Selection Info -->
+    <div class="selection-section">   
+      <div class="selection-name">
+        {{ selectionName }}
+      </div>
+      <div class="price-box"
+           [class.back]="type === 'back'"
+           [class.lay]="type === 'lay'">
+        {{ type }} @ {{ price }}
+      </div>
+    </div>
+
+    <!-- Stake Input -->
+    <div class="form-row">
+      <label>Stake</label>
+      <input type="number"
+             [value]="stake"
+             (input)="stake = $any($event.target).value"
+             class="form-control" />
+    </div>
+
+    <!-- Profit -->
+    <div class="profit-section">
+      Profit:
+      <span class="profit-value">
+        {{ profit }}
+      </span>
+    </div>
+
+    <!-- Stake Buttons -->
+    <div class="stake-buttons">
+      @for (btn of stakeButtons; track btn) {
+        <button (click)="setStake(btn)">
+          {{ btn }}
+        </button>
+      }
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button class="btn-cancel" (click)="close()">Close</button>
+      <button class="btn-submit" (click)="submitBet()">Submit</button>
+    </div>
+
+  </div>
+</div>
+

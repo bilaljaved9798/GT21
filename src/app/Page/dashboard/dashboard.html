@@ -1,0 +1,61 @@
+<div class="headingdivagent">
+  <span class="headingcaption"><strong>Sport Highlights</strong></span>
+</div>
+
+<ul class="inplaymatchheading" *ngIf="eventTypes.length > 0;">
+  <li *ngFor="let item of eventTypes">
+  <a class="inplaymatchheadinglink ipshead"
+     [class.active]="activeCategory === item"
+     (click)="setActiveCategory(item)">
+
+    <img [src]="'assets/images/' + normalizeCategory(item) + '.png'" width="30" />
+    {{ item }} ({{ getCount(item) }})
+  </a>
+</li>
+</ul>
+<div *ngFor="let item of eventTypes">
+  <div *ngIf="activeCategory === item"
+       class="inplaydatabycategory"
+       [id]="'inplaydatafor' + normalizeCategory(item)">
+
+    <div class="inplaydatarow" *ngFor="let match of getMarketsByEventType(item)">
+
+      <i class="fa fa-share-alt" style="float:right"></i>
+
+      <div class="inplaymatchname">
+        <i class="fa fa-caret-right"
+           [style.color]="getCaretColor(match, item === 'Cricket')"></i>
+
+        <a [style.color]="getMatchStatusColor(match)"
+           (click)="openMarket(match)">
+          {{ match.marketBookName.split('/')[0]?.trim() }}       
+        </a>
+
+        <div class="inplaytime">
+        {{ addHours(match.orignalOpenDate, 5) | date:'dd-MM-yyyy hh:mm a' }}
+        </div>
+      </div>
+
+      <ng-container *ngIf="item !== 'Horse Racing' && item !== 'Greyhound Racing'; else racing">
+        <div class="inplaymatchbackandlay">
+          <div class="inplayback">{{ match?.runners?.[0]?.exchangePrices?.availableToBack?.[0]?.price || '-' }}</div>        
+          <div class="inplayback">{{ match?.runners?.[0]?.exchangePrices?.availableToBack?.[1]?.price || '-' }}</div>
+          <div class="inplayback">{{ match?.runners?.[0]?.exchangePrices?.availableToBack?.[2]?.price || '-' }}</div>
+          <div class="inplaylay">{{ match?.runners?.[1]?.exchangePrices?.availableToLay?.[0]?.price || '-' }}</div>
+          <div class="inplaylay">{{ match?.runners?.[1]?.exchangePrices?.availableToLay?.[1]?.price || '-' }}</div>
+          <div class="inplaylay">{{ match?.runners?.[1]?.exchangePrices?.availableToLay?.[2]?.price || '-' }}</div>
+        </div>
+      </ng-container>
+
+      <ng-template #racing>
+        <div class="moleucule"
+             (click)="openMarket(match)">
+          {{ match.sheetName }}
+        </div>
+      </ng-template>
+
+    </div>
+
+  </div>
+</div>
+

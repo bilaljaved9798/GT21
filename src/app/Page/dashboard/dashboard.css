@@ -1,0 +1,17 @@
+    .active {
+  background-color: #1e90ff;
+  color: white;
+  border-radius: 4px;
+}
+.price-box {
+  cursor: pointer;
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 14px;
+}
