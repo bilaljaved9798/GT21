@@ -1,53 +1,78 @@
 <div class="betslip-card">
 
   <div class="betslip-header">
-    <span>Bet Slip</span>
+    <div>
+      <span class="betslip-title">Bet Slip</span>
+      <span class="betslip-subtitle">Review your selection</span>
+    </div>
+    <button type="button" class="header-close" title="Close" (click)="close()">×</button>
   </div>
-  <div class="betslip-body">
-    <!-- Selection Info -->
-    <div class="selection-section">   
-      <div class="selection-name">
-        {{ selectionName }}
+
+  <div class="betslip-body" *ngIf="bet(); else emptySlip">
+    <div class="selection-section">
+      <div class="selection-copy">
+        <span class="section-label">Selection</span>
+        <span class="selection-name" [title]="selectionName()">
+          {{ selectionName() }}
+        </span>
       </div>
+
       <div class="price-box"
-           [class.back]="type === 'back'"
-           [class.lay]="type === 'lay'">
-        {{ type }} @ {{ price }}
+        [class.back]="type()?.toLowerCase() === 'back'"
+        [class.lay]="type()?.toLowerCase() === 'lay'"
+        [class.odds-up]="oddsChange() === 'up'"
+        [class.odds-down]="oddsChange() === 'down'">
+        <span>{{ type() }}</span>
+        <strong>{{ price() }}</strong>
       </div>
     </div>
 
-    <!-- Stake Input -->
     <div class="form-row">
-      <label>Stake</label>
-      <input type="number"
-             [value]="stake"
-             (input)="stake = $any($event.target).value"
-             class="form-control" />
+      <label for="stakeAmount">Stake</label>
+      <div class="stake-input-wrap">
+        <span>Rs</span>
+        <input
+          id="stakeAmount"
+          type="number"
+          min="0"
+          [ngModel]="stake()"
+          (ngModelChange)="stake.set($event)"
+          class="form-control" />
+      </div>
     </div>
 
-    <!-- Profit -->
-    <div class="profit-section">
-      Profit:
-      <span class="profit-value">
-        {{ profit }}
-      </span>
-    </div>
-
-    <!-- Stake Buttons -->
     <div class="stake-buttons">
-      @for (btn of stakeButtons; track btn) {
-        <button (click)="setStake(btn)">
+      @for (btn of quickStakes; track btn) {
+        <button type="button" (click)="setStake(btn)">
           {{ btn }}
         </button>
       }
     </div>
 
-    <!-- Actions -->
-    <div class="actions">
-      <button class="btn-cancel" (click)="close()">Close</button>
-      <button class="btn-submit" (click)="submitBet()">Submit</button>
+    <div class="summary-grid">
+      <div class="summary-item profit">
+        <span>Profit</span>
+        <strong>{{ profit().toFixed(2) }}</strong>
+      </div>
+      <div class="summary-item loss">
+        <span>Loss</span>
+        <strong>{{ loss().toFixed(2) }}</strong>
+      </div>
     </div>
-
-  </div>
+<div class="bet-error" *ngIf="errorMessage()">
+  {{ errorMessage() }}
 </div>
+    <div class="actions">
+      <button type="button" class="btn-cancel" (click)="close()">Cancel</button>
+      <button type="button" class="btn-submit" [disabled]="stake() <= 0 || submitting()" (click)="submitBet()">
+        {{ submitting() ? 'Placing...' : 'Place Bet' }}
+      </button>
+    </div>
+  </div>
 
+  <ng-template #emptySlip>
+    <div class="empty-slip">
+      <span>No bet selected</span>
+    </div>
+  </ng-template>
+</div>

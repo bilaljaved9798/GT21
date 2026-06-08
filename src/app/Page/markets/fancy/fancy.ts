@@ -5,6 +5,7 @@ import { MarketService } from '../../../Services/marketservice';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StorageService } from '../../../Services/storage-service';
 import { CommonModule } from '@angular/common';
+import { BetSlipService } from '../../../Services/bet-slip-service';
 
 @Component({
   selector: 'app-fancy',
@@ -24,8 +25,7 @@ private timerText: string = '';
 private model: any = {};
  market: FancyMarket[] = [];
 
-constructor(private marketService: MarketService,private route: ActivatedRoute,private cdr: ChangeDetectorRef,private router: Router,private storage: StorageService) {
-
+constructor(private marketService: MarketService,private betSlipService: BetSlipService,private route: ActivatedRoute,private cdr: ChangeDetectorRef,private router: Router,private storage: StorageService) {
  const info = this.storage.get<any>('userInfo');
   this.userid = info?.user?.id;
 }
@@ -34,14 +34,6 @@ constructor(private marketService: MarketService,private route: ActivatedRoute,p
     this.destroy$.complete();
   }
 ngOnInit() {
-  // this.marketService.getMarketsFancy(this.eventId, this.marketId, this.userid)
-  //       .subscribe(res => {
-  //         this.market = res;
-  //         this.now = Date.now();
-  //         this.cdr.markForCheck();
-  //         this.loadFancyMarket();
-  //       });
-  // Call API here using eventId & marketId
   this.marketService.markets$
   .pipe(takeUntil(this.destroy$))
   .subscribe(data => {
@@ -50,7 +42,6 @@ ngOnInit() {
   : Array.isArray(data?.Runners)
     ? data.Runners
     : [];
-
 this.market = runners.map((r: any): FancyMarket => ({
         AdjustmentFactor: r.AdjustmentFactor ?? null,
         Average: r.Average,
@@ -64,12 +55,12 @@ this.market = runners.map((r: any): FancyMarket => ({
         LastPriceTraded: r.LastPriceTraded ?? null,
         LaySize: r.LaySize1,
         Layprice: r.LayPrice1,
-        Loss: r.Loss,
+        Loss: r.Lose,
         MarketBookID: r.MarketBookID,
         MarketStatusStr: r.GameStatus,
         Matches: r.Matches || [],
         Orders: r.Orders || [],
-        ProfitandLoss: r.ProfitandLoss,
+        Profit: r.Profit,
         RemovalDate: r.RemovalDate ? new Date(r.RemovalDate) : null,
         RunnerName: r.RunnerName,
         SelectionId: r.SelectionId,
@@ -87,19 +78,6 @@ this.market = runners.map((r: any): FancyMarket => ({
 }
 
 
-loadFancyMarket() {
-  interval(4000) // ⏱ every 1 second
-        .pipe(
-          takeUntil(this.destroy$),
-          switchMap(() => this.marketService.getMarketsFancy(this.eventId, this.marketId, this.userid))
-        )
-        .subscribe(res => {
-          this.market = res;
-          this.now = Date.now();
-          this.cdr.markForCheck();
-        });
-}
-
 showMarketRules(market: string, country: string, id: string) {
     console.log('Show market rules:', market, country, id);
     // Navigate to market rules page or open modal
@@ -111,12 +89,34 @@ showMarketRules(market: string, country: string, id: string) {
     this.router.navigate(['/bets/completed'], { queryParams: { marketBookID, selectionId } });
   }
 
-  showBetslip(selectionId: string, type: string, price: any, stake: string, something: string, marketBookID: string, runnerName: string, size: any, arg9: string, arg10: string) {
-    console.log('Show betslip:', selectionId, type, price);
-    // Open betslip modal with bet details
-  }
-
   trackByMarketBookID(index: number, runner: FancyMarket ) {
     return runner.MarketBookID || index;
+  }
+
+   showBetSlip(
+    selectionId: number,
+    selectionName: string,
+    type: string,
+    price: number,
+    stake: number,
+    MarketBookID: string,
+    marketName: string,
+    size: number,
+    index: number
+  ) {
+   this.betSlipService.addBet({
+    selectionId: selectionId,
+    selectionName: selectionName,
+    marketId: this.eventId,
+    marketName: selectionName,
+    eventId: this.eventId,
+    type: type,
+    price: price,
+    size: size,
+    stack:0,
+    Clickedlocation:9, // 9 for fancy market
+    runnersCount: 1, // or this.market?.runners?.length || 0,
+    categoryName: 'Fancy'
+  });
   }
 }

@@ -31,22 +31,88 @@
       />
 
       {{ market?.marketBookName || '' }}
-      {{ market?.mainSportsname || '' }}
     </span>
   </div>
 </div>
+ <app-score-update *ngIf="mainsportsname != 'Cricket' "></app-score-update>
 <br />
+<div
+  class="favoriteselection"
+  *ngIf="selectedRunners.length > 0"
+  [style.display]="selectedRunners.length > 1 ? 'block' : 'none'"
+>
+
+ <div class="favoriteselectionname">
+    {{ favoriteSelectionName }}
+  </div>
+
+  <div class="favoritepricebackandlay">
+
+    <div
+      class="favoritebackprice"
+      (click)="showMultiRunnerBetSlip('back')">
+
+      {{ favoriteBackPrice }}
+    </div>
+
+    <div
+      class="favoritelayprice"
+      (click)="showMultiRunnerBetSlip('lay')">
+
+      {{ favoriteLayPrice }}
+    </div>
+
+  </div>
+
+  <div class="favoritesizebackandlay">
+
+    <div class="favoritebacksize">
+      {{ favoriteBackSize }}
+    </div>
+
+    <div class="favoritelaysize">
+      {{ favoriteLaySize }}
+    </div>
+
+  </div>
+
+</div>
+
+<div class="bet-not-allowed" *ngIf="betNotAllowedMessage">
+  {{ betNotAllowedMessage }}
+</div>
  <!-- RUNNER NAME -->
-<div class="runner-row col-md-12 col-lg-12" 
- *ngFor="let runner of market?.runners; let valueid = index"
-  [id]="'selection' + runner.selectionId.replace(' ', '')"
-  style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)"
- >
+ <div
+  class="runner-row col-md-12 col-lg-12"
+  *ngFor="let runner of market?.runners"
+  [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)"
+  [id]="'selection' + runner.selectionId"
+  style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
 
   <!-- RUNNER INFO -->
   <div class="runner-info col-md-6 col-lg-6">
-    <div class="runner-name">
-      {{ runner.runnerName }}
+    <!-- Horse Silk -->
+  <div
+    *ngIf="runner.wearingURL"
+    class="clothnumstalldrawimg"
+    (click)="onRunnerClick(runner)"
+  >
+    <img
+      class="runnerwearing"
+      [src]="getWearingUrl(runner.wearingURL)"
+    
+      (error)="onImageError($event)"
+    />
+  </div>
+    <div class="runner-name" style="width:100%"  [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)"
+  (click)="onRunnerClick(runner)">
+          {{ runner.runnerName }}
+           <span
+    *ngIf="isRunnerSelected(runner.selectionId)"
+    class="selected-icon"
+  >
+    ✓
+  </span>
       <div 
     class="pnl"
     [ngClass]="{
@@ -75,6 +141,7 @@
   <div class="price-box back-box"      
       *ngFor="let back of (isMobile ? (getBackPrices(runner).slice().reverse() | slice:0:1) : getBackPrices(runner).slice().reverse()); let i = index"
        [class.empty]="!back"
+       [class.bet-disabled]="back && !isBettingAllowed()"
        (click)="back && showBetSlip(
          runner.selectionId,
          runner.runnerName,
@@ -100,6 +167,7 @@
   <div class="price-box lay-box"
        *ngFor="let lay of (isMobile ? (getLayPrices(runner) | slice:0:1) : getLayPrices(runner)); let i = index"
        [class.empty]="!lay"
+       [class.bet-disabled]="lay && !isBettingAllowed()"
        (click)="lay && showBetSlip(
          runner.selectionId,
          runner.runnerName,
@@ -121,6 +189,7 @@
 </div>
 </div>
 </div>
+
         <!-- <app-toss [eventId]="eventId" *ngIf="mainsportsname=='Cricket'"></app-toss> -->
 <div class="runner-row col-md-12 col-lg-12" *ngIf="mainsportsname=='Cricket'" >
   <app-line-market [eventId]="eventId || ''"> 
@@ -148,54 +217,74 @@
 </div>
 
 <div class="col-md-4 col-lg-4">
-  <div class="no-padding" id="multimedia" style="margin-bottom:-4px;background:linear-gradient(to top, #00ff8a, #000000) !important;z-index:100">
-     <button type="submit" id="btnPlay" class="col-sm-6 tvmbl btntvcard buttonlove" style="background:linear-gradient(to top, #00ff8a, #000000) !important;color:white;z-index:100; border-bottom:5px solid white">Live Video</button>
-     <button type="submit" id="btnscorecard" class="col-sm-6 tvmbl btntvcard buttonlove1" style="background:linear-gradient(to top, #00ff8a, #000000) !important;color:white;z-index:100;border-bottom:5px solid white;border-left:1px solid white;">Score Card</button>
- </div>
+
+  <div class="no-padding"
+       id="multimedia"
+       style="margin-bottom:-4px;background:linear-gradient(to top, #00ff8a, #000000) !important;z-index:100">
+
+    <!-- LIVE VIDEO -->
+    <button
+      type="button"
+      class="col-sm-6 tvmbl btntvcard buttonlove"
+      [class.active-btn]="activeTab === 'video'"
+      (click)="showTab('video')">
+
+      Live Video
+
+    </button>
+
+    <!-- SCORE CARD -->
+    <button
+      type="button"
+      class="col-sm-6 tvmbl btntvcard buttonlove"
+      [class.active-btn]="activeTab === 'score'"
+      (click)="showTab('score')">
+
+      Score Card
+
+    </button>
+
+  </div>
+
 </div>
-<div class="col-md-4 col-lg-4"> 
-   <iframe class="cardsscore col-md-4 col-sm-12 col-lg-4 no-padding" style="z-index:100; height: 320px ;display:none" id="video" frameborder="0"> </iframe>
-  <iframe control="0" class="cardsscore col-md-4 col-sm-12 col-lg-4 no-padding" id="scorecaed" frameborder="0" style="text-align: center;    margin-top: 1px;    height: 256px;    border-bottom: 5px solid white;    margin-bottom: -4px;    z-index: 100;"></iframe>
+
+<!-- VIDEO -->
+<div class="col-md-4 col-lg-4"
+     *ngIf="activeTab === 'video'">
+
+  <iframe
+    class="cardsscore col-md-12 no-padding"
+    [src]="videoUrl"
+    frameborder="0"
+    style="height:320px">
+
+  </iframe>
+
 </div>
-<div class="col-md-4 col-lg-4" *ngIf="!isMobile">
+
+<!-- SCORECARD -->
+<div class="col-md-4 col-lg-4"
+     *ngIf="activeTab === 'score'">
+
+  <iframe
+    class="cardsscore col-md-12 no-padding"
+    [src]="scoreCardUrl"
+    frameborder="0"
+    style="height:256px">
+
+  </iframe>
+
+</div>
+
+<div class="col-md-4 col-lg-4 d-none d-md-block"
+     *ngIf="betSlipService.bets().length > 0">
   <app-bet-slip
-  [selectionName]="selectedBet?.selectionName"
-  [type]="selectedBet?.type"    
-  [price]="selectedBet?.price"
-  [size]="selectedBet?.size"
-  [selectionId]="selectedBet?.selectionId"
-  [marketId]="selectedBet?.marketId"
-  [marketName]="selectedBet?.marketName"
-  [runnersCount]="market?.runners?.length || 0"
-  [eventId]="selectedBet?.eventId"
-  [clickedLocation]="selectedBet?.clickedLocation"
-  (closeEvent)="onCloseBetSlip()">
+    (closeEvent)="betSlipService.clear()">
   </app-bet-slip>
 </div>
+<div class="col-md-4 col-lg-4 d-none d-md-block">
+<app-user-bets></app-user-bets>
+</div>
 
 </div>
 
-<div class="mobile-modal"
-     *ngIf="showBetSlipModal && isMobile">
-
-  <div class="modal-overlay"
-       (click)="showBetSlipModal = false">
-  </div>
-
-  <div class="modal-content">
-    <app-bet-slip
-       [selectionName]="selectedBet?.selectionName"
-       [type]="selectedBet?.type"
-       [price]="selectedBet?.price"
-       [size]="selectedBet?.size"
-       [selectionId]="selectedBet?.selectionId"
-       [marketId]="selectedBet?.marketId"
-       [marketName]="selectedBet?.marketName"
-       [runnersCount]="market?.runners?.length || 0"
-       [eventId]="selectedBet?.eventId"
-       [clickedLocation]="1"
-      (closeEvent)="onCloseBetSlip()">
-    </app-bet-slip>
-  </div>
-
-</div>

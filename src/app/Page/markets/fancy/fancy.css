@@ -22,10 +22,10 @@ text-align: center;
 }
 .price {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
 }
 .size {
-  font-size: 12px;
+  font-size: 11px;
 }
 .prices-group {
   display: inline-flex;
@@ -62,7 +62,7 @@ text-align: center;
   }
 @media (max-width: 768px) {
   .runner-info {
-    width:  57%;
+    width:  65%;
   }
   .price-width{
    width: 41%;
@@ -91,4 +91,17 @@ text-align: center;
 
 .lay-box {
      background: rgb(255, 179, 179);
+}
+.status-box{
+font-size: 15px;
+}
+
+.profit {
+  color: #28a745; /* Bootstrap green */
+  font-weight: 600;
+}
+
+.loss {
+  color: #dc3545; /* Bootstrap red */
+  font-weight: 600;
 }

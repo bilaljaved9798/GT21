@@ -20,28 +20,37 @@
   <!-- Runner Info (Mobile full width, Desktop 8 cols) -->
   <div class="col-8 col-md-8 runner-info" style="float: left;">
     
-    <div class="d-flex justify-content-between align-items-center">
+   <div class="d-flex justify-content-between align-items-center">
 
-      <!-- Runner Name + Ellipsis -->
-      <div class="runner-name text-truncate">
-        {{ runner.RunnerName }}
-      </div>
+  <!-- Runner Name -->
+  <div class="runner-name text-truncate">
+    {{ runner?.RunnerName }}
+  </div>
 
-      <!-- PnL -->
-      <div 
-        class="pnl ms-2"
-        [ngClass]="{
-          'profit': runner.ProfitandLoss > 0,
-          'loss': runner.ProfitandLoss < 0
-        }"
-      >
-        {{ runner.ProfitandLoss }}
-      </div>
+  <!-- Right Side -->
+  <div class="d-flex align-items-center ms-2">
 
-      <!-- Button -->
-      <button class="btn btn-sm btn-primary ms-2">Book</button>
+    <!-- PnL -->
+  
 
-    </div>
+    <!-- Button -->
+    <button class="btn btn-sm btn-primary flex-shrink-0" style="float: left;">
+      Book
+    </button>
+     <div 
+  style="width: 90px; float: left;"
+  class="pnl me-2"
+>
+  <span *ngIf="(runner?.Profit ?? 0) > 0" class="profit">
+    {{ runner.Profit }}
+  </span>
+  <span *ngIf="(runner?.Loss ?? 0) < 0" class="loss">
+    {{ runner.Loss }}
+  </span>
+</div>
+  </div>
+
+</div>
 
   </div>
 
@@ -50,7 +59,7 @@
 
     <!-- Status -->
     <div 
-      *ngIf="runner?.MarketStatusStr === 'SUSPENDED' || runner?.MarketStatusStr === 'BALL_RUNNING'" 
+      *ngIf="runner?.MarketStatusStr === 'SUSPENDED' || runner?.MarketStatusStr === 'Ball Running'" 
       class="status-box text-center"
     >
       <div class="status-text">
@@ -59,17 +68,19 @@
     </div>
 
     <!-- Prices -->
-    <div *ngIf="runner?.MarketStatusStr !== 'SUSPENDED' && runner?.MarketStatusStr !== 'BALL_RUNNING'" 
+    <div *ngIf="runner?.MarketStatusStr !== 'SUSPENDED' && runner?.MarketStatusStr !== 'Ball Running'" 
          class="d-flex justify-content-between mt-2">
 
       <!-- Back -->
-      <div class="price-box back-box text-center flex-fill me-1" style="float: left;margin-right:2px">
+      <div class="price-box back-box text-center flex-fill me-1" style="float: left;margin-right:2px" (click)="showBetSlip(
+         runner.SelectionId, runner.RunnerName, 'back', (runner.Backprice || 0), 0, runner.MarketBookID, 'Fancy', (runner.BackSize || 0), 0)">
         <div class="price">{{ runner.Backprice }}</div>
         <div class="size">{{ runner.BackSize }}</div>
       </div>
 
       <!-- Lay -->
-      <div class="price-box lay-box text-center flex-fill ms-1">
+      <div class="price-box lay-box text-center flex-fill ms-1"  (click)="showBetSlip(
+         runner.SelectionId, runner.RunnerName, 'lay', (runner.Layprice || 0), 0, runner.MarketBookID, 'Fancy', (runner.LaySize || 0), 0)" style="margin-left:2px">
         <div class="price">{{ runner.Layprice }}</div>
         <div class="size">{{ runner.LaySize }}</div>
       </div>

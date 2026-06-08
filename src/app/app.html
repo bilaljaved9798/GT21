@@ -5,40 +5,13 @@
 
 <router-outlet></router-outlet>
 
-<!-- Desktop -->
-<div class="col-md-4 col-lg-4"
-     *ngIf="betSlipService.isOpen() && !isMobile">
-
-  <app-bet-slip
-    [selectionName]="betSlipService.selectedBet()?.selectionName"
-    [type]="betSlipService.selectedBet()?.type"
-    [price]="betSlipService.selectedBet()?.price"
-    [size]="betSlipService.selectedBet()?.size"
-    [selectionId]="betSlipService.selectedBet()?.selectionId"
-    [marketId]="betSlipService.selectedBet()?.marketId"
-    [marketName]="betSlipService.selectedBet()?.marketName"
-    [eventId]="betSlipService.selectedBet()?.eventId"
-    (closeEvent)="betSlipService.close()">
-  </app-bet-slip>
-
-</div>
-
-<!-- Mobile -->
 <div class="mobile-modal"
      *ngIf="betSlipService.isOpen() && isMobile">
 
-  <div class="modal-overlay"
-       (click)="betSlipService.close()">
-  </div>
+  <div class="overlay" (click)="betSlipService.close()"></div>
 
   <div class="modal-content">
-    <app-bet-slip
-      [selectionName]="betSlipService.selectedBet()?.selectionName"
-      [type]="betSlipService.selectedBet()?.type"
-      [price]="betSlipService.selectedBet()?.price"
-      [size]="betSlipService.selectedBet()?.size"
-      (closeEvent)="betSlipService.close()">
-    </app-bet-slip>
+    <app-bet-slip></app-bet-slip>
   </div>
 
 </div>

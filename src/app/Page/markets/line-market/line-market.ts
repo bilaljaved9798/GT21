@@ -1,12 +1,12 @@
 import { ChangeDetectorRef, Component, Inject, Input, PLATFORM_ID } from '@angular/core';
 import { MarketBook } from '../../../interface/MarketBook';
-import { interval, Subject, switchMap, takeUntil } from 'rxjs';
+import { interval, Subject, switchMap, takeUntil, catchError } from 'rxjs';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MarketService } from '../../../Services/marketservice';
 import { StorageService } from '../../../Services/storage-service';
-import { BetSlip } from '../../bet-slip/bet-slip';
 import { NumberFormatPipe } from "../../../Services/number-format-pipe";
+import { BetSlipService } from '../../../Services/bet-slip-service';
 
 @Component({
   selector: 'app-line-market',
@@ -21,7 +21,7 @@ userid: any;
  private destroy$ = new Subject<void>();
  isMobile = false;
  readonly priceSlots = 3;
-  constructor(private marketService: MarketService,private cdr: ChangeDetectorRef,@Inject(PLATFORM_ID) private platformId: Object) { 
+  constructor(private marketService: MarketService,private cdr: ChangeDetectorRef,private betSlipService: BetSlipService,@Inject(PLATFORM_ID) private platformId: Object) { 
 
    }
 
@@ -30,23 +30,50 @@ userid: any;
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('resize', this.onResize);
     }
-      this.marketService.getMarketsLine(this.eventId, this.userid)
-        .subscribe(res => {
-          this.marketBooks = res;
-          this.cdr.markForCheck();
-          this.loadMarketBooks();
+          this.marketService.getMarketsLine(this.eventId, this.userid)
+        .pipe(
+          catchError(error => {
+            if (error.name === 'AbortError' || error.status === 0) {
+              console.log('Initial line market request cancelled');
+              return [[]];
+            }
+            throw error;
+          })
+        )
+        .subscribe({
+          next: res => {
+            this.marketBooks = res;
+            this.cdr.markForCheck();
+            this.loadMarketBooks();
+          },
+          error: err => {
+            console.error('Initial line market error:', err);
+          }
         }); 
   }
 
   loadMarketBooks() {
-    interval(4000) // ⏱ every 1 second
+    interval(5000) // Increased to 5 seconds to reduce load
         .pipe(
           takeUntil(this.destroy$),
-          switchMap(() => this.marketService.getMarketsLine(this.eventId, this.userid))
+          switchMap(() => this.marketService.getMarketsLine(this.eventId, this.userid).pipe(
+            catchError(error => {
+              if (error.name === 'AbortError' || error.status === 0) {
+                console.log('Line market polling request cancelled');
+                return [[]]; // Return empty array
+              }
+              throw error;
+            })
+          ))
         )
-        .subscribe(res => {
-          this.marketBooks = res;
-          this.cdr.markForCheck();
+        .subscribe({
+          next: res => {
+            this.marketBooks = res;
+            this.cdr.markForCheck();
+          },
+          error: err => {
+            console.error('Line market polling error:', err);
+          }
         });
   }
    onResize = () => {
@@ -93,27 +120,27 @@ getLayPrices(runner: any) {
   ];
 }
 
-showBetSlip(
-  selectionId: string,
-  selectionName: string,
-  type: string,
-  price: number,
-  stake: number,
-  marketId: string,
-  marketName: string,
-  size: number,
-  index: number
-) {
-  // this.betSlipService.setBet({
-  //   selectionId,
-  //   selectionName,
-  //   type,
-  //   price,
-  //   stake,
-  //   size,
-  //   marketId,
-  //   marketName,
-  //   index
-  // });
-}
+ showBetSlip(
+    selectionId: number,
+    selectionName: string,
+    type: string,
+    price: number,
+    stake: number,
+    marketId: string,
+    marketName: string,
+    size: number,
+    index: number
+  ) {
+   this.betSlipService.addBet({
+    selectionId: selectionId,
+    selectionName: selectionName,
+    marketId: this.eventId,
+    marketName: marketName,
+    eventId: this.eventId,
+    type: type,
+    price: price,
+    size: 0,
+    categoryName: 'Fancy'
+  });
+  }
 }

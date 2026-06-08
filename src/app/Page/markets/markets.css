@@ -1,0 +1,45 @@
+.bet-not-allowed {
+  width: 100%;
+  margin: 6px 0 10px;
+  padding: 10px 12px;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  font-weight: 700;
+  text-align: center;
+}
+
+.price-box.bet-disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+.runnerselectedhorse {
+  border: 2px solid #00ff8a;
+  background: rgba(0,255,138,.15) !important;
+}
+.runner-name {
+  padding: 4px 8px;
+  transition: all .2s ease;
+}
+
+.runnerselectedhorse {
+  background: rgba(0,255,138,.15);
+  border-left: 4px solid #00ff8a;
+  font-weight: 600;
+}
+
+.selected-icon {
+  color: #00ff8a;
+  float: right;
+  font-weight: bold;
+}
+.clothnumstalldrawimg {
+  width: 32px;
+  min-width: 32px;
+  cursor: pointer;
+}
+.runnerwearing {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}

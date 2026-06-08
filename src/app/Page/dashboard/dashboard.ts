@@ -33,8 +33,13 @@ ngOnInit(): void {
     this.functionDashboard();
   }
 
-  getMarketsByEventType(eventType: string) {
-  return this.allMarkets.filter(m => m.mainSportsname === eventType);
+ getMarketsByEventType(eventType: string) {
+
+  return [...new Map(
+    this.allMarkets
+      .filter(m => m.mainSportsname === eventType)
+      .map(item => [item.marketId, item]) // distinct by marketId
+  ).values()];
 }
 
   functionDashboard() {

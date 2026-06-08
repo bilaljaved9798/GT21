@@ -1,43 +1,61 @@
-<h4>{{ marketboos?.mname }}</h4>
- <div class="runner-row col-md-12 col-lg-12"
-     *ngFor="let runner of marketboos?.section"
-     style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
+<div *ngFor="let marketbook of marketboos">
+  <h4 style="font-weight: bold;">{{ marketbook?.mname }}</h4>
 
-  <div class="runner-info col-md-6 col-lg-6">
+ <div class="runner-row col-md-12 col-lg-12" *ngFor="let runner of marketbook?.section; let k = index"  style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
+
+  <div class="runner-info col-md-8 col-8">
     <div class="runner-name">
       {{ runner.nat }}
       <div 
     class="pnl">
+    {{ runner.pnl }}
   </div>
     </div>  
   </div>
  
-  <div class="col-md-6 col-lg-6 margin">
-  
-<div class="prices-group back-group" style="float: right;">
-  <div class="price-box back-box"
-       *ngFor="let back of (isMobile ? (getBackPrices(runner.odds) | slice:0:1) : getBackPrices(runner.odds)); let i = index">
+<div class="col-md-4 col-4 margin position-relative">
 
-    <ng-container *ngIf="marketboos?.status === 'SUSPENDED'">
-      <div class="lock-icon">🔒</div>
-    </ng-container>
-    
-       <ng-container *ngIf="back && marketboos?.status !== 'SUSPENDED'" >
-      <div class="price">{{ back.odds }}</div>
-      <div class="size">{{ back.size | numberFormat }}</div>
-    </ng-container>
-     
+  <!-- LOCK OVERLAY -->
+  <div class="market-lock"
+       *ngIf="runner?.gstatus === 'Suspended'">
+
+    🔒 Suspended
+
   </div>
+
+  <!-- BACK -->
+  <div class="prices-group back-group"
+       [class.disabled-market]="runner?.gstatus === 'Suspended'"
+      >
+
+    <div class="price-box back-box"
+         *ngFor="let back of (isMobile ? (getBackPrices(runner.odds) | slice:0:1) : getBackPrices(runner.odds)); let i = index">
+
+      <div class="price">{{ k }}</div>
+
+      <div class="size">8.85</div>
+
+    </div>
+
+  </div>
+
+  <!-- LAY -->
+  <div class="prices-group lay-group"
+       style="margin-left: 2px;"
+       [class.disabled-market]="runner?.gstatus === 'Suspended'"
+      >
+
+    <div class="price-box lay-box text-center flex-fill ms-1"
+         *ngFor="let back of (isMobile ? (getBackPrices(runner.odds) | slice:0:1) : getBackPrices(runner.odds)); let i = index">
+
+      <div class="price">{{ k }}</div>
+
+      <div class="size">10.25</div>
+
+    </div>
+
+  </div>
+
 </div>
-<!-- <div class="prices-group lay-group" style="margin-left: 2px;">
-  <div class="price-box lay-box"
-       *ngFor="let lay of (isMobile ? (getLayPrices(runner.odds) | slice:0:1) : getLayPrices(runner.odds)); let i = index">
-       <ng-container *ngIf="lay && marketboos?.status !== 'SUSPENDED'" >
-      <div class="price">{{ lay.odds }}</div>
-      <div class="size">{{ lay.size | numberFormat }}</div>
-    </ng-container>
-     
-  </div>
-</div> -->
 </div>
 </div>

@@ -1,54 +1,115 @@
-<div class="login-wrapper">
+<head>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yT6oCmPAV/..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-  <div class="login-card text-center">
+</head>
+<div class="d-flex justify-content-center align-items-center min-vh-100">
 
-    <!-- LOGO -->
-    <img src="assets/logo.png" class="logo" alt="GT Exchange" />
+  <div class="user_card">
 
-    <h4 class="title">GT Exchange</h4>
-    <p class="text-muted mb-4">Login to your account</p>
+    <div class="brand_logo_header w-100 text-center">
+      GTEXCH
+    </div>
 
-    <form (ngSubmit)="login()" #loginForm="ngForm">
+    <div class="form_container mt-4 text-center">
 
-      <!-- Username -->
-      <div class="mb-3 text-start">
-        <label class="form-label">Username</label>
-        <input
-          type="text"
-          class="form-control"
-          name="username"
-          [(ngModel)]="model.username"
-          required
-          placeholder="Enter username"
-        />
-      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-      <!-- Password -->
-      <div class="mb-3 text-start">
-        <label class="form-label">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          name="password"
-          [(ngModel)]="model.password"
-          required
-          placeholder="Enter password"
-        />
-      </div>
+        <div class="input-icons">
+          <i class="fa fa-user icon"></i>
 
-      <!-- Button -->
-      <button type="submit" class="btn btn-primary w-100 btn-login"
-              [disabled]="loginForm.invalid">
-        Login
-      </button>
+          <input
+            type="text"
+            formControlName="username"
+            placeholder="Username"
+            class="input-field">
+        </div>
 
-      <!-- Error -->
-      <div class="mt-3 text-danger" *ngIf="errorMessage">
-        {{ errorMessage }}
-      </div>
+        <div class="input-icons">
 
-    </form>
+          <i class="fa fa-key icon"></i>
+
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            placeholder="Password"
+            class="input-field">
+          <i
+            class="fa"
+            [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
+            (click)="togglePassword()"
+            style="position:absolute;right:-325px;top:50%;transform:translateY(-50%);cursor:pointer;color:black">
+          </i>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input
+              type="checkbox"
+              name="rememberMe">
+            <strong> Remember Me</strong>
+          </label>
+        </div>
+
+        <div class="mt-3">
+          <button
+            type="submit"
+            class="btn1">
+            LOGIN
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+
+    <div class="main-container mt-4">
+
+      <p>
+        <strong><a href="#">About us</a> | </strong>
+
+        <strong>
+          <a href="/terms#cookiepolicy">
+            Cookie Policy
+          </a> |
+        </strong>
+
+        <strong>
+          <a href="/terms#term">
+            Terms & Conditions
+          </a> |
+        </strong>
+
+        <strong>
+          <a href="/terms#responsiblegambling">
+            Gambling can be addictive, please play responsibly
+          </a> |
+        </strong>
+
+        <strong>
+          <a href="/terms#parentalsupervision">
+            Parental Supervision
+          </a>
+        </strong>
+      </p>
+
+      <hr>
+
+      <p class="powered-box">
+
+        <span class="powerdby">
+          Powered by
+        </span>
+
+        <img
+          src="assets/betfair-logo.png"
+          alt="Betfair"
+          width="110"
+          height="40">
+
+      </p>
+
+    </div>
 
   </div>
-
 </div>

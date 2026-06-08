@@ -397,8 +397,6 @@ h9 {
     font-size: 15px !important;
 }
 
-.football-timeline {
-}
 
 .team-1,
 .team-2 {
@@ -496,7 +494,6 @@ h9 {
     background: -o-linear-gradient(bottom, #9c9c9c, #fff);
     background: -webkit-gradient( linear, left bottom, left top, from(#9c9c9c), to(#fff) );
     background: linear-gradient(0deg, #9c9c9c, #fff);
-    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#9c9c9c', GradientType=0);
 }
 
 .time-football {
@@ -583,7 +580,7 @@ h9 {
     font-size: 18px;
     border-radius: 2px;
     margin: 03px 4px;
-    float: right;
+    float:right;
     cursor: pointer;
     border: 2px solid white;
 }
@@ -1183,7 +1180,7 @@ cta-8:hover {
 }
 
 .Maintime {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 100;
     text-shadow: 0.3px 0.25px #ffffff;
 }
@@ -1290,14 +1287,6 @@ cta-8:hover {
     text-align: center;
     background: white;
     text-transform: uppercase;
-}
-
-.runnerfavorite .runnersname, .runnerfavorite .runnersnameHorse, .runnerfavorite .runnersnamenotrace {
-    /*color: #FF0000 !important;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 14px;*/
-  /*  text-transform: uppercase;*/
 }
 
 .suspended {
@@ -3154,22 +3143,20 @@ label {
 
     .user-bets-wrapper .bets-header .selection {
         width: 42% !important;
-        border-right: 1px solid white;
     }
 
     .user-bets-wrapper .bets-header .Amount {
         width: 25% !important;
-        border-right: 1px solid white;
     }
 
     .user-bets-wrapper .selection {
         width: 42%;
-        border-right: 1px solid black;
+    
     }
 
     .user-bets-wrapper .Odd {
         width: 25%;
-        border-right: 1px solid black;
+        
     }
 
 
@@ -3210,14 +3197,12 @@ label {
 .bets-headeruser .Amount {
     background: #075E54;
     width: 30% !important;
-    border-right: 1px solid #fff;
     font-size: 9px;
 }
 
 .bets-headeruser .amount {
     background: #075E54;
     width: 30% !important;
-    border-right: 1px solid #fff;
     font-size: 9px;
 }
 
@@ -3225,16 +3210,12 @@ label {
 .bets-header .Amount {
     background: #075E54;
     width: 20% !important;
-    border-right: 1px solid #fff;
-    border-left: 1px solid #fff;
     font-size: 9px;
 }
 
 .bets-header .odd {
     background: #075E54;
     width: 15% !important;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
 }
 
 
@@ -3242,8 +3223,6 @@ label {
     background: #075E54;
     width: 20%;
     float: left;
-    border-right: 1px solid #fff;
-    /*border-right: 1px solid;*/
 }
 
 
@@ -3844,14 +3823,14 @@ label {
     display: none;
 }
 
-.checkboxrunnername {
+/* .checkboxrunnername {
     display: none;
 }
 
 .checkboxrunnernameavg {
     display: none;
     float: left;
-}
+} */
 
 .backcircle {
     color: #72bbef;
@@ -4675,7 +4654,7 @@ a {
 
 
 .namestyle {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 500;
     text-transform: uppercase;
     margin-top: -6px;
@@ -7311,7 +7290,15 @@ a {
   align-items: center;
   justify-content: center;
 }
+.profit {
+  color: #28a745; /* Bootstrap green */
+  font-weight: 600;
+}
 
+.loss {
+  color: #dc3545; /* Bootstrap red */
+  font-weight: 600;
+}
 .status-text {
   padding: 10px;
 }

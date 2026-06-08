@@ -1,5 +1,5 @@
 export interface Runner {
-  selectionId: string;
+  selectionId: number;
   runnerName: string;
   statusStr: string;
   jockeyName: string;

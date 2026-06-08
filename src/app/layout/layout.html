@@ -1,7 +1,84 @@
 <header class="navbar">
   <button class="menu-btn" (click)="toggleSidebar()">☰</button>
-  <span class="title">Global Sports</span>
-  <button class="logout-btn" (click)="logout()">Logout</button>
+  <span class="title" (click)="gohome()">Global Sports</span>
+   <!-- Right User Dropdown -->
+  <div class="user-dropdown">
+
+  <div class="user-info"
+       (click)="toggleUserMenu($event)">
+
+    <span>{{ userName }}</span>
+    <span>▼</span>
+
+  </div>
+
+  <div class="dropdown-menu account-menu"
+       *ngIf="showUserMenu">
+
+   
+
+    <div class="account-stat">
+      <span>Balance</span>
+      <strong>{{ AccountBalance | number:'1.2-2' }}</strong>
+    </div>
+
+    <div class="account-stat">
+      <span>Liability</span>
+      <strong class="liability-value">{{ currentLiability | number:'1.2-2' }}</strong>
+    </div>
+
+    <button *ngIf="canManageUsers()" type="button" class="dropdown-item" (click)="goTo('create-user')">
+      Manage User
+    </button>
+
+    <button *ngIf="canViewActivity()" type="button" class="dropdown-item" (click)="goTo('view-activity')">
+      View Activity
+    </button>
+
+    <button *ngIf="canAddCredit()" type="button" class="dropdown-item" (click)="goTo('add-credit')">
+      Add/Remove Credit
+    </button>
+
+    <button type="button" class="dropdown-item" (click)="goTo('ledger')">
+      Ledger/Statement
+    </button>
+
+    <button type="button" class="dropdown-item" (click)="goTo('my-bets')">
+      My Bets
+    </button>
+
+    <button type="button" class="dropdown-item" (click)="goTo('profit-loss')">
+      Profit & Loss
+    </button>
+
+    <button *ngIf="canUseAdminTools()" type="button" class="dropdown-item" (click)="goTo('plus-minus-summary')">
+      Plus & Minus Summary
+    </button>
+
+    <button *ngIf="canUseAdminTools()" type="button" class="dropdown-item" (click)="goTo('pound-rate')">
+      Set Pound Rate
+    </button>
+
+    <button *ngIf="canUseAdminTools()" type="button" class="dropdown-item" (click)="goTo('fancy-result-post')">
+      Fancy Result Post
+    </button>
+
+    <button type="button" class="dropdown-item" (click)="goTo('change-password')">
+      Change Password
+    </button>
+
+    <button type="button" class="dropdown-item" (click)="goTo('activity-log')">
+      Activity Log
+    </button>
+
+    <button type="button" class="dropdown-item logout" (click)="logout()">
+      Log Out
+    </button>
+
+  </div>
+
+</div>
+
 </header>
 
 <div class="container">
@@ -15,59 +92,173 @@
       <span>Sports</span>
     </div>
 
-    <div class="submenu" *ngIf="openMenu === 'sports'">
+    <div class="submenu sports-submenu" *ngIf="openMenu === 'sports'">
 
       <!-- SPORT LIST -->
-      <a (click)="selectSport('Cricket')">Cricket</a>
+      <button
+        type="button"
+        class="sport-link"
+        [class.active]="selectedSport === 'Cricket'"
+        (click)="selectSport('Cricket')">
+        Cricket
+      </button>
         <!-- MATCH LIST -->
-      <div *ngIf="selectedSport==='Cricket' && !loading">
-       <div *ngFor="let match of soccerMatches"
-         class="submenu-item"
-         (click)="openMarket(match)">
+      <div class="event-submenu sports-events" *ngIf="selectedSport === 'Cricket'">
+        <div *ngIf="loading" class="submenu-state">Loading matches...</div>
 
-      {{ match.todayHorseRace }}
-       </div>
-        </div>
-      <a (click)="selectSport('Soccer')">Soccer</a>
-      <div *ngIf="selectedSport==='Soccer' && !loading">
-       <div *ngFor="let match of soccerMatches"
-         class="submenu-item"
-         (click)="openMarket(match)">
+        <button
+          type="button"
+          *ngFor="let match of soccerMatches"
+          class="submenu-event"
+          [title]="match.marketBookName || match.todayHorseRace"
+          [attr.aria-label]="match.marketBookName || match.todayHorseRace"
+          (click)="openMarket(match)">
+          <span class="submenu-event-icon">›</span>
+          <span class="submenu-event-name">
+            {{ match.marketBookName || match.todayHorseRace }}
+          </span>
+        </button>
 
-      {{ match.todayHorseRace }}
-       </div>
+        <div *ngIf="!loading && soccerMatches.length === 0" class="submenu-state">
+          No matches found
         </div>
-      <a (click)="selectSport('Tennis')">Tennis</a>
-      <div *ngIf="selectedSport==='Tennis' && !loading">
-       <div *ngFor="let match of soccerMatches"
-         class="submenu-item"
-         (click)="openMarket(match)">
+      </div>
 
-      {{ match.todayHorseRace }}
-       </div>
+      <button
+        type="button"
+        class="sport-link"
+        [class.active]="selectedSport === 'Soccer'"
+        (click)="selectSport('Soccer')">
+        Soccer
+      </button>
+      <div class="event-submenu sports-events" *ngIf="selectedSport === 'Soccer'">
+        <div *ngIf="loading" class="submenu-state">Loading matches...</div>
+
+        <button
+          type="button"
+          *ngFor="let match of soccerMatches"
+          class="submenu-event"
+          [title]="match.marketBookName || match.todayHorseRace"
+          [attr.aria-label]="match.marketBookName || match.todayHorseRace"
+          (click)="openMarket(match)">
+          <span class="submenu-event-icon">›</span>
+          <span class="submenu-event-name">
+            {{ match.marketBookName || match.todayHorseRace }}
+          </span>
+        </button>
+
+        <div *ngIf="!loading && soccerMatches.length === 0" class="submenu-state">
+          No matches found
         </div>
+      </div>
+
+      <button
+        type="button"
+        class="sport-link"
+        [class.active]="selectedSport === 'Tennis'"
+        (click)="selectSport('Tennis')">
+        Tennis
+      </button>
+      <div class="event-submenu sports-events" *ngIf="selectedSport === 'Tennis'">
+        <div *ngIf="loading" class="submenu-state">Loading matches...</div>
+
+        <button
+          type="button"
+          *ngFor="let match of soccerMatches"
+          class="submenu-event"
+          [title]="match.marketBookName || match.todayHorseRace"
+          [attr.aria-label]="match.marketBookName || match.todayHorseRace"
+          (click)="openMarket(match)">
+          <span class="submenu-event-icon">›</span>
+          <span class="submenu-event-name">
+            {{ match.marketBookName || match.todayHorseRace }}
+          </span>
+        </button>
+
+        <div *ngIf="!loading && soccerMatches.length === 0" class="submenu-state">
+          No matches found
+        </div>
+      </div>
+    </div>
+
+     <!-- Cricket -->
+    <div class="menu-item" *ngIf="isHorseAllowed" (click)="loadCricket(4)">
+       <img src="assets/images/Cricket.png" width="30">
+      <span>Cricket</span>
+    </div>
+
+    <div class="submenu event-submenu" *ngIf="openMenu === 'Cricket'">
+      <div *ngIf="loading" class="submenu-state">Loading matches...</div>
+
+      <button
+        type="button"
+        *ngFor="let match of soccerMatches"
+        class="submenu-event"
+        [title]="match.marketBookName || match.todayHorseRace"
+        [attr.aria-label]="match.marketBookName || match.todayHorseRace"
+        (click)="openMarket(match)">
+        <span class="submenu-event-icon">›</span>
+        <span class="submenu-event-name">
+          {{ match.marketBookName || match.todayHorseRace }}
+        </span>
+      </button>
+
+      <div *ngIf="!loading && soccerMatches.length === 0" class="submenu-state">
+        No matches found
+      </div>
     </div>
 
     <!-- HORSE RACING -->
-    <div class="menu-item" *ngIf="isHorseAllowed" (click)="toggleMenu('horse')">
+    <div class="menu-item" *ngIf="isHorseAllowed" (click)="loadHorse(7)">
       <img src="assets/images/Horse.png" width="30">
-      <a (click)="loadHorse(7)">Today Race</a>
+      <span>Today Race</span>
     </div>
 
-    <div class="submenu" *ngIf="openMenu === 'horse'">
-       <div *ngFor="let match of soccerMatches"
-       class="submenu-item"
-       (click)="openMarket(match)">
+    <div class="submenu event-submenu" *ngIf="openMenu === 'horse'">
+      <div *ngIf="loading" class="submenu-state">Loading matches...</div>
 
-    {{ match.marketBookName }}
+      <button
+        type="button"
+        *ngFor="let match of soccerMatches"
+        class="submenu-event"
+        [title]="match.marketBookName || match.todayHorseRace"
+        [attr.aria-label]="match.marketBookName || match.todayHorseRace"
+        (click)="openMarket(match)">
+        <span class="submenu-event-icon">›</span>
+        <span class="submenu-event-name">
+          {{ match.marketBookName || match.todayHorseRace }}
+        </span>
+      </button>
 
-  </div>
+      <div *ngIf="!loading && soccerMatches.length === 0" class="submenu-state">
+        No matches found
+      </div>
     </div>
 
     <!-- GREYHOUND -->
-    <div class="menu-item" *ngIf="isGreyhoundAllowed" (click)="loadGreyhound()">
+    <div class="menu-item" *ngIf="isGreyhoundAllowed" (click)="loadGreyhound(4339)">
       <img src="assets/images/Greyhound.png" width="30">
       <span>Greyhound</span>
+    </div>
+     <div class="submenu event-submenu" *ngIf="openMenu === 'Greyhound'">
+      <div *ngIf="loading" class="submenu-state">Loading matches...</div>
+
+      <button
+        type="button"
+        *ngFor="let match of soccerMatches"
+        class="submenu-event"
+        [title]="match.marketBookName || match.todayHorseRace"
+        [attr.aria-label]="match.marketBookName || match.todayHorseRace"
+        (click)="openMarket(match)">
+        <span class="submenu-event-icon">›</span>
+        <span class="submenu-event-name">
+          {{ match.marketBookName || match.todayHorseRace }}
+        </span>
+      </button>
+
+      <div *ngIf="!loading && soccerMatches.length === 0" class="submenu-state">
+        No matches found
+      </div>
     </div>
 
     <!-- OTHER ITEMS -->

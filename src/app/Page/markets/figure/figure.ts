@@ -5,25 +5,26 @@ import { Datum, Odd } from '../../../interface/fancymarket';
 import { MarketService } from '../../../Services/marketservice';
 import { StorageService } from '../../../Services/storage-service';
 import { NumberFormatPipe } from "../../../Services/number-format-pipe";
+import { BetSlipService } from '../../../Services/bet-slip-service';
 
 @Component({
   selector: 'app-figure',
-  imports: [CommonModule, NumberFormatPipe],
+  imports: [CommonModule],
   templateUrl: './figure.html',
   styleUrl: './figure.css',
 })
 export class Figure {
    @Input() eventId!: string;
  @Input() marketId!: string
-  market: any;
-    marketboos: Datum | null = null;
+  market: any=[];
+   marketboos: Datum[] =[];
   userid: any;
    selectedBet:any;
    readonly priceSlots = 1;
  isMobile = false;
 showBetSlipModal = false;
  private destroy$ = new Subject<void>();
-constructor(private marketService: MarketService,private cdr: ChangeDetectorRef,private storage: StorageService,@Inject(PLATFORM_ID) private platformId: Object) {
+constructor(private marketService: MarketService,public betSlipService: BetSlipService,private cdr: ChangeDetectorRef,private storage: StorageService,@Inject(PLATFORM_ID) private platformId: Object) {
       const info = this.storage.get<any>('userInfo');
       this.userid =  info?.user?.id;;
      }
@@ -36,8 +37,9 @@ constructor(private marketService: MarketService,private cdr: ChangeDetectorRef,
     this.marketService.markets$
   .pipe(takeUntil(this.destroy$))
   .subscribe(data => {
-    this.market = data.diamondRoot.data.find((x: any) => x?.gtype === 'cricketcasino') || null;
-     this.marketboos =this.market;
+    this.market = data?.diamondRoot?.data
+  ?.filter((x: any) => x?.gtype === 'cricketcasino') || [];
+  this.marketboos = this.market;
     });
   }
 
@@ -75,30 +77,32 @@ getLayPrices(Odds: Odd[] = []) {
     ...Array(Math.max(0, this.priceSlots - arr.length)).fill(null)
   ];
 }
-    showBetSlip(
-    selectionId: string,
+   showBetSlip(
+    
+    selectionId: number,
     selectionName: string,
     type: string,
     price: number,
     stake: number,
-    marketId: string,
+    MarketBookID: string,
     marketName: string,
     size: number,
     index: number
   ) {
     debugger;
-    this.selectedBet = {
-      selectionName: selectionName,
-      selectionId: selectionId,
-      type: type,
-      price: price,
-      size: size,
-      stake: stake,
-      marketId: marketId,
-      marketName: marketName
-    };
-    if (this.isMobile) {
-      this.showBetSlipModal = true;
-    }
+   this.betSlipService.addBet({
+    selectionId: selectionId,
+    selectionName: selectionName,
+    marketId: MarketBookID,
+    marketName: selectionName,
+    eventId: this.eventId,
+    type: type,
+    price: price,
+    size: size,
+    stack:0,
+    Clickedlocation:8, // 8 for figure market
+    runnersCount: 1, // or this.market?.runners?.length || 0
+    categoryName: 'Fancy'
+  });
   }
 }

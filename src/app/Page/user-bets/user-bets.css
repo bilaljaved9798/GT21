@@ -1,0 +1,88 @@
+.matched-bets {
+  width: 100%;
+  font-size: 17px;
+}
+
+/* Heading */
+.matched-unmatched-heading {
+  font-weight: 600;
+  background:transparent;
+  color: black;
+}
+
+/* Header */
+.bets-header-row {
+  display: flex;
+  align-items: center;
+  background: -webkit-linear-gradient(bottom,#1aa867,#0a0a0a);
+  color: white;
+  font-weight: 600;
+}
+
+/* Bet Row */
+.bets-row {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 42px;
+}
+
+/* BACK */
+.bets-row.back {
+  background: #b3d9ff;
+}
+
+/* LAY */
+.bets-row.lay {
+  background: #ffd1dc;
+}
+
+/* COMMON CELL STYLE */
+.selection,
+.odd,
+.amount {
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* 50% */
+.selection {
+  width: 50%;
+  font-weight: 500;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 25% */
+.odd {
+  width: 25%;
+  justify-content: center;
+  text-align: center;
+}
+
+/* 25% */
+.amount {
+  width: 25%;
+  justify-content: flex-end;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .matched-bets {
+    font-size: 12px;
+  }
+
+  .selection,
+  .odd,
+  .amount {
+    padding: 8px;
+  }
+}

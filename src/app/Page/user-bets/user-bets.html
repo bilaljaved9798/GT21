@@ -1,0 +1,97 @@
+<div class="user-bets-wrapper">
+
+     <div class="unmatched-bets">
+
+  <div class="matched-unmatched-heading">
+    <label>Unmatched Bets {{ unmatched.length }}</label>
+
+    <button style="float: right;margin-right: 7px;" class="btn btn-danger"
+            (click)="cancelAll()">
+      Cancel All
+    </button>
+  </div>
+
+ <!-- Header -->
+  <div class="bets-header-row">
+    <div>x</div>
+    <div class="selection">
+      Runner
+    </div>
+
+    <div class="odd">
+      Size
+    </div>
+
+    <div class="amount">
+      Price
+    </div>
+
+  </div>
+
+  <div *ngFor="let item of unmatched"
+       class="bets-items">
+
+    <div>
+      <button (click)="deleteBet(item.id)">X</button>
+    </div>
+
+    <div>{{ item.selectionName }}</div>
+    <div>{{ item.userOdd }}</div>
+    <div>{{ item.amount }}</div>
+
+  </div>
+
+</div>
+
+<div class="matched-bets">
+
+  <div class="matched-unmatched-heading">
+    <label>Matched Bets {{ matched.length }}</label>
+  </div>
+
+  <!-- Header -->
+  <div class="bets-header-row">
+
+    <div class="selection">
+      Runner
+    </div>
+
+    <div class="odd">
+      Size
+    </div>
+
+    <div class="amount">
+      Price
+    </div>
+
+  </div>
+
+  <!-- Rows -->
+  <div *ngFor="let item of matched">
+
+    <div
+      class="bets-row"
+      [ngClass]="{
+        'back': item.betType === 'back',
+        'lay': item.betType === 'lay'
+      }"
+    >
+
+      <div class="selection">
+        {{ item.selectionName }}
+      </div>
+
+      <div class="odd">
+        {{ item.userOdd }}
+      </div>
+
+      <div class="amount">
+        {{ item.amount }}
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</div>

@@ -1,25 +1,25 @@
 export interface FancyMarket  {
   AdjustmentFactor?: number | null;
   Average?: string;
-  BackSize?: string;
-  Backprice?: string;
+  BackSize?: number;
+  Backprice?: number;
   BettingAllowed?: boolean;
   Clothnumber?: string;
   ExchangePrices?: any; // You can define a proper interface if needed
   Handicap?: number | null;
   JockeyName?: string;
   LastPriceTraded?: number | null;
-  LaySize?: string;
-  Layprice?: string;
+  LaySize?: number;
+  Layprice?: number;
   Loss: number;
   MarketBookID: string;
   MarketStatusStr?: string;
   Matches?: any[]; // Replace with proper interface if available
   Orders?: any[];  // Replace with proper interface if available
-  ProfitandLoss: number;
+  Profit: number;
   RemovalDate?: Date | null;
   RunnerName: string;
-  SelectionId: string;
+  SelectionId: number;
   StallDraw?: string;
   StartingPrices?: any; // Define later if needed
   Status?: any;         // Enum or interface can be created
@@ -81,6 +81,7 @@ export interface Section {
     rdt: any;
     cno: any;
     sdraw: any;
+    pnl: any;
     odds: Odd[];
 }
 

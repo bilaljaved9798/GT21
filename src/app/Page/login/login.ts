@@ -2,42 +2,54 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../Services/auth-service';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Loaderservice } from '../../Services/loaderservice';
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,ReactiveFormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
 export class Login {
- loginData: any = {}
+   loginForm: FormGroup ;
+  showPassword = false;
   public loading: boolean = false;
-model = {
-    username: '',
-    password: ''
-  };
   errorMessage: string = '';
-   constructor(private router: Router, private authService: AuthService){}
+   constructor(private router: Router, private authService: AuthService,public _loaderservice:Loaderservice,private fb: FormBuilder){
+      this.loginForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      rememberMe: [false]
+    });
+   }
+
   ngOnInit() {
-    debugger;
-    // Check if user is already logged in
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/dashboard']);
     }
   }
 
+   togglePassword(): void {
+    this.showPassword = !this.showPassword;
+  }
+
   login() {
-    this.authService.login(this.model.username, this.model.password).subscribe(
+    this._loaderservice.show();
+      const username = this.loginForm.value.username;
+      const password = this.loginForm.value.password;
+
+    this.authService.login(username, password).subscribe(
       result => {
-        this.loading = false;
+        this._loaderservice.hide();
         //this.router.navigate(['/dashboard']);
       },
       error => {
-        this.loading = false;
-        this.errorMessage = this.authService.errorMessage.error;
+        this._loaderservice.hide();
+        this.errorMessage = 'Invalid login attempt';
       }
     );
   }
+  
   }
 

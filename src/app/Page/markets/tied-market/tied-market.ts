@@ -33,20 +33,11 @@ showBetSlipModal = false;
    if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('resize', this.onResize);
     }
-  //      this.marketService.gettied(this.eventId, this.marketId, this.userid)
-  //       .subscribe(res => {
-  //         this.market = res;
-  //         this.marketboos =
-  // this.market?.diamondRoot?.data?.find(
-  //   (x: any) => x?.mname === "TIED_MATCH"
-  // ) || null;
-  //         //var data1=this.market.diamondRoot.data.filter(x=>x.mname=="TIED_MATCH");
-  //         this.cdr.markForCheck();
-  //       }); 
+ 
   this.marketService.markets$
   .pipe(takeUntil(this.destroy$))
   .subscribe(data => {
-    this.marketboos = data.diamondRoot.data.find((x: any) => x?.mname === 'TIED_MATCH') || null;
+    this.marketboos = data?.diamondRoot?.data.find((x: any) => x?.mname === 'TIED_MATCH') || null;
   });
 
     }

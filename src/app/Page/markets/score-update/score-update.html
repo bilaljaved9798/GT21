@@ -1,0 +1,242 @@
+<div class="score-football" *ngIf="scoreData && mainSportsname === 'Soccer'">
+
+  <div class="row football-timeline">
+
+    <div class="col-12">
+
+      <div class="team-1">
+
+        <div class="score-star">
+          <i class="fa fa-star" style="color:forestgreen"></i>
+        </div>
+
+        <div class="score-team-info">
+
+          <div class="team-name-1">
+            {{ scoreData.score.home.name }}
+          </div>
+
+          <div class="team-score">
+            ({{ scoreData.score.home.score }}
+            -
+            {{ scoreData.score.away.score }})
+          </div>
+
+          <div class="team-name-2">
+            {{ scoreData.score.away.name }}
+          </div>
+
+        </div>
+
+        <div class="time-football">
+          Time:
+          {{ scoreData.timeElapsed }}'
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FIRST HALF -->
+
+    <div class="col-12 col-sm-6" style="width: 48%;padding-right: 10px;">
+
+      <div class="score-first-half timeline-bg">
+
+        <div
+          class="score-timeline"
+          [style.width.%]="firstHalfTimelineWidth"
+          style="background-color:green">
+        </div>
+
+        <!-- HOME GOALS -->
+
+        <div
+          *ngFor="let goal of firstHalfHomeGoals"
+          class="score-goal-home tooltip"
+          [style.margin-left.%]="firstHalfPosition(goal.matchTime)"
+          [title]="goal.teamName + ' - ' + goal.matchTime">
+
+          <i class="fas fa-futbol"></i>
+
+        </div>
+
+        <!-- AWAY GOALS -->
+
+        <div
+          *ngFor="let goal of firstHalfAwayGoals"
+          class="score-goal-away tooltip"
+          [style.margin-left.%]="firstHalfPosition(goal.matchTime)"
+          [title]="goal.teamName + ' - ' + goal.matchTime">
+
+          <i class="fas fa-futbol"></i>
+
+        </div>
+
+        <!-- HOME YELLOW -->
+
+        <div
+          *ngFor="let card of firstHalfHomeYellowCards"
+          class="score-yellow-card-home"
+          [style.margin-left.%]="firstHalfPosition(card.matchTime)"
+          [title]="card.teamName + ' - ' + card.matchTime">
+        </div>
+
+        <!-- AWAY YELLOW -->
+
+        <div
+          *ngFor="let card of firstHalfAwayYellowCards"
+          class="score-yellow-card-away"
+          [style.margin-left.%]="firstHalfPosition(card.matchTime)"
+          [title]="card.teamName + ' - ' + card.matchTime">
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SECOND HALF -->
+
+    <div class="col-12 col-sm-6" style="width: 48%;">
+
+      <div class="score-second-half timeline-bg">
+
+        <div
+          class="score-timeline"
+          [style.width.%]="secondHalfTimelineWidth"
+          style="background-color:green">
+        </div>
+
+        <div
+          *ngFor="let goal of secondHalfHomeGoals"
+          class="score-goal-home"
+          [style.margin-left.%]="secondHalfPosition(goal.matchTime)"
+          [title]="goal.teamName + ' - ' + goal.matchTime">
+
+          <i class="fas fa-futbol"></i>
+
+        </div>
+
+        <div
+          *ngFor="let goal of secondHalfAwayGoals"
+          class="score-goal-away"
+          [style.margin-left.%]="secondHalfPosition(goal.matchTime)"
+          [title]="goal.teamName + ' - ' + goal.matchTime">
+
+          <i class="fas fa-futbol"></i>
+
+        </div>
+
+        <div
+          *ngFor="let card of secondHalfHomeYellowCards"
+          class="score-yellow-card-home"
+          [style.margin-left.%]="secondHalfPosition(card.matchTime)"
+          [title]="card.teamName + ' - ' + card.matchTime">
+        </div>
+
+        <div
+          *ngFor="let card of secondHalfAwayYellowCards"
+          class="score-yellow-card-away"
+          [style.margin-left.%]="secondHalfPosition(card.matchTime)"
+          [title]="card.teamName + ' - ' + card.matchTime">
+        </div>
+
+      </div>
+
+    </div>
+
+   
+
+  </div>
+
+</div>
+
+<div class="scorecardT" style="text-align:left;" *ngIf="tennisScore && mainSportsname === 'Tennis'">
+
+  <div class="tennisser" style="float:left;width:25%">
+
+    <div class="teno text-truncate">
+      {{ tennisScore.playerA }}
+    </div>
+
+    <div class="teno text-truncate">
+      {{ tennisScore.playerB }}
+    </div>
+
+    <div class="teno" style="color:darkred;">
+      Set {{ tennisScore.currentSet }}
+      |
+      {{ tennisScore.setA }} : {{ tennisScore.setB }}
+    </div>
+
+  </div>
+
+  <div class="tennisScore" style="float:left;text-align:center;width:20%">
+
+    <div class="teno text-success fw-bold">
+      {{ tennisScore.playerASetScore }}
+    </div>
+
+    <div class="teno text-success fw-bold">
+      {{ tennisScore.playerBSetScore }}
+    </div>
+
+    <div class="teno">1</div>
+
+  </div>
+
+  <div
+    class="tennisScore"
+    style="float:left;border-right:1px solid black;text-align:center;width:10%">
+
+    <div class="teno text-success fw-bold">
+      {{ tennisScore.homeGame }}
+    </div>
+
+    <div class="teno text-success fw-bold">
+      {{ tennisScore.awayGame }}
+    </div>
+
+    <div class="teno">
+      {{ tennisScore.gameNumber }}
+    </div>
+
+  </div>
+
+  <div
+    class="tennisScore"
+    style="border-right:1px solid black;text-align:center;width:20%">
+
+    <div class="teno text-success fw-bold">
+      {{ tennisScore.homePoints }}
+    </div>
+
+    <div class="teno text-success fw-bold">
+      {{ tennisScore.awayPoints }}
+    </div>
+
+    <div class="teno">
+      Points
+    </div>
+
+  </div>
+
+  <div
+    class="tennisScore"
+    style="text-align:center;width:23%">
+
+    <div class="teno fw-bold">
+      {{ tennisScore.homeServiceBreaks }}
+    </div>
+
+    <div class="teno fw-bold">
+      {{ tennisScore.awayServiceBreaks }}
+    </div>
+
+    <div class="teno">
+      Srv Break
+    </div>
+
+  </div>
+
+</div>

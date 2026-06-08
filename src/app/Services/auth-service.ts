@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
-import { environment } from '../environments/environments';
 import { StorageService } from './storage-service';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',

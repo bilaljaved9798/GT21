@@ -1,0 +1,339 @@
+.betslip-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d7e3dd;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.16);
+  overflow: hidden;
+  color: #17231d;
+}
+
+.betslip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background: linear-gradient(to bottom, #111827, #168254);
+  color: #ffffff;
+}
+
+.betslip-title {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.betslip-subtitle {
+  display: block;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 12px;
+}
+
+.header-close {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.betslip-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+}
+
+.selection-section{display:flex;align-items:stretch;justify-content:space-between;gap:10px;min-width:0}
+
+.selection-copy {
+  min-width: 0;
+  flex: 1;
+  padding: 10px;
+  background: #f6faf8;
+  border: 1px solid #e1ebe6;
+}
+
+.section-label {
+  display: block;
+  color: #5f7169;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.selection-name {
+  display: block;
+  margin-top: 4px;
+  overflow: hidden;
+  color: #15241d;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.price-box {
+  min-width: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border: 1px solid #d9e3df;
+  background: #eef4f1;
+  color: #26342e;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.price-box strong {
+  font-size: 18px;
+}
+
+.price-box.back {
+  border-color: #91d7f4;
+  background: #d7f1fb;
+  color: #075985;
+}
+
+.price-box.lay {
+  border-color: #f6adc2;
+  background: #fde3eb;
+  color: #9f1239;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-row label {
+  color: #384a42;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stake-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cfdcd6;
+  background: #ffffff;
+}
+
+.stake-input-wrap span {
+  padding: 0 10px;
+  color: #64756e;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-control {
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  border: 0;
+  border-left: 1px solid #dce6e1;
+  outline: none;
+  padding: 0 10px;
+  color: #17231d;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.form-control:focus {
+  box-shadow: inset 0 0 0 2px #168254;
+}
+
+.stake-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.stake-buttons button {
+  min-height: 34px;
+  border: 1px solid #c9d8d1;
+  background: #f7fbf9;
+  color: #173328;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.summary-item {
+  padding: 10px;
+  border: 1px solid #dce7e2;
+  background: #f8fbfa;
+}
+
+.summary-item span,
+.summary-item strong {
+  display: block;
+}
+
+.summary-item span {
+  color: #65756f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.summary-item strong {
+  margin-top: 4px;
+  font-size: 16px;
+}
+
+.summary-item.profit strong {
+  color: #15803d;
+}
+
+.summary-item.loss strong {
+  color: #be123c;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.actions button {
+  min-height: 40px;
+  border: 0;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.btn-submit {
+  background: #168254;
+  color: #ffffff;
+}
+
+.btn-submit:disabled {
+  background: #9fb5ab;
+  cursor: not-allowed;
+}
+
+.empty-slip {
+  padding: 22px 14px;
+  color: #5f7169;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .betslip-card {
+    max-height: min(82dvh, 520px);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+
+  .betslip-header {
+    padding: 9px 12px;
+  }
+
+  .betslip-title {
+    font-size: 14px;
+  }
+
+  .betslip-subtitle {
+    font-size: 11px;
+  }
+
+  .betslip-header {
+    flex: 0 0 auto;
+  }
+
+  .betslip-body {
+    gap: 8px;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 10px 12px 0;
+  }
+
+  .selection-section {
+    flex-direction: column;
+  }
+
+  .price-box {
+    min-height: 40px;
+    flex-direction: row;
+  }
+
+  .form-control {
+    height: 36px;
+  }
+
+  .stake-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .stake-buttons button {
+    min-height: 30px;
+  }
+
+  .summary-item {
+    padding: 8px;
+  }
+
+  .actions {
+    grid-template-columns: 1fr 1fr;
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    margin: 0 -12px;
+    padding: 8px 12px max(8px, env(safe-area-inset-bottom));
+    background: #ffffff;
+    border-top: 1px solid #dce7e2;
+  }
+
+}
+
+@media (max-width: 360px) {
+  .betslip-header,
+  .betslip-body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .actions {
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.bet-error{
+  background: #ffebee;
+  color: #c62828;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  border: 1px solid #ef9a9a;
+}

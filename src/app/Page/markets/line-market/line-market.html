@@ -1,12 +1,12 @@
 <div>
-  <h3>LINE/FANCY MARKET</h3>
+  <h4 style="font-weight: bold;">LINE/FANCY MARKET</h4>
 <!-- Markets -->
 <div *ngFor="let item of marketBooks" class="marketbook" [attr.data-marketid]="item.marketId">
 
   <!-- Runners -->
   <div  class="runner-row col-md-12 col-lg-12" 
  *ngFor="let runner of item?.runners; let valueid = index"
-  [id]="'selection' + runner.selectionId.replace(' ', '')"
+  [id]="'selection' + runner.selectionId"
   style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
 
     <!-- Runner Name -->
