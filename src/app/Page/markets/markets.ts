@@ -17,6 +17,7 @@ import { UserbetService } from '../../Services/userbet-service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ScoreUpdate } from "./score-update/score-update";
 import { MultipleBetSlipService } from '../../Services/multiple-bet-slip-service';
+import { ScoreService } from '../../Services/score-service';
 
 @Component({
   selector: 'app-markets',
@@ -56,7 +57,7 @@ favoriteLaySize = '';
   videoUrl!: SafeResourceUrl;
   scoreCardUrl!: SafeResourceUrl;
   eventType:number = 4;
-  constructor(private marketService: MarketService, private sanitizer: DomSanitizer, public betSlipService: BetSlipService, private userbetService: UserbetService,
+  constructor(private marketService: MarketService, private sanitizer: DomSanitizer, public betSlipService: BetSlipService, private userbetService: UserbetService,private scoreService: ScoreService,
     private route: ActivatedRoute,public multiSlip: MultipleBetSlipService, private cdr: ChangeDetectorRef, private router: Router, private storage: StorageService, @Inject(PLATFORM_ID) private platformId: Object) {
     const info = this.storage.get<any>('userInfo');
     this.model.userId = info?.user?.id;
@@ -88,7 +89,7 @@ favoriteLaySize = '';
        setTimeout(() => {
           this.refreshMarket();
           this.loadMarkets();
-        }, 400);
+        }, 100);
       }
     });
 
@@ -105,6 +106,9 @@ favoriteLaySize = '';
   });
 }
 
+getothersccorMarket(){
+
+}
 private calculateMultipleOdds(): void {
 
   if (this.selectedRunners.length < 2) {
@@ -194,6 +198,11 @@ private calculateMultipleOdds(): void {
         this.loadMarkets()
         if (this.mainsportsname === 'Cricket') {
           this.marketService.startPolling(this.eventId, this.model.selectedMarketId, this.model.userId);
+        }
+        if (this.mainsportsname === 'Soccer') {
+          this.scoreService.getothersportsScore(this.eventId,this.model.userId).subscribe(scoreRes => {
+            this.matchData = scoreRes;
+          });
         }
       });
     }

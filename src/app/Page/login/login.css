@@ -153,7 +153,9 @@
         color: white;
         border-radius: 2px;
         font-weight: 800;
+        font-size: large;
         transition: 0.3s ease;
+
         font-family: "Times New Roman", Times, serif;
     }
 

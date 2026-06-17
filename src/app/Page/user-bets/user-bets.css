@@ -14,7 +14,7 @@
 .bets-header-row {
   display: flex;
   align-items: center;
-  background: -webkit-linear-gradient(bottom,#1aa867,#0a0a0a);
+  background:linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0));
   color: white;
   font-weight: 600;
 }

@@ -14,7 +14,7 @@
   justify-content: space-between;
   gap: 12px;
   padding: 12px 14px;
-  background: linear-gradient(to bottom, #111827, #168254);
+  background:linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0));
   color: #ffffff;
 }
 

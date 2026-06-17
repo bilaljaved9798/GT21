@@ -64,8 +64,14 @@ ngOnInit(): void {
      this.activeCategory = category;
    }
   getCount(category: string): number {
-    return this.allMarkets.filter(x => x.mainSportsname === category).length;
+    return new Set(
+  this.allMarkets
+    .filter(x => x.mainSportsname === category)
+    .map(x => x.marketId)
+).size;
+    //return this.allMarkets.filter(x => x.mainSportsname === category).length;
   }
+
 
 addHours(dateValue: any, hours: number): Date {
   const date = new Date(dateValue);

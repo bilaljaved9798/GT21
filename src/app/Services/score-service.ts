@@ -21,4 +21,9 @@ constructor(private http: HttpClient) {}
       `${this.baseUrl}CricketScoreApi/CreateScoreCard?EventID=${eventId}`
     );
   }
+  getothersportsScore(eventId: string, userId: string): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}CricketScoreApi/GetOtherSoccer?EventID=${eventId};userId=${userId}  `
+    );
+  }
 }

@@ -2879,7 +2879,7 @@ label {
 .marketname {
     float: left;
     color: white;
-    background: linear-gradient(to bottom, #000, #35c483) !important; 
+    background:linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0));
     width: 100% !important;
     text-align: center;
     border:1px solid black;
@@ -5536,9 +5536,9 @@ a {
 
 
     .tvmbl {
-        width: 50.6%;
+        width: 49.5%;
         font-weight: 700;
-        margin-left: -1.29%;
+        margin-left: 0.29%;
         text-shadow: 1px 1px #000000;
         letter-spacing: 0.5px;
     }
@@ -7100,7 +7100,7 @@ a {
 .runner-row {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
   padding: 2px 2px;
   font-family: Arial, sans-serif;
 }

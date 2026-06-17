@@ -1,6 +1,6 @@
 .navbar {
   height: 56px;
-  background: linear-gradient(to bottom, #000,#35c483);
+  background:linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0));
   color: white;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@
 
 .sidebar {
   width: 240px;
-  background: linear-gradient(to bottom, #35c483, #000);
+  background: linear-gradient(rgb(0, 255, 138), rgb(0, 0, 0));
   color: white;
   transition: 0.3s;
   height: calc(100vh - 56px);
@@ -49,6 +49,8 @@
   cursor: pointer;
   gap: 10px;
   min-width: 0;
+  font-size: 20px;
+   color: white;
 }
 
 .menu-item span {
@@ -204,10 +206,10 @@
 }
 
 .account-menu {
-  width: 155px;
-  max-height: min(78vh, 560px);
   overflow-y: auto;
   border-radius: 8px;
+  margin-left: -13px;
+  width: auto;
 }
 
 .account-summary {
@@ -218,15 +220,15 @@
 }
 
 .account-stat {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 10px 14px;
+  gap: 3px;
+  padding: 6px 20px;
   border-bottom: 1px solid #e5e7eb;
-  background: #f8fafc;
   color: #111827;
-  font-size: 13px;
+  font-size: 15px;
+  background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
 }
 
 .account-stat strong {
@@ -243,10 +245,10 @@
   display: block;
   width: 100%;
   border: 0;
-  background: #ffffff;
+  background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
   color: #111827;
 
-  padding: 12px 16px;
+  padding: 6px 20px;
 
   text-decoration: none;
 
