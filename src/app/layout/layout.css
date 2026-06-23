@@ -12,11 +12,12 @@
 }
 
 .menu-btn, .logout-btn {
-  background: none;
+  background: transparent;
   border: none;
   color: white;
-  font-size: 18px;
+  font-size: 24px;
   cursor: pointer;
+  margin-right: 130px;
 }
 
 .container {
@@ -150,7 +151,7 @@
 .content {
   flex: 1;
   min-width: 0;
-  padding: 10px;
+  padding: 3px !important;
   overflow-x: hidden;
 }
 
@@ -209,7 +210,7 @@
   overflow-y: auto;
   border-radius: 8px;
   margin-left: -13px;
-  width: auto;
+  width: max-content;
 }
 
 .account-summary {
@@ -324,7 +325,7 @@
   }
 
   .title {
-    font-size: 16px;
+    font-size: 23px;
     max-width: 45vw;
     overflow: hidden;
     text-overflow: ellipsis;

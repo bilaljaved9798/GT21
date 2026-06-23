@@ -1061,8 +1061,8 @@ cta-8:hover {
 }
 
 .btntvcard {
-    background: -webkit-linear-gradient(top, rgb(53, 196, 131), rgb(0, 0, 0)) !important;
-    height: 33px;
+  background: linear-gradient( to top, rgb(0, 255, 138), rgb(0, 0, 0));
+  height: 33px;
 }
 
 .reletedeventbackground {
@@ -4113,14 +4113,13 @@ a {
 }
 
 .inplaydatarow {
-    float: left;
-    font-size: 16px;
-    font-weight: bold;
-    border-bottom: 1px solid #e2e1e1;
-    box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px,rgba(200, 255, 250, 0.25) 0px -12px 30px,rgba(255, 255, 255, 0.2) 0px 4px 6px,rgba(150, 255, 240, 0.3) 0px 12px 13px,rgba(255, 255, 255, 0.15) 0px -3px 5px;
-    width: 100%;
-    margin-bottom: 0px;
-    background-color: white;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #e2e1e1;
+  background: linear-gradient( to top, #ffffff2b 92%, #00ff451f 53%) !important; width: 100%;
+  margin-bottom: -2px !important;
+  background-color: white;
 }
 
     .inplaydatarow a:hover {
@@ -5485,16 +5484,15 @@ a {
         float: right;
     }
 
-    .inplaydatarow {
-        border-bottom: 1px solid #e2e1e1;
-        /*  text-shadow: 0.3px 0.3px #000000;*/
-        float: left;
-        font-size: 13.5px;
-        font-weight: 500;
-        width: 100%;
-        margin-bottom: 1px;
-       
-    }
+  .inplaydatarow {
+    Text-shadow: 0.3px 0.3px #000000;
+    float: left;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 13.5px;
+    font-weight: 500;
+    width: 100%;
+    margin-bottom: -1px !important
+  }
 
     .bslipl {
         margin-left: -10px;
@@ -7093,7 +7091,7 @@ a {
   color: #666;
 }
 .runner-row {
-  display: flex;
+  display: -webkit-box;
   align-items: center;
   background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
   padding: 2px 2px;
@@ -7252,8 +7250,8 @@ a {
   .runner-price-box {
     display: none;
   }
-  .margin{
-   margin: auto;
+  .margin {
+    margin: -1px 1px 0px 22px
   }
 .runner-info {
   width: 58%;
@@ -7277,9 +7275,9 @@ a {
 }
 .status-box {
   height: 100%;
-  background: #000000;
+  background: white;
   opacity: 0.98;
-  color: #fff;
+  color: red;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -7288,6 +7286,7 @@ a {
 .profit {
   color: #28a745; /* Bootstrap green */
   font-weight: 600;
+  
 }
 
 .loss {

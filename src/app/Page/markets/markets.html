@@ -1,148 +1,135 @@
 <div class="container-fluid">
 <div class="row">
-<div class="col-md-8 col-lg-8">
-<div class="col-md-12 no-padding marketinfo">
-  <div
-    class="marketname"
-  >
-    <span class="Maintime" [id]="'lblStartTime' + market?.marketId">
-      {{ formatDate(matchStartTime)}}
-    </span>
-   
-   <span [ngClass]="getStatusClass(market?.marketStatusstr)">
-  {{ getStatusText(market?.marketStatusstr) }}
-</span>
+  <div class="col-md-8 col-lg-8">
+    <div class="col-md-12 no-padding marketinfo">
+      <div class="marketname">
+        <span class="Maintime" [id]="'lblStartTime' + market?.marketId">
+          {{ formatDate(matchStartTime)}}
+        </span>
+
+        <span>
+          {{ getStatusText(market?.marketStatusstr) }}
+        </span>
+
+
+        <br />
+
+        <span class="namestyle">
+          <span style="margin-top:3px !important;"
+                title="Rules"
+                class="rule active1"
+                (click)="showMarketRules(market?.mainSportsname ?? '', market?.marketBookName ?? '', market?.runners?.length ?? 0)">
+          </span>
+
+          <img class="timrimg"
+               [src]="getMarketImages(market?.mainSportsname || '')"
+               *ngIf="getMarketImages(market?.mainSportsname || '')"
+               style="height:35px" />
+
+          {{ market?.marketBookName || '' }}
+        </span>
+      </div>
+    </div>
+    <app-score-update *ngIf="mainsportsname != 'Cricket' "></app-score-update>
     <br />
+    <div class="favoriteselection"
+         *ngIf="selectedRunners.length > 0"
+         [style.display]="selectedRunners.length > 1 ? 'block' : 'none'">
 
-    <span class="namestyle">
-      <span
-        style="margin-top:3px !important;"
-        title="Rules"
-        class="rule active1"
-        (click)="showMarketRules(market?.mainSportsname ?? '', market?.marketBookName ?? '', market?.runners?.length ?? 0)"
-      >
-      </span>
-
-      <img
-        class="timrimg"
-        [src]="getMarketImages(market?.mainSportsname || '')"
-        *ngIf="getMarketImages(market?.mainSportsname || '')"
-        style="height:35px"
-      />
-
-      {{ market?.marketBookName || '' }}
-    </span>
-  </div>
-</div>
- <app-score-update *ngIf="mainsportsname != 'Cricket' "></app-score-update>
-<br />
-<div
-  class="favoriteselection"
-  *ngIf="selectedRunners.length > 0"
-  [style.display]="selectedRunners.length > 1 ? 'block' : 'none'"
->
-
- <div class="favoriteselectionname">
-    {{ favoriteSelectionName }}
-  </div>
-
-  <div class="favoritepricebackandlay">
-
-    <div
-      class="favoritebackprice"
-      (click)="showMultiRunnerBetSlip('back')">
-
-      {{ favoriteBackPrice }}
-    </div>
-
-    <div
-      class="favoritelayprice"
-      (click)="showMultiRunnerBetSlip('lay')">
-
-      {{ favoriteLayPrice }}
-    </div>
-
-  </div>
-
-  <div class="favoritesizebackandlay">
-
-    <div class="favoritebacksize">
-      {{ favoriteBackSize }}
-    </div>
-
-    <div class="favoritelaysize">
-      {{ favoriteLaySize }}
-    </div>
-
-  </div>
-
-</div>
-
-<div class="bet-not-allowed" *ngIf="betNotAllowedMessage">
-  {{ betNotAllowedMessage }}
-</div>
- <!-- RUNNER NAME -->
- <div
-  class="runner-row col-md-12 col-lg-12"
-  *ngFor="let runner of market?.runners"
-  [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)"
-  [id]="'selection' + runner.selectionId"
-  style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
-
-  <!-- RUNNER INFO -->
-  <div class="runner-info col-md-6 col-lg-6">
-    <!-- Horse Silk -->
-  <div
-    *ngIf="runner.wearingURL"
-    class="clothnumstalldrawimg"
-    (click)="onRunnerClick(runner)"
-  >
-    <img
-      class="runnerwearing"
-      [src]="getWearingUrl(runner.wearingURL)"
-    
-      (error)="onImageError($event)"
-    />
-  </div>
-    <div class="runner-name" style="width:100%"  [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)"
-  (click)="onRunnerClick(runner)">
-          {{ runner.runnerName }}
-           <span
-    *ngIf="isRunnerSelected(runner.selectionId)"
-    class="selected-icon"
-  >
-    ✓
-  </span>
-      <div 
-    class="pnl"
-    [ngClass]="{
-      'profit': runner.profitandLoss > 0,
-      'loss': runner.profitandLoss < 0
-    }"
-  >
-    {{ runner.profitandLoss }}
-  </div>
-    </div>  
-     <div class="runner-price-box">
-      <div class="last-price">
-        {{ runner.lastPriceTraded }}
+      <div class="favoriteselectionname">
+        {{ favoriteSelectionName }}
       </div>
-      <div class="total-matched">
-        {{ runner.totalMatched }}
+
+      <div class="favoritepricebackandlay">
+
+        <div class="favoritebackprice"
+             (click)="showMultiRunnerBetSlip('back')">
+
+          {{ favoriteBackPrice }}
+        </div>
+
+        <div class="favoritelayprice"
+             (click)="showMultiRunnerBetSlip('lay')">
+
+          {{ favoriteLayPrice }}
+        </div>
+
       </div>
+
+      <div class="favoritesizebackandlay">
+
+        <div class="favoritebacksize">
+          {{ favoriteBackSize }}
+        </div>
+
+        <div class="favoritelaysize">
+          {{ favoriteLaySize }}
+        </div>
+
+      </div>
+
     </div>
-  </div>
- 
-  <div class="col-md-6 col-lg-6 margin" >
+
+    <div class="bet-not-allowed" *ngIf="betNotAllowedMessage">
+      {{ betNotAllowedMessage }}
+    </div>
   
 
-  <!-- BACK -->
-<div class="prices-group back-group">
-  <div class="price-box back-box"      
-      *ngFor="let back of (isMobile ? (getBackPrices(runner).slice().reverse() | slice:0:1) : getBackPrices(runner).slice().reverse()); let i = index"
-       [class.empty]="!back"
-       [class.bet-disabled]="back && !isBettingAllowed()"
-       (click)="back && showBetSlip(
+
+    <!-- RUNNER NAME -->
+    <div class="runner-row col-md-12 col-lg-12"
+         *ngFor="let runner of market?.runners"
+         [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)"
+         [id]="'selection' + runner.selectionId"
+         style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
+
+      <!-- RUNNER INFO -->
+      <div class="runner-info col-md-6 col-lg-6">
+        <!-- Horse Silk -->
+        <div *ngIf="runner.wearingURL"
+             class="clothnumstalldrawimg"
+             (click)="onRunnerClick(runner)">
+          <img class="runnerwearing"
+               [src]="getWearingUrl(runner.wearingURL)"
+               (error)="onImageError($event)" />
+        </div>
+        <div class="runner-name" style="width:100%" [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)"
+             (click)="onRunnerClick(runner)">
+          {{ runner.runnerName }}
+          <span *ngIf="isRunnerSelected(runner.selectionId)"
+                class="selected-icon">
+            ✓
+          </span>
+          <div class="pnl"
+               [ngClass]="{
+               'profit' : runner.profitandLoss>
+            0,
+            'loss': runner.profitandLoss < 0
+            }"
+            >
+            {{ runner.profitandLoss }}
+          </div>
+        </div>
+        <div class="runner-price-box">
+          <div class="last-price">
+            {{ runner.lastPriceTraded }}
+          </div>
+          <div class="total-matched">
+            {{ runner.totalMatched }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-6 margin">
+
+
+        <!-- BACK -->
+        <div class="prices-group back-group">
+          <div class="price-box back-box"
+               *ngFor="let back of (isMobile ? (getBackPrices(runner).slice().reverse() | slice:0:1) : getBackPrices(runner).slice().reverse()); let i = index"
+               [class.empty]="!back"
+               [class.bet-disabled]="back && !isBettingAllowed()"
+               (click)="back && showBetSlip(
          runner.selectionId,
          runner.runnerName,
          'back',
@@ -154,21 +141,21 @@
          i
        )">
 
-    <ng-container *ngIf="back">
-      <div class="price">{{ back.price }}</div>
-      <div class="size">{{ back.size | numberFormat }}</div>
-    </ng-container>
+            <ng-container *ngIf="back">
+              <div class="price">{{ back.price }}</div>
+              <div class="size">{{ back.size | numberFormat }}</div>
+            </ng-container>
 
-  </div>
-</div>
+          </div>
+        </div>
 
-  <!-- LAY -->
-<div class="prices-group lay-group" style="margin-left: 2px;">
-  <div class="price-box lay-box"
-       *ngFor="let lay of (isMobile ? (getLayPrices(runner) | slice:0:1) : getLayPrices(runner)); let i = index"
-       [class.empty]="!lay"
-       [class.bet-disabled]="lay && !isBettingAllowed()"
-       (click)="lay && showBetSlip(
+        <!-- LAY -->
+        <div class="prices-group lay-group" style="margin-left: 2px;">
+          <div class="price-box lay-box"
+               *ngFor="let lay of (isMobile ? (getLayPrices(runner) | slice:0:1) : getLayPrices(runner)); let i = index"
+               [class.empty]="!lay"
+               [class.bet-disabled]="lay && !isBettingAllowed()"
+               (click)="lay && showBetSlip(
          runner.selectionId,
          runner.runnerName,
          'lay',
@@ -180,41 +167,40 @@
          i
        )">
 
-    <ng-container *ngIf="lay">
-      <div class="price">{{ lay.price }}</div>
-      <div class="size">{{ lay.size | numberFormat }}</div>
-    </ng-container>
+            <ng-container *ngIf="lay">
+              <div class="price">{{ lay.price }}</div>
+              <div class="size">{{ lay.size | numberFormat }}</div>
+            </ng-container>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <app-toss [eventId]="eventId" *ngIf="mainsportsname=='Cricket'"></app-toss> -->
+    <div class="runner-row col-md-12 col-lg-12" *ngIf="mainsportsname=='Cricket'">
+      <app-line-market [eventId]="eventId || ''">
+      </app-line-market>
+    </div>
+
+    <div class="col-md-12 col-lg-12" *ngIf="mainsportsname=='Cricket'">
+      <div class="col-sm-12 col-md-6 col-lg-6 no-padding">
+        <app-fancy [eventId]="eventId || ''"
+                   [marketId]="model.selectedMarketId|| ''">
+        </app-fancy>
+      </div>
+      <div class="col-sm-12  col-md-6 col-lg-6 no-padding">
+        <app-figure [eventId]="eventId || ''"
+                    [marketId]="model.selectedMarketId|| ''"></app-figure>
+      </div>
+    </div>
+
+    <app-tied-market *ngIf="mainsportsname=='Cricket'"
+                     [eventId]="eventId || ''"
+                     [marketId]="model.selectedMarketId|| ''">
+    </app-tied-market>
 
   </div>
-</div>
-</div>
-</div>
-
-        <!-- <app-toss [eventId]="eventId" *ngIf="mainsportsname=='Cricket'"></app-toss> -->
-<div class="runner-row col-md-12 col-lg-12" *ngIf="mainsportsname=='Cricket'" >
-  <app-line-market [eventId]="eventId || ''"> 
-  </app-line-market> 
-</div>
-
-<div class="col-md-12 col-lg-12" *ngIf="mainsportsname=='Cricket'" >
-    <div class="col-sm-12 col-md-6 col-lg-6 no-padding" >                     
-             <app-fancy
-             [eventId]="eventId || ''"
-             [marketId]="model.selectedMarketId|| ''" >
-            </app-fancy> 
-       </div>
-   <div class="col-sm-12  col-md-6 col-lg-6 no-padding" >
-     <app-figure [eventId]="eventId || ''"
-             [marketId]="model.selectedMarketId|| ''" ></app-figure> 
-  </div>
-</div>
-
- <app-tied-market *ngIf="mainsportsname=='Cricket'"
-  [eventId]="eventId || ''"
-  [marketId]="model.selectedMarketId|| ''">
-</app-tied-market> 
-
-</div>
 
 <div class="col-md-4 col-lg-4">
 

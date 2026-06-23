@@ -62,10 +62,10 @@ text-align: center;
   }
 @media (max-width: 768px) {
   .runner-info {
-    width:  65%;
+    width:  62%;
   }
   .price-width{
-   width: 41%;
+   width: 42%;
   }
 }
 .runner-name {
