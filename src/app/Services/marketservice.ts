@@ -6,6 +6,7 @@ import { FancyMarket } from '../interface/fancymarket';
 import { MarketBook } from '../interface/MarketBook';
 import { StorageService } from './storage-service';
 import { environment } from '../../environments/environment';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 @Injectable({ providedIn: 'root' })
 export class MarketService {
@@ -251,10 +252,9 @@ export class MarketService {
     );
   }
 
-  getVideoUrl(sportId: number, eventId: string): Observable<string> {
-    return this.http.get(
-      `${this.baseUrl}MarketApi/GetTvLinks?sportId=${sportId}&eventId=${eventId}`,
-      { responseType: 'text' }
-    );
-  }
+getVideoUrl(sportId: number, eventId: string): Observable<any[]> {
+  return this.http.get<any[]>(
+    `${this.baseUrl}MarketApi/GetCardLinks?eventId=${eventId}`
+  );
+}
 }

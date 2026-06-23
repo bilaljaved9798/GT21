@@ -498,16 +498,16 @@ private calculateMultipleOdds(): void {
 
 showTab(tab: 'video' | 'score') {
 
-  this.marketService
-    .getVideoUrl(this.eventType, this.eventId)
-    .subscribe(url => {
-
+  this.marketService.getVideoUrl(this.eventType, this.eventId)
+  .subscribe(url => {
+    var link= url;
+   var scorecardLink = link.find(x => x.EventID===this.eventId)?.scorecard;
       this.videoUrl =
-        this.sanitizer.bypassSecurityTrustResourceUrl(url);
+        this.sanitizer.bypassSecurityTrustResourceUrl("");
 
       if (tab === 'score') {
         this.scoreCardUrl =
-          this.sanitizer.bypassSecurityTrustResourceUrl('https://serviceapi.fairgame7.com/getIframeUrl/471734455?sportType=football&isTv=true&isScore=true');
+          this.sanitizer.bypassSecurityTrustResourceUrl(scorecardLink || '');
       }
 
       this.activeTab = tab;
