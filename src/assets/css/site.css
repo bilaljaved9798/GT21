@@ -5019,19 +5019,14 @@ a {
         }
     }
 
-
-
-
-
-
     .score-first-half {
-        width: 51%;
+        width: 50%;
         float: left;
         margin-left: -11px;
     }
 
     .score-second-half {
-        width: 51%;
+        width: 50%;
         float: right;
         margin-top: 13.98px;
         margin-right: -10.5px;
