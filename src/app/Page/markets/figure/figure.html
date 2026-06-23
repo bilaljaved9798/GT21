@@ -1,5 +1,7 @@
 <div *ngFor="let marketbook of marketboos">
-  <h4 style="font-weight: bold;">{{ marketbook?.mname }}</h4>
+  <div style="font-weight: bold; color: white; align-content: center; height: 35px; background: linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0)) " >{{ marketbook?.mname }}
+
+  </div>
 
  <div class="runner-row col-md-12 col-lg-12" *ngFor="let runner of marketbook?.section; let k = index"  style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
 

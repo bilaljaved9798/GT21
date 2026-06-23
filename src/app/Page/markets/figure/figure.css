@@ -23,7 +23,8 @@
 
   z-index: 99;
 
-  background: rgba(0, 0, 0, 0.45);
+  background: white;
+  color:red !important;
 
   display: flex;
   align-items: center;
