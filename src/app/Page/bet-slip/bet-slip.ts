@@ -122,8 +122,12 @@ oddsChange = computed(() => {
   }
 
 submitBet() {
-
+ 
   const b = this.bet();
+
+  if(b?.Clickedlocation === 8 || b?.Clickedlocation === 9){
+    b.runnersCount = 0;
+  }
 
   if (!b || this.submitting() || this.stake() <= 0) return;
 
