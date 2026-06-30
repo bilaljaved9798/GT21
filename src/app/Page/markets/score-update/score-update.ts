@@ -77,24 +77,25 @@ export class ScoreUpdate {
 
   loadTennisScore(): void {
 
-    this.footballService.getMatchScore('1')
+    this.footballService.getMatchScore('2')
       .subscribe(res => {
 var data = JSON.parse(res) || {};
+data = data.find((x: any) => x.eventId === Number(this.eventId)) || {};
         this.tennisScore = {
-  playerA: data.playerA,
-  playerB: data.playerB,
-  currentSet: data.currentSet,
-  setA: data.setA,
-  setB: data.setB,
-  playerASetScore: data.playerASetScore,
-  playerBSetScore: data.playerBSetScore,
-  homeGame: data.homeGame,
-  awayGame: data.awayGame,
+  playerA: data.awayName,
+  playerB: data.homeName,
+  currentSet: data.state.currentSet,
+  setA: data.state.score.home.sets,
+  setB: data.state.score.away.sets,
+  playerASetScore: data.state.score.home.gameSequence,
+  playerBSetScore: data.state.score.away.gameSequence,
+  homeGame: data.state.score.away.games,
+  awayGame: data.state.score.home.games,
   gameNumber: data.gameNumber,
-  homePoints: data.homePoints,
-  awayPoints: data.awayPoints,
-  homeServiceBreaks: data.homeServiceBreaks,
-  awayServiceBreaks: data.awayServiceBreaks
+  homePoints: data.state.score.home.score,
+  awayPoints: data.state.score.away.score,
+  homeServiceBreaks: data.state.score.home.serviceBreaks,
+  awayServiceBreaks: data.state.score.away.serviceBreaks
 }
       });
 

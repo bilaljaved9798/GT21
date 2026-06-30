@@ -198,14 +198,14 @@
     </div>
 
     <div class="teno">
-      {{ tennisScore.gameNumber }}
+      <div class="teno"> {{ tennisScore.currentSet }}</div>
     </div>
 
   </div>
 
   <div
     class="tennisScore"
-    style="border-right:1px solid black;text-align:center;width:20%">
+    style="float:left;border-right:1px solid black;text-align:center;width:20%">
 
     <div class="teno text-success fw-bold">
       {{ tennisScore.homePoints }}
@@ -223,7 +223,7 @@
 
   <div
     class="tennisScore"
-    style="text-align:center;width:23%">
+    style="float:left;text-align:center;width:23%">
 
     <div class="teno fw-bold">
       {{ tennisScore.homeServiceBreaks }}
