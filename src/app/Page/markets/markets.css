@@ -18,7 +18,7 @@
   background: rgba(0,255,138,.15) !important;
 }
 .runner-name {
-  padding: 4px 8px;
+  padding: 0px 0px;
   transition: all .2s ease;
 }
 

@@ -228,7 +228,7 @@
   padding: 6px 20px;
   border-bottom: 1px solid #e5e7eb;
   color: #111827;
-  font-size: 15px;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px, rgba(200, 255, 250, 0.25) 0px -12px 30px, rgba(255, 255, 255, 0.2) 0px 4px 6px, rgba(150, 255, 240, 0.3) 0px 12px 13px, rgba(255, 255, 255, 0.15) 0px -3px 5px; font-size: 15px;
   background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
 }
 
@@ -242,22 +242,17 @@
 
 /* ITEMS */
 .dropdown-item {
-
   display: block;
   width: 100%;
   border: 0;
-  background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px, rgba(200, 255, 250, 0.25) 0px -12px 30px, rgba(255, 255, 255, 0.2) 0px 4px 6px, rgba(150, 255, 240, 0.3) 0px 12px 13px, rgba(255, 255, 255, 0.15) 0px -3px 5px; background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
   color: #111827;
-
   padding: 6px 20px;
-
   text-decoration: none;
-
   font-size: 14px;
   font-weight: 500;
   text-align: left;
   cursor: pointer;
-
 }
 
 .dropdown-item:hover {
@@ -325,7 +320,7 @@
   }
 
   .title {
-    font-size: 23px;
+    font-size: 20px;
     max-width: 45vw;
     overflow: hidden;
     text-overflow: ellipsis;

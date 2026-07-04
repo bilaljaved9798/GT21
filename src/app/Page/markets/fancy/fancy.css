@@ -4,11 +4,27 @@ text-align: center;
 }
 .price {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 18px;
 }
 
+.bookbutton1 {
+  float: left;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: times;
+  color: forestgreen;
+  margin-top: 3px;
+}
+
+  .bookbutton1:hover {
+    color: red;
+    text-decoration: underline;
+    background: white
+  }
+
 .size {
-  font-size: 11px;
+  font-size: 12px;
+  font-weight:500;
 }
 .layitemf{
 width: 25%;
@@ -22,10 +38,12 @@ text-align: center;
 }
 .price {
   font-weight: bold;
-  font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
 }
 .size {
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 500;
 }
 .prices-group {
   display: inline-flex;
@@ -51,8 +69,8 @@ text-align: center;
   background: #ffb3b3;
 }
 .runner-name {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 700;
+  font-size: 15px;
     display: flex;
   flex-direction: column;
 }
@@ -93,7 +111,7 @@ text-align: center;
      background: rgb(255, 179, 179);
 }
 .status-box{
-font-size: 15px;
+font-size: 16px;
 }
 
 .profit {

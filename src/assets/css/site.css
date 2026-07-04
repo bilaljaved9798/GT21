@@ -15,6 +15,7 @@ body {
 }
 
 
+
 * {
     margin: 0;
     padding: 0;
@@ -165,17 +166,15 @@ h9 {
 }
 
 
-    .buttonlove:hover {
-        flex: 1 0 auto;
-        
-        color: black;
-        Background: white;
-        color:black;
-        text-align: center;
-        border-top: 3px solid #f41e44;
-        
-        border-left: 0px white solid !important;
-    }
+  .buttonlove:hover {
+    flex: 1 0 auto;
+    color: black;
+    Background: #00800082;
+    color: black;
+    text-align: center;
+    border-top: 3px solid #f41e44;
+    border-left: 0px white solid !important;
+  }
 
 
 .buttonlove1 {
@@ -1065,6 +1064,11 @@ cta-8:hover {
   height: 33px;
 }
 
+  .btntvcard:hover {
+
+
+  }
+
 .reletedeventbackground {
     /* background: linear-gradient(to top, #00ff8a, #000000) !important; */
     background: #263238;
@@ -1702,7 +1706,7 @@ textarea {
     z-index: 0;
     min-height: 36px;
     border-bottom: 1px solid #e5e5e5;
-    height: 36px;
+    height: 43px;
 }
 
     .upperlinks a {
@@ -4113,11 +4117,12 @@ a {
 }
 
 .inplaydatarow {
-  float: left;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px, rgba(200, 255, 250, 0.25) 0px -12px 30px, rgba(255, 255, 255, 0.2) 0px 4px 6px, rgba(150, 255, 240, 0.3) 0px 12px 13px, rgba(255, 255, 255, 0.15) 0px -3px 5px; float: left;
   font-size: 16px;
   font-weight: bold;
   border-bottom: 1px solid #e2e1e1;
-  background: linear-gradient( to top, #ffffff2b 92%, #00ff451f 53%) !important; width: 100%;
+  background: linear-gradient( to top, #ffffff2b 92%, #00ff451f 53%) !important;
+  width: 100%;
   margin-bottom: -2px !important;
   background-color: white;
 }
@@ -4792,7 +4797,7 @@ a {
 
 
     .upperlinks {
-        top: -44px;
+        top: -3px;
         position: relative;
         margin: 0;
         padding-bottom: 1px;
@@ -4804,7 +4809,7 @@ a {
         z-index: 0;
         min-height: 46px;
         border-bottom: 1px solid #e5e5e5;
-        height: 36px;
+        height: 43px;
     }
 
         .upperlinks a {
@@ -4812,7 +4817,7 @@ a {
             vertical-align: middle;
             display: inline-block;
             z-index: 1029;
-            height: 40px;
+            height: 39px;
             /* width: 36px; */
             margin-right: -2px;
             padding: 8px 8px;
@@ -5487,11 +5492,12 @@ a {
   .inplaydatarow {
     Text-shadow: 0.3px 0.3px #000000;
     float: left;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px, rgba(200, 255, 250, 0.25) 0px -12px 30px, rgba(255, 255, 255, 0.2) 0px 4px 6px, rgba(150, 255, 240, 0.3) 0px 12px 13px, rgba(255, 255, 255, 0.15) 0px -3px 5px ;
+    float : left;
     font-size: 13.5px;
     font-weight: 500;
     width: 100%;
-    margin-bottom: -1px !important
+    margin-bottom: -3px !important
   }
 
     .bslipl {
@@ -5756,7 +5762,7 @@ a {
     }
 
     .graph {
-        margin-top: 2.5px;
+        margin-top: 1.5px;
         float: left;
         color: #337ab7;
         margin-left: -0.5px;
@@ -6062,9 +6068,9 @@ a {
         margin-left: 1px;
     }
 
-    .fa {
+ /*   .fa {
         display: none;
-    }
+    }*/
 
     #marketbook label, #betslipcontent label, #fancymarketbook label, #marketbooksoccer label, #Indianfancymarketbook1 label, #marketbookTWT label, #KJfancymarketbook label, #Figurefancymarketbook label, #SFigfancymarketbook label {
         margin-bottom: 0px;
@@ -6804,10 +6810,10 @@ a {
     #ExchangePricesmain {
         display: inline-block;
     }
-
+/*
     .fa {
         display: none;
-    }
+    }*/
 
     .inplaymatchbackandlay {
         display: none;
@@ -7092,24 +7098,28 @@ a {
 }
 .runner-row {
   display: -webkit-box;
+  margin-bottom:-1px;
   align-items: center;
+
+ 
   background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
   padding: 2px 2px;
-  font-family: Arial, sans-serif;
+  font-family: 'Times New Roman';
 }
 
 /* Runner Info */
 .runner-info {
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between*/;
   align-items: center;
   width: 50%;
 }
 
 .runner-name {
-  font-weight: 600;
-  font-size: 14px;
-    display: flex;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  font-family: 'Times New Roman', Times, serif;
   flex-direction: column;
 }
 
@@ -7149,11 +7159,13 @@ a {
 
 .price {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .size {
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 /* BACK = Blue */
@@ -7251,7 +7263,7 @@ a {
     display: none;
   }
   .margin {
-    margin: -1px 1px 0px 22px
+    margin: -1px 1px 0px -2px
   }
 .runner-info {
   width: 58%;
@@ -7274,6 +7286,8 @@ a {
   font-weight: 600;
 }
 .status-box {
+    
+    height:44px;
   height: 100%;
   background: white;
   opacity: 0.98;
@@ -7295,6 +7309,7 @@ a {
 }
 .status-text {
   padding: 10px;
+  font-family:'Times New Roman'
 }
     .betslip-card {
   background: #ffffff;
