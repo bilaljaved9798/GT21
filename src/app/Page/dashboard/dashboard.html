@@ -1,6 +1,10 @@
 
 
-<div style="height: 190px; align-content: center;text-align:center;">
+
+
+
+
+<div style="height: 200px; align-content: center;text-align:center;">
   E-Gaming Coming Soon
 </div>
 
@@ -27,10 +31,10 @@
 
     <div class="inplaydatarow" *ngFor="let match of getMarketsByEventType(item)">
 
-      <i class="fa fa-share-alt" style="float:right"></i>
+      <i class="fa fa-share-alt" style="float:unset;margin-top:17px"></i>
 
       <div class="inplaymatchname">
-        <i class="fa fa-caret-right"
+        <i style="float:left;margin-top:7px" class="fa fa-caret-right"
            [style.color]="getCaretColor(match, item === 'Cricket')"></i>
 
         <a [style.color]="getMatchStatusColor(match)"

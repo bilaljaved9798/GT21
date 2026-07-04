@@ -1,43 +1,110 @@
-<div class="runner-row col-md-12 col-lg-12" *ngIf="marketboos !=null ">
-  Tied Match
+<div class="runner-row col-md-12 col-lg-12" *ngIf="marketboos !=null " style="font-weight: bold;margin-left:-4px; font-family: times; color: white; width: 105%; align-content: center; height: 33px; background: linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0)) !important">
+
+  <div style="margin-top:3px">
+
+    Tied Match
+
+  </div>
+
+
+
+
+
 </div>
- <div class="runner-row col-md-12 col-lg-12"
+
+<table>
+
+  <thead>
+
+
+
+
+
+
+
+    <tr>
+
+      <th style="    width: 17%; font-weight:600">
+        <span style="font-size:15px">
+          Total Matched:
+        </span>
+      </th>
+
+      <th style="  width: 20%;  ">
+
+      </th>
+
+
+      <th style="width: 10%;text-align: center;">
+        <span style="font-size:medium">
+          Back
+        </span>
+        <br />
+
+        <span>
+          <i style="color: #2797e6;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"></i>
+
+        </span>
+
+      </th>
+
+      <th style="width: 10%;text-align: center;">
+
+        <span style="font-size:medium">
+          Lay
+
+        </span>
+        <br />
+        <span>
+          <i style="color: #f994a9;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"> </i>
+        </span>
+      </th>
+
+
+
+    </tr>
+  </thead>
+
+</table>
+
+
+
+<div class="runner-row col-md-12 col-lg-12"
      *ngFor="let runner of marketboos?.section"
      style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
 
   <div class="runner-info col-md-6 col-lg-6">
     <div class="runner-name">
       {{ runner.nat }}
-      <div 
-    class="pnl">
+      <div class="pnl">
+      </div>
+    </div>
   </div>
-    </div>  
-  </div>
- 
-  <div class="col-md-6 col-lg-6 margin" >
-  
-<div class="prices-group back-group">
-  <div class="price-box back-box"
-       *ngFor="let back of (isMobile ? (getBackPrices(runner.odds) | slice:0:1) : getBackPrices(runner.odds)); let i = index"
-       [class.empty]="!back">
 
-    <ng-container *ngIf="back">
-      <div class="price">{{ back.odds }}</div>
-      <div class="size">{{ back.size | numberFormat }}</div>
-    </ng-container>
+  <div class="col-md-6 col-lg-6 margin">
 
-  </div>
-</div>
+    <div class="prices-group back-group">
+      <div class="price-box back-box"
+           *ngFor="let back of (isMobile ? (getBackPrices(runner.odds) | slice:0:1) : getBackPrices(runner.odds)); let i = index"
+           [class.empty]="!back">
 
-<div class="prices-group lay-group" style="margin-left: 2px;">
-  <div class="price-box lay-box"
-       *ngFor="let lay of (isMobile ? (getLayPrices(runner.odds) | slice:0:1) : getLayPrices(runner.odds)); let i = index"
-       [class.empty]="!lay">
-    <ng-container *ngIf="lay">
-      <div class="price">{{ lay.odds }}</div>
-      <div class="size">{{ lay.size | numberFormat }}</div>
-    </ng-container>
+        <ng-container *ngIf="back">
+          <div class="price">{{ back.odds }}</div>
+          <div class="size">{{ back.size | numberFormat }}</div>
+        </ng-container>
+
+      </div>
+    </div>
+
+    <div class="prices-group lay-group" style="margin-left: 2px;">
+      <div class="price-box lay-box"
+           *ngFor="let lay of (isMobile ? (getLayPrices(runner.odds) | slice:0:1) : getLayPrices(runner.odds)); let i = index"
+           [class.empty]="!lay">
+        <ng-container *ngIf="lay">
+          <div class="price">{{ lay.odds }}</div>
+          <div class="size">{{ lay.size | numberFormat }}</div>
+        </ng-container>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </div>

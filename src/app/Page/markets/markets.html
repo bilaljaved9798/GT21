@@ -1,15 +1,21 @@
+
+
+
 <div class="container-fluid">
+
+
 <div class="row">
-  <div class="col-md-8 col-lg-8">
+
+  <div class="col-md-8 col-lg-8" style="    margin-top: 36px;">
+
     <div class="col-md-12 no-padding marketinfo">
+
       <div class="marketname">
+
         <span class="Maintime" [id]="'lblStartTime' + market?.marketId">
           {{ formatDate(matchStartTime)}}
         </span>
 
-        <span>
-          {{ getStatusText(market?.marketStatusstr) }}
-        </span>
 
 
         <br />
@@ -30,15 +36,115 @@
         </span>
       </div>
     </div>
+
+    <div style="margin-bottom: -18px;">
+
+      <label style="font-weight: 500; border-top: 2px solid forestgreen; margin-top: 4px; box-shadow: rgba(0, 0, 0, 0.08)1.5px 1.95px 2.6px">
+        Match Odds | Winner: 1
+      </label>
+
+
+
+
+
+      <label style="float: right; border-top: 2px solid forestgreen; margin-top: 5px; font-weight: 500; box-shadow: rgba(0, 0, 0, 0.08)1.5px 1.95px 2.6px">
+        {{ getStatusText(market?.marketStatusstr) }}
+      </label>
+    </div>
+
+
     <app-score-update *ngIf="mainsportsname != 'Cricket' "></app-score-update>
     <br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <table>
+
+      <thead>
+
+
+
+
+
+
+
+        <tr>
+
+          <th style="    width: 17%; font-weight:600">
+            <span style="font-size:15px">
+              Total Matched:
+            </span>
+          </th>
+
+          <th style="  width: 20%;  ">
+
+          </th>
+
+
+          <th style="width: 10%;text-align: center;">
+            <span style="font-size:medium">
+              Back
+            </span>
+            <br />
+
+            <span>
+              <i style="color: #2797e6;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"></i>
+
+            </span>
+
+          </th>
+
+          <th style="width: 10%;text-align: center;">
+
+            <span style="font-size:medium">
+              Lay
+
+            </span>
+            <br />
+            <span>
+              <i style="color: #f994a9;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"> </i>
+            </span>
+          </th>
+
+
+
+        </tr>
+      </thead>
+
+    </table>
+
+
+
+
+   
+
+
+
     <div class="favoriteselection"
          *ngIf="selectedRunners.length > 0"
          [style.display]="selectedRunners.length > 1 ? 'block' : 'none'">
 
+
+
       <div class="favoriteselectionname">
         {{ favoriteSelectionName }}
       </div>
+
+
 
       <div class="favoritepricebackandlay">
 
@@ -73,15 +179,26 @@
     <div class="bet-not-allowed" *ngIf="betNotAllowedMessage">
       {{ betNotAllowedMessage }}
     </div>
-  
+
 
 
     <!-- RUNNER NAME -->
+
+
+
     <div class="runner-row col-md-12 col-lg-12"
          *ngFor="let runner of market?.runners"
          [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)"
          [id]="'selection' + runner.selectionId"
-         style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
+         style="background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%); text-overflow: ellipsis; overflow: hidden; white-space:nowrap;">
+
+
+     
+        <a>
+          <i class="fa fa-bar-chart graph"></i> <br/>
+          <i class="fas fa-caret-right" style="   margin-top: 4px;"></i>
+        </a>
+     
 
       <!-- RUNNER INFO -->
       <div class="runner-info col-md-6 col-lg-6">

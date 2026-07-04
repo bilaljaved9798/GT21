@@ -15,44 +15,55 @@
      </div>
 </div> -->
 
+
+
+
+
+
+
   <div *ngFor="let runner of market" class="row align-items-center mb-2 runner-row ">
 
   <!-- Runner Info (Mobile full width, Desktop 8 cols) -->
-  <div class="col-8 col-md-8 runner-info" style="float: left;">
-    
-   <div class="d-flex justify-content-between align-items-center">
+    <div class="col-8 col-md-8 runner-info" style="float: left;">
 
-  <!-- Runner Name -->
-  <div class="runner-name text-truncate">
-    {{ runner?.RunnerName }}
-  </div>
+      <a>
+        <i class="fa fa-bar-chart graph"></i> <br />
+        <i class="fas fa-caret-right" style="   margin-top: 4px;"></i>
+      </a>
 
-  <!-- Right Side -->
-  <div class="d-flex align-items-center ms-2">
 
-    <!-- PnL -->
-  
+      <div class="d-flex justify-content-between align-items-center">
 
-    <!-- Button -->
-    <button class="btn btn-sm btn-primary flex-shrink-0" style="float: left;">
-      Book
-    </button>
-     <div 
-  style="width: 90px; float: left;"
-  class="pnl me-2"
->
-  <span *ngIf="(runner?.Profit ?? 0) > 0" class="profit">
-    {{ runner.Profit }}
-  </span>
-  <span *ngIf="(runner?.Loss ?? 0) < 0" class="loss">
-    {{ runner.Loss }}
-  </span>
-</div>
-  </div>
 
-</div>
 
-  </div>
+
+        <!-- Runner Name -->
+        <div class="runner-name text-truncate">
+          {{ runner?.RunnerName }}
+        </div>
+
+        <!-- Right Side -->
+        <div class="d-flex align-items-center ms-2">
+
+          <!-- PnL -->
+          <!-- Button -->
+          <div class="bookbutton1" style="float: left;">
+            Book
+          </div>
+          <div style="width: 90px; float: left;"
+               class="pnl me-2">
+            <span *ngIf="(runner?.Profit ?? 0) > 0" class="profit">
+              {{ runner.Profit }}
+            </span>
+            <span *ngIf="(runner?.Loss ?? 0) < 0" class="loss">
+              {{ runner.Loss }}
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
 
   <!-- Prices / Status -->
   <div class="col-4 col-md-4 price-width">

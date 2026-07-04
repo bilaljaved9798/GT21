@@ -1,19 +1,116 @@
 
 
 
-<div style="font-weight: bold; color: white; width: 280%; align-content: center; height: 33px; background: linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0)) ">
+<style>
+  .table {
+      max-width:250%;
+      width:244%;
+      margin-bottom:-4px;
+
+
+  }
+
+
+    .table thead > tr > th {
+        border-bottom:0px;
+
+    }
+
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+
+        padding:0px
+    }
+
+
+</style>
+
+
+
+<div style="font-weight: bold;margin-left:-4px; font-family: times; color: white; width: 280%; align-content: center; height: 33px; background: linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0)); ">
   FANCY MARKET 2
 
-  <i class="fa fa-star-o" aria-hidden="true"></i>
+ 
 
 </div>
 
 
 
+
+  
+
+<table class="table">
+
+  <thead>
+
+
+
+
+
+
+
+    <tr>
+
+      <th style="    width: 17%; font-weight:600">
+        <span style="font-size:15px">
+          
+        </span>
+      </th>
+
+      <th style="  width: 20%;  ">
+
+      </th>
+
+
+      <th style="width: 10%;text-align: center;">
+        <span style="font-size:medium">
+          Back
+        </span>
+        <br />
+
+        <span>
+          <i style="color: #2797e6;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"></i>
+
+        </span>
+
+      </th>
+
+      <th style="width: 10%;text-align: center;">
+
+        <span style="font-size:medium">
+          Lay
+
+        </span>
+        <br />
+        <span>
+          <i style="color: #f994a9;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"> </i>
+        </span>
+      </th>
+
+
+
+    </tr>
+  </thead>
+
+</table>
+
+
+
+
+
 <div>
+
+
+
+
+
+
 
   <!-- Markets -->
   <div *ngFor="let item of marketBooks" class="marketbook" [attr.data-marketid]="item.marketId">
+
+
+
+
 
     <!-- Runners -->
     <div class="runner-row col-md-12 col-lg-12"
@@ -37,6 +134,12 @@
           </div>
         </div>
 
+
+
+
+
+
+
         <!-- Last Price -->
         <div class="runner-price-box">
           <div class="last-price">
@@ -48,6 +151,12 @@
         </div>
 
       </div>
+
+
+
+
+
+
 
       <!-- Back / Lay -->
       <div class="col-md-6 col-lg-6 margin">
