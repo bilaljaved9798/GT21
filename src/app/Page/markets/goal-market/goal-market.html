@@ -1,1 +1,96 @@
-<p>goal-market works!</p>
+
+    <div class="bet-not-allowed" *ngIf="betNotAllowedMessage">
+      {{ betNotAllowedMessage }}
+    </div>
+  
+
+
+    <!-- RUNNER NAME -->
+    <div class="runner-row col-md-12 col-lg-12"
+         *ngFor="let runner of market?.runners"
+         
+         style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
+
+      <!-- RUNNER INFO -->
+      <div class="runner-info col-md-6 col-lg-6">
+        
+       
+        <div class="runner-name" style="width:100%" >
+          {{ runner.runnerName }}
+         
+          <div class="pnl"
+               [ngClass]="{
+               'profit' : runner.profitandLoss>
+            0,
+            'loss': runner.profitandLoss < 0
+            }"
+            >
+            {{ runner.profitandLoss }}
+          </div>
+        </div>
+        <div class="runner-price-box">
+          <div class="last-price">
+            {{ runner.lastPriceTraded }}
+          </div>
+          <div class="total-matched">
+            {{ runner.totalMatched }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-6 margin">
+
+
+        <!-- BACK -->
+        <div class="prices-group back-group">
+          <div class="price-box back-box"
+               *ngFor="let back of (isMobile ? (getBackPrices(runner).slice().reverse() | slice:0:1) : getBackPrices(runner).slice().reverse()); let i = index"
+               [class.empty]="!back"
+               [class.bet-disabled]="back && !isBettingAllowed()"
+               (click)="back && showBetSlip(
+         runner.selectionId,
+         runner.runnerName,
+         'back',
+         back.price,
+         2000,
+         market?.marketId ?? '',
+         market?.marketBookName ?? '',
+         back.size,
+         i
+       )">
+
+            <ng-container *ngIf="back">
+              <div class="price">{{ back.price }}</div>
+              <div class="size">{{ back.size | numberFormat }}</div>
+            </ng-container>
+
+          </div>
+        </div>
+
+        <!-- LAY -->
+        <div class="prices-group lay-group" style="margin-left: 2px;">
+          <div class="price-box lay-box"
+               *ngFor="let lay of (isMobile ? (getLayPrices(runner) | slice:0:1) : getLayPrices(runner)); let i = index"
+               [class.empty]="!lay"
+               [class.bet-disabled]="lay && !isBettingAllowed()"
+               (click)="lay && showBetSlip(
+         runner.selectionId,
+         runner.runnerName,
+         'lay',
+         lay.price,
+         2000,
+         market?.marketId ?? '',
+         market?.marketBookName ?? '',
+         lay.size,
+         i
+       )">
+
+            <ng-container *ngIf="lay">
+              <div class="price">{{ lay.price }}</div>
+              <div class="size">{{ lay.size | numberFormat }}</div>
+            </ng-container>
+
+          </div>
+        </div>
+      </div>
+    </div>

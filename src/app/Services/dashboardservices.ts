@@ -25,4 +25,8 @@ export class Dashboardservices {
   getInPlaySoccer(userid: number, typeId: number) {
     return this.http.get<any>(`${this.baseUrl}DashBoardApi/InPlayMatches?userid=${userid}&mainSportsCategory=${typeId}`);
   }
+
+  GetSoccerMarkets(eventId: string) {
+    return this.http.get<any>(`${this.baseUrl}DashBoardApi/GetSoccerMarkets?eventId=${eventId}`);
+  }
 }

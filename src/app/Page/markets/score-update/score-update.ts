@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, Input, PLATFORM_ID } from '@angular/core';
 import { ScoreService } from '../../../Services/score-service';
 import { StorageService } from '../../../Services/storage-service';
 import { FormsModule } from '@angular/forms';
@@ -13,17 +13,14 @@ import { MarketBook } from '../../../interface/MarketBook';
   styleUrl: './score-update.css',
 })
 export class ScoreUpdate {
+  @Input() status!: string;
   scoreData: any;
-
   firstHalfHomeGoals: any[] = [];
   firstHalfAwayGoals: any[] = [];
-
   secondHalfHomeGoals: any[] = [];
   secondHalfAwayGoals: any[] = [];
-
   firstHalfHomeYellowCards: any[] = [];
   firstHalfAwayYellowCards: any[] = [];
-
   secondHalfHomeYellowCards: any[] = [];
   secondHalfAwayYellowCards: any[] = [];
 
@@ -57,13 +54,13 @@ export class ScoreUpdate {
 
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId) && this.eventId && this.mainSportsname === 'Soccer') {
+    if (isPlatformBrowser(this.platformId) && this.eventId && this.mainSportsname === 'Soccer' && this.status == 'In Play') {
       this.loadScore();
       this.refreshSubscription = interval(5000).subscribe(() => {
         this.loadScore();
       });
     }
-    if (isPlatformBrowser(this.platformId) && this.eventId && this.mainSportsname === 'Tennis') {
+    if (isPlatformBrowser(this.platformId) && this.eventId && this.mainSportsname === 'Tennis' && this.status == 'In Play') {
       this.loadTennisScore();
       this.refreshSubscription = interval(5000).subscribe(() => {
         this.loadTennisScore();

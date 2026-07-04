@@ -5,8 +5,8 @@ import { map, switchMap, takeUntil, tap, catchError } from 'rxjs/operators';
 import { FancyMarket } from '../interface/fancymarket';
 import { MarketBook } from '../interface/MarketBook';
 import { StorageService } from './storage-service';
-import { environment } from '../../environments/environment';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class MarketService {

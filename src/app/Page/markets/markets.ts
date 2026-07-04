@@ -18,10 +18,11 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ScoreUpdate } from "./score-update/score-update";
 import { MultipleBetSlipService } from '../../Services/multiple-bet-slip-service';
 import { ScoreService } from '../../Services/score-service';
+import { GoalMarket } from "./goal-market/goal-market";
 
 @Component({
   selector: 'app-markets',
-  imports: [TiedMarket, Figure, BetSlip, Fancy, LineMarket, NumberFormatPipe, CommonModule, UserBets, ScoreUpdate],
+  imports: [TiedMarket, Figure, BetSlip, Fancy, NumberFormatPipe, CommonModule, UserBets, ScoreUpdate, GoalMarket],
   templateUrl: './markets.html',
   styleUrl: './markets.css',
 })
@@ -199,16 +200,13 @@ private calculateMultipleOdds(): void {
         if (this.mainsportsname === 'Cricket') {
           this.marketService.startPolling(this.eventId, this.model.selectedMarketId, this.model.userId);
         }
-        if (this.mainsportsname === 'Soccer') {
-          this.scoreService.getothersportsScore(this.eventId,this.model.userId).subscribe(scoreRes => {
-            this.matchData = scoreRes;
-          });
-        }
       });
     }
         this.userbetService.betPlaced$
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => this.refreshMarket());
+
+      this.showTab('score');
   }
 
   addHours(dateValue: any, hours: number): Date {
@@ -259,7 +257,6 @@ private calculateMultipleOdds(): void {
 
   loadMarkets(): void {
     this.marketPollStop$.next();
-
     timer(1000, 2000) // Increased initial delay and interval to reduce load
       .pipe(
         takeUntil(this.destroy$),
@@ -501,9 +498,11 @@ showTab(tab: 'video' | 'score') {
   this.marketService.getVideoUrl(this.eventType, this.eventId)
   .subscribe(url => {
     var link= url;
-   var scorecardLink = link.find(x => x.EventID===this.eventId)?.scorecard;
+    var res = link.find(x => x.EventID===this.eventId);
+    var videoLink = link.find(x => x.EventID===this.eventId)?.tvlink1;
+    var scorecardLink = link.find(x => x.EventID===this.eventId)?.scorecard;
       this.videoUrl =
-        this.sanitizer.bypassSecurityTrustResourceUrl("");
+        this.sanitizer.bypassSecurityTrustResourceUrl(videoLink || '');
 
       if (tab === 'score') {
         this.scoreCardUrl =
@@ -601,9 +600,7 @@ getWearingUrl(url: string): string {
 }
 
 onImageError(event: Event) {
-
   const img = event.target as HTMLImageElement;
-
   img.src = 'assets/images/not-found.png';
 }
 

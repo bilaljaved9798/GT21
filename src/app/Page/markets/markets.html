@@ -30,7 +30,7 @@
         </span>
       </div>
     </div>
-    <app-score-update *ngIf="mainsportsname != 'Cricket' "></app-score-update>
+    <app-score-update *ngIf="mainsportsname != 'Cricket' "  [status]="market?.marketStatusstr || ''"></app-score-update>
     <br />
     <div class="favoriteselection"
          *ngIf="selectedRunners.length > 0"
@@ -178,10 +178,10 @@
     </div>
 
     <!-- <app-toss [eventId]="eventId" *ngIf="mainsportsname=='Cricket'"></app-toss> -->
-    <div class="runner-row col-md-12 col-lg-12" *ngIf="mainsportsname=='Cricket'">
+    <!-- <div class="runner-row col-md-12 col-lg-12" *ngIf="mainsportsname=='Cricket'">
       <app-line-market [eventId]="eventId || ''">
       </app-line-market>
-    </div>
+    </div> -->
 
     <div class="col-md-12 col-lg-12" *ngIf="mainsportsname=='Cricket'">
       <div class="col-sm-12 col-md-6 col-lg-6 no-padding">
@@ -199,6 +199,11 @@
                      [eventId]="eventId || ''"
                      [marketId]="model.selectedMarketId|| ''">
     </app-tied-market>
+    
+    <app-goal-market *ngIf="mainsportsname=='Soccer'"
+                     [eventId]="eventId || ''"
+                     >
+    </app-goal-market>
 
   </div>
 
