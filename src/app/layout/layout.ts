@@ -7,6 +7,7 @@ import { AuthService } from '../Services/auth-service';
 import { Dashboardservices } from '../Services/dashboardservices';
 import { StorageService } from '../Services/storage-service';
 import { UserbetService } from '../Services/userbet-service';
+import { MarketBook } from '../interface/MarketBook';
 
 @Component({
   selector: 'app-layout',
@@ -31,7 +32,7 @@ export class Layout {
   currentBalance = 0;
   currentLiability = 0;
   showUserMenu = false;
-
+  marketbook: MarketBook | null = null;
   constructor(
     private auth: AuthService,
     private router: Router,
@@ -157,9 +158,20 @@ canUseAdminTools() {
 }
 
   openMarket(match: any) {
+    debugger;
+    if (!this.marketbook) {
+      this.marketbook = {} as MarketBook;
+    }
+
+    this.marketbook.marketId = match.marketCatalogueID;
+    this.marketbook.eventID = match.eventID;
+    this.marketbook.mainSportsname = "Cricket"; // Assuming it's cricket for this example
+    this.marketbook.marketBookName = match.eventName;
+    this.marketbook.orignalOpenDate = match.eventOpenDate;
+
     this.router.navigate(['/market'], {
-      state: { match: match },
-      queryParams: { id: match.marketId}
+      state: { match: this.marketbook },
+      queryParams: { id: match.marketCatalogueID }
     });
   }
 

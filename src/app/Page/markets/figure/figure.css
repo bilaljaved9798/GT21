@@ -47,3 +47,19 @@
 
   pointer-events: none;
 }
+.pnl {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.pnl.profit {
+  color: #28a745; /* Green */
+}
+
+.pnl.loss {
+  color: #dc3545; /* Red */
+}
+
+.pnl.neutral {
+  color: #6c757d; /* Gray */
+}

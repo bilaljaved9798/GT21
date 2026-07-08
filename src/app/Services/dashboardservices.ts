@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { StorageService } from './storage-service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { InPlayMatch } from '../interface/in-play-matches';
 
 @Injectable({
   providedIn: 'root',
@@ -29,4 +30,11 @@ export class Dashboardservices {
   GetSoccerMarkets(eventId: string) {
     return this.http.get<any>(`${this.baseUrl}DashBoardApi/GetSoccerMarkets?eventId=${eventId}`);
   }
+
+  GetReletedMarkets(eventType: string, marketId: string) {  
+    return this.http.get<InPlayMatch[]>(
+  `${this.baseUrl}MarketApi/GetRelatedEvent?eventtype=${eventType}&marketbookID=${marketId}`
+);
+  }
+  
 }
