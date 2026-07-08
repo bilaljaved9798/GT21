@@ -1,6 +1,14 @@
 <div *ngFor="let marketbook of marketboos">
+
+
   <div style="font-weight: bold; color: white; align-content: center; height: 35px; background: linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0)) ">
-    {{ marketbook?.mname }}
+
+    <div style="margin-left:11px">
+      {{ marketbook?.mname }}
+
+    </div>
+
+   
 
   </div>
 
@@ -65,7 +73,7 @@
 
 
     <a>
-      <i class="fa fa-bar-chart graph"></i> <br />
+      <img src="assets/images/Screenshot_2025-02-17_020603-removebg-preview.png" alt="Company Logo" height="18" width="18"> <br />
       <i class="fas fa-caret-right" style="   margin-top: 4px;"></i>
     </a>
 
@@ -73,7 +81,7 @@
 
 
     <div class="runner-info col-md-8 col-8">
-      <div class="runner-name">
+      <div class="runner-name" style="  margin-top: -20px;           margin-left: -2px;">
         {{ runner.nat }}
         <div class="pnl">
           {{ runner.pnl }}

@@ -7,79 +7,166 @@
     <div style="text-align: center;" class="col-md-6 col-lg-6 no-padding">
       <label style="font-weight:700">Yes</label>
       <i class="backcircle fa fa-arrow-circle-down"></i>
-    </div>         
+    </div>
         <div style="text-align: center;" class="col-md-6 col-lg-6 no-padding">
               <label style="font-weight:700">No</label>
-              <i class="laycircle fa fa-arrow-circle-down"></i>     
-    </div> 
+              <i class="laycircle fa fa-arrow-circle-down"></i>
+    </div>
      </div>
 </div> -->
 
+<style>
+  .table {
+    max-width: 100%;
+    width: 244%;
+    margin-bottom: -4px;
+  }
+
+
+    .table thead > tr > th {
+      border-bottom: 0px;
+    }
+
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+      padding: 0px;
+      line-height:1.25
+    }
+</style>
+
+
+
+<div style="font-weight: bold;margin-left:-4px; font-family: times; color: white; width: 280%; align-content: center; height: 33px; background: linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0)); ">
+
+  <div style="margin-left: 11px;">
+
+    FANCY MARKET 2
+  </div>
+
+
+
+
+
+</div>
+
+
+<table class="table">
+
+  <thead>
 
 
 
 
 
 
-  <div *ngFor="let runner of market" class="row align-items-center mb-2 runner-row ">
+
+    <tr>
+
+      <th style="    width: 17%; font-weight:600">
+        <span style="font-size:15px">
+
+        </span>
+      </th>
+
+      <th style="  width: 20%;  ">
+
+      </th>
+
+
+      <th style="width: 10%;text-align: center;">
+        <span style="font-size:medium">
+          Yes
+        </span>
+        <br />
+
+        <span>
+          <i style="color: #2797e6;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"></i>
+
+        </span>
+
+      </th>
+
+      <th style="width: 10%;text-align: center;">
+
+        <span style="font-size:medium">
+          No
+
+        </span>
+        <br />
+        <span>
+          <i style="color: #f994a9;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"> </i>
+        </span>
+      </th>
+
+
+
+    </tr>
+  </thead>
+
+</table>
+
+
+<div *ngFor="let runner of market" class="row align-items-center mb-2 runner-row ">
+
+
+
+
+
 
   <!-- Runner Info (Mobile full width, Desktop 8 cols) -->
-    <div class="col-8 col-md-8 runner-info" style="float: left;">
+  <div class="col-8 col-md-8 runner-info" style="float: left;">
 
-      <a>
-        <i class="fa fa-bar-chart graph"></i> <br />
-        <i class="fas fa-caret-right" style="   margin-top: 4px;"></i>
-      </a>
-
-
-      <div class="d-flex justify-content-between align-items-center">
+    <a style="    margin-left: -5px;">
+      <img src="assets/images/Screenshot_2025-02-17_020603-removebg-preview.png" alt="Company Logo" height="18" width="18"> <br />
+      <i class="fas fa-caret-right" style="   margin-top: 4px;"></i>
+    </a>
 
 
+    <div class="d-flex justify-content-between align-items-center">
 
 
-        <!-- Runner Name -->
-        <div class="runner-name text-truncate">
-          {{ runner?.RunnerName }}
+
+
+      <!-- Runner Name -->
+      <div class="runner-name text-truncate">
+        {{ runner?.RunnerName }}
+      </div>
+
+      <!-- Right Side -->
+      <div class="d-flex align-items-center ms-2">
+
+        <!-- PnL -->
+        <!-- Button -->
+        <div class="bookbutton1" style="float: left;">
+          Book
         </div>
-
-        <!-- Right Side -->
-        <div class="d-flex align-items-center ms-2">
-
-          <!-- PnL -->
-          <!-- Button -->
-          <div class="bookbutton1" style="float: left;">
-            Book
-          </div>
-          <div style="width: 90px; float: left;"
-               class="pnl me-2">
-            <span *ngIf="(runner?.Profit ?? 0) > 0" class="profit">
-              {{ runner.Profit }}
-            </span>
-            <span *ngIf="(runner?.Loss ?? 0) < 0" class="loss">
-              {{ runner.Loss }}
-            </span>
-          </div>
+        <div style="width: 90px; float: left;margin-top:6px"
+             class="pnl me-2">
+          <span *ngIf="(runner?.Profit ?? 0) > 0" class="profit">
+            {{ runner.Profit }}
+          </span>
+          <span *ngIf="(runner?.Loss ?? 0) < 0" class="loss">
+            {{ runner.Loss }}
+          </span>
         </div>
-
       </div>
 
     </div>
+
+  </div>
 
   <!-- Prices / Status -->
   <div class="col-4 col-md-4 price-width">
 
     <!-- Status -->
-    <div 
-      *ngIf="runner?.MarketStatusStr === 'SUSPENDED' || runner?.MarketStatusStr === 'Ball Running'" 
-      class="status-box text-center"
-    >
+    <div *ngIf="runner?.MarketStatusStr === 'SUSPENDED' || runner?.MarketStatusStr === 'Ball Running'"
+         class="status-box text-center">
       <div class="status-text">
         {{ runner?.MarketStatusStr === 'SUSPENDED' ? 'SUSPENDED' : 'BALL RUNNING' }}
       </div>
     </div>
 
     <!-- Prices -->
-    <div *ngIf="runner?.MarketStatusStr !== 'SUSPENDED' && runner?.MarketStatusStr !== 'Ball Running'" 
+    <div *ngIf="runner?.MarketStatusStr !== 'SUSPENDED' && runner?.MarketStatusStr !== 'Ball Running'"
          class="d-flex justify-content-between mt-2">
 
       <!-- Back -->
@@ -90,7 +177,7 @@
       </div>
 
       <!-- Lay -->
-      <div class="price-box lay-box text-center flex-fill ms-1"  (click)="showBetSlip(
+      <div class="price-box lay-box text-center flex-fill ms-1" (click)="showBetSlip(
          runner.SelectionId, runner.RunnerName, 'lay', (runner.Layprice || 0), 0, runner.MarketBookID, 'Fancy', (runner.LaySize || 0), 0)" style="margin-left:2px">
         <div class="price">{{ runner.Layprice }}</div>
         <div class="size">{{ runner.LaySize }}</div>

@@ -13,7 +13,9 @@ text-align: center;
   font-weight: 600;
   font-family: times;
   color: forestgreen;
-  margin-top: 3px;
+  
+  margin-top: 5px;
+  margin-left: 3px;
 }
 
   .bookbutton1:hover {

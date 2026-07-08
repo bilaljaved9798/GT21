@@ -401,7 +401,7 @@ h9 {
 .team-2 {
     font-size: 14px;
     font-weight: 700;
-    min-height: 28px;
+    min-height: 12px;
     margin-bottom: 8px;
     width: 100%;
     text-align: center;
@@ -4771,7 +4771,7 @@ a {
     
 
     div.scrollmenu {
-        margin-bottom: -44px;
+        margin-bottom: -40px;
         background-color: #333;
         overflow: auto;
         white-space: nowrap;
@@ -7117,6 +7117,7 @@ a {
 
 .runner-name {
   font-weight: 700;
+  margin-left:4px;
   font-size: 16px;
   display: flex;
   font-family: 'Times New Roman', Times, serif;
@@ -7295,7 +7296,7 @@ a {
   font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: center;
+  
 }
 .profit {
   color: #28a745; /* Bootstrap green */
