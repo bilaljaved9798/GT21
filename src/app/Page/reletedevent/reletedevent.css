@@ -1,0 +1,48 @@
+.headingcaption{
+    color:#fff;
+    font-weight:500;
+    font-size:large;
+    margin:2px 2px 2px 7px;
+}
+
+.sporthighlightsuldiv2{
+    max-height:320px;
+    overflow:auto;
+}
+
+.inplaydatarow{
+    display:flex;
+    align-items:center;
+    border-bottom:1px solid #ddd;
+    padding:6px;
+}
+
+.fa-caret-right{
+    margin-right:8px;
+    font-size:18px;
+}
+
+.relatedname{
+    flex:1;
+}
+
+.relatedname a{
+    cursor:pointer;
+    text-decoration:none;
+    color:#000;
+}
+
+.relatedname.past a{
+    color:green;
+    font-weight:bold;
+}
+
+.relatedtime{
+    width:70px;
+    text-align:right;
+    font-size:12px;
+}
+
+.relatedspan{
+    white-space:nowrap;
+}

@@ -19,10 +19,11 @@ import { ScoreUpdate } from "./score-update/score-update";
 import { MultipleBetSlipService } from '../../Services/multiple-bet-slip-service';
 import { ScoreService } from '../../Services/score-service';
 import { GoalMarket } from "./goal-market/goal-market";
+import { Reletedevent } from "../reletedevent/reletedevent";
 
 @Component({
   selector: 'app-markets',
-  imports: [TiedMarket, Figure, BetSlip, Fancy, NumberFormatPipe, CommonModule, UserBets, ScoreUpdate, GoalMarket],
+  imports: [TiedMarket, Figure, BetSlip, Fancy, NumberFormatPipe, CommonModule, UserBets, ScoreUpdate, GoalMarket, Reletedevent],
   templateUrl: './markets.html',
   styleUrl: './markets.css',
 })
@@ -60,7 +61,8 @@ favoriteLaySize = '';
   eventType:number = 4;
   constructor(private marketService: MarketService, private sanitizer: DomSanitizer, public betSlipService: BetSlipService, private userbetService: UserbetService,private scoreService: ScoreService,
     private route: ActivatedRoute,public multiSlip: MultipleBetSlipService, private cdr: ChangeDetectorRef, private router: Router, private storage: StorageService, @Inject(PLATFORM_ID) private platformId: Object) {
-    const info = this.storage.get<any>('userInfo');
+    debugger;
+      const info = this.storage.get<any>('userInfo');
     this.model.userId = info?.user?.id;
     const nav = this.router.getCurrentNavigation();
     this.market = nav?.extras?.state?.['match'];
@@ -502,7 +504,7 @@ showTab(tab: 'video' | 'score') {
     var videoLink = link.find(x => x.EventID===this.eventId)?.tvlink1;
     var scorecardLink = link.find(x => x.EventID===this.eventId)?.scorecard;
       this.videoUrl =
-        this.sanitizer.bypassSecurityTrustResourceUrl(videoLink || '');
+        this.sanitizer.bypassSecurityTrustResourceUrl('https://e765432.diamondcricketid.com/dtv.php?id=' + videoLink || '');
 
       if (tab === 'score') {
         this.scoreCardUrl =

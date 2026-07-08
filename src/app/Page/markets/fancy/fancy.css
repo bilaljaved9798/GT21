@@ -125,3 +125,45 @@ font-size: 16px;
   color: #dc3545; /* Bootstrap red */
   font-weight: 600;
 }
+
+.market-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:6px 8px;
+    width:100%;
+}
+
+.market-title{
+    flex:1;
+    font-weight:600;
+    font-size:16px;
+}
+
+.price-header{
+    width:160px;              /* Same width as Yes/No price columns */
+    display:flex;
+}
+
+.price-col{
+    flex:1;
+    text-align:center;
+}
+
+.price-col .title{
+    font-weight:700;
+    font-size:18px;
+    line-height:18px;
+}
+
+.backcircle{
+    color:#4aa3ff;
+    font-size:22px;
+    margin-top:3px;
+}
+
+.laycircle{
+    color:#ff9aa2;
+    font-size:22px;
+    margin-top:3px;
+}

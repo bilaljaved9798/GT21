@@ -78,7 +78,7 @@ getLayPrices(Odds: Odd[] = []) {
   ];
 }
    showBetSlip(
-    
+   
     selectionId: number,
     selectionName: string,
     type: string,
@@ -92,9 +92,9 @@ getLayPrices(Odds: Odd[] = []) {
     debugger;
    this.betSlipService.addBet({
     selectionId: selectionId,
-    selectionName: selectionName,
+    selectionName: selectionName + ' - ' + marketName,
     marketId: MarketBookID,
-    marketName: selectionName,
+    marketName: selectionName + ' - ' + marketName,
     eventId: this.eventId,
     type: type,
     price: price,

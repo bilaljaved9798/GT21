@@ -11,17 +11,8 @@
    
 
   </div>
-
   <table>
-
     <thead>
-
-
-
-
-
-
-
       <tr>
 
         <th style="    width: 17%; font-weight:600">
@@ -29,72 +20,54 @@
             Total Matched:
           </span>
         </th>
-
         <th style="  width: 20%;  ">
-
         </th>
-
-
         <th style="width: 10%;text-align: center;">
           <span style="font-size:medium">
             Back
           </span>
           <br />
-
           <span>
             <i style="color: #2797e6;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"></i>
-
           </span>
-
         </th>
-
         <th style="width: 10%;text-align: center;">
 
           <span style="font-size:medium">
             Lay
-
           </span>
           <br />
           <span>
             <i style="color: #f994a9;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"> </i>
           </span>
         </th>
-
-
-
       </tr>
     </thead>
 
   </table>
 
-
-
   <div class="runner-row col-md-12 col-lg-12" *ngFor="let runner of marketbook?.section; let k = index" style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
-
-
     <a>
       <img src="assets/images/Screenshot_2025-02-17_020603-removebg-preview.png" alt="Company Logo" height="18" width="18"> <br />
       <i class="fas fa-caret-right" style="   margin-top: 4px;"></i>
     </a>
-
-
-
-
     <div class="runner-info col-md-8 col-8">
       <div class="runner-name" style="  margin-top: -20px;           margin-left: -2px;">
         {{ runner.nat }}
-        <div class="pnl">
-          {{ runner.pnl }}
-        </div>
+       <div
+  class="pnl"
+  [ngClass]="{
+    'profit': runner.pnl > 0,
+    'loss': runner.pnl < 0,
+    'neutral': runner.pnl == 0
+  }"
+>
+  {{ runner.pnl | number }}
+</div>
       </div>
     </div>
 
     <div class="col-md-4 col-4 margin position-relative">
-
-
-
-
-
       <!-- LOCK OVERLAY -->
       <div class="market-lock"
            *ngIf="runner?.gstatus === 'Suspended'">
@@ -102,24 +75,14 @@
         🔒 Times UP
 
       </div>
-
-
-
-
-
       <!-- BACK -->
       <div class="prices-group back-group"
            [class.disabled-market]="runner?.gstatus === 'Suspended'">
-
         <div class="price-box back-box"
-             *ngFor="let back of (isMobile ? (getBackPrices(runner.odds) | slice:0:1) : getBackPrices(runner.odds)); let i = index">
-
+             *ngFor="let back of (isMobile ? (getBackPrices(runner.odds) | slice:0:1) : getBackPrices(runner.odds)); let i = index" (click)="showBetSlip(runner.sid, runner.nat, 'back', 885, back.size, marketbook.mid,marketbook.mname, back.size, k)">
           <div class="price">{{ k }}</div>
-
           <div class="size">8.85</div>
-
         </div>
-
       </div>
 
       <!-- LAY -->
@@ -128,7 +91,7 @@
            [class.disabled-market]="runner?.gstatus === 'Suspended'">
 
         <div class="price-box lay-box text-center flex-fill ms-1"
-             *ngFor="let back of (isMobile ? (getBackPrices(runner.odds) | slice:0:1) : getBackPrices(runner.odds)); let i = index">
+             *ngFor="let lay of (isMobile ? (getLayPrices(runner.odds) | slice:0:1) : getLayPrices(runner.odds)); let i = index" (click)="showBetSlip(runner.sid, runner.nat, 'lay', 1025, 100, marketbook.mid,marketbook.mname, 100, k)">
 
           <div class="price">{{ k }}</div>
 

@@ -1065,13 +1065,10 @@ cta-8:hover {
 }
 
   .btntvcard:hover {
-
-
   }
 
 .reletedeventbackground {
-    /* background: linear-gradient(to top, #00ff8a, #000000) !important; */
-    background: #263238;
+   background: linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0));
 }
 
 .love12 {
@@ -1694,7 +1691,6 @@ textarea {
 }
 
 .upperlinks {
-    top: -21px;
     position: relative;
     margin: 0;
     padding-bottom: 1px;
