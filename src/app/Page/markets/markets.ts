@@ -23,7 +23,7 @@ import { Reletedevent } from "../reletedevent/reletedevent";
 
 @Component({
   selector: 'app-markets',
-  imports: [TiedMarket, Figure, BetSlip, Fancy, NumberFormatPipe, CommonModule, UserBets, ScoreUpdate, GoalMarket],
+  imports: [TiedMarket, Figure, BetSlip, Fancy, NumberFormatPipe, CommonModule, UserBets, ScoreUpdate, GoalMarket, Reletedevent],
   templateUrl: './markets.html',
   styleUrl: './markets.css',
 })

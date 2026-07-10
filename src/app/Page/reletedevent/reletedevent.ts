@@ -15,16 +15,14 @@ import { StorageService } from '../../Services/storage-service';
 })
 export class Reletedevent {
 
-   eventType: string = '';
-   marketId: string = '';
+@Input() eventType!: string;
+@Input() marketId!: string;
   events: InPlayMatch[] = [];
   constructor(private router: Router,private deshboardService: Dashboardservices,private storage: StorageService) {
-    debugger;
-  this.marketId = this.storage.get('marketID') || '';    
-  this.eventType = (this.storage.get('selectedMarket') as MarketBook)?.mainSportsname || '';
+    
   }
 
-  NGOnInit(): void {
+  ngOnInit(): void {
     this.deshboardService.GetReletedMarkets(this.eventType, this.marketId).subscribe({
       next: res => {
         if (res && res.length > 0) {

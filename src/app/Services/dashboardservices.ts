@@ -33,7 +33,7 @@ export class Dashboardservices {
 
   GetReletedMarkets(eventType: string, marketId: string) {  
     return this.http.get<InPlayMatch[]>(
-  `${this.baseUrl}MarketApi/GetRelatedEvent?eventtype=${eventType}&marketbookID=${marketId}`
+  `${this.baseUrl}DashBoardApi/GetRelatedEvent?eventtype=${eventType}&marketbookID=${marketId}`
 );
   }
   
