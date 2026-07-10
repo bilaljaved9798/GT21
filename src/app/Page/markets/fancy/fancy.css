@@ -128,16 +128,18 @@ font-size: 16px;
 
 .market-header{
     display:flex;
+    margin-bottom:-3px;
     justify-content:space-between;
     align-items:center;
-    padding:6px 8px;
+    padding:2px 0px;
     width:100%;
 }
 
 .market-title{
     flex:1;
-    font-weight:600;
-    font-size:16px;
+    font-weight:700;
+    font-size:18px;
+    padding:6px;
 }
 
 .price-header{
@@ -152,18 +154,18 @@ font-size: 16px;
 
 .price-col .title{
     font-weight:700;
-    font-size:18px;
+    font-size:17px;
     line-height:18px;
 }
 
 .backcircle{
     color:#4aa3ff;
-    font-size:22px;
-    margin-top:3px;
+    font-size:18px;
+    margin-top:2px;
 }
 
 .laycircle{
     color:#ff9aa2;
-    font-size:22px;
-    margin-top:3px;
+    font-size:18px;
+    margin-top:2px;
 }
