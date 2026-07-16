@@ -4014,13 +4014,14 @@ a {
 }
 
 .headingcaption {
-    line-height: 34px;
-    padding: 0;
-    margin: 0;
-    float: left;
-    text-align: left;
-    font-weight: 700 !important;
-    font-size: 20px;
+  line-height: 34px;
+  padding: 0;
+  margin: 0;
+      width:100%;
+float: left;
+  text-align: left;
+  font-weight: 700 !important;
+  font-size: 20px;
 }
 
 .bodydata {
@@ -7093,10 +7094,10 @@ a {
 }
 .runner-row {
   display: -webkit-box;
-  margin-bottom:-1px;
+  margin-bottom: -1px;
   align-items: center;
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px, rgba(200, 255, 250, 0.25) 0px -12px 30px, rgba(255, 255, 255, 0.2) 0px 4px 6px, rgba(150, 255, 240, 0.3) 0px 12px 13px, rgba(255, 255, 255, 0.15) 0px -3px 5px; background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
 
- 
   background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
   padding: 2px 2px;
   font-family: 'Times New Roman';
@@ -7166,12 +7167,12 @@ a {
 
 /* BACK = Blue */
 .back-box {
-  background-color: #bde0ff;
+  background-color: #72bbef;
 }
 
-.back-box:hover {
-  background-color: #8fd0ff;
-}
+  .back-box:hover {
+    background-color: #FF8A8E;
+  }
 
 /* LAY = Pink */
 .lay-box {
@@ -7207,12 +7208,12 @@ a {
 
 /* back color */
 .back-box {
-  background: #b3d9ff;
+  background: #72bbef;
 }
 
 /* lay color */
 .lay-box {
-  background: #ffb3b3;
+  background: #FF8A8E;
 }
 /* empty placeholder */
 .price-box.empty {
