@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, interval, Observable, Subject, timer } from 'rxjs';
+import { BehaviorSubject, interval, Observable, of, Subject, Subscription, timer } from 'rxjs';
 import { map, switchMap, takeUntil, tap, catchError } from 'rxjs/operators';
 import { FancyMarket } from '../interface/fancymarket';
 import { MarketBook } from '../interface/MarketBook';
 import { StorageService } from './storage-service';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 import { environment } from '../../environments/environment';
-
 @Injectable({ providedIn: 'root' })
 export class MarketService {
   private baseUrl = environment.apiBaseUrl;
-
+private pollingSubscription?: Subscription;
   private marketsSource = new BehaviorSubject<any>(null);
   markets$ = this.marketsSource.asObservable();
   userid: any;
@@ -23,57 +22,58 @@ export class MarketService {
     this.userid = info?.user?.id;
   }
 
-  startPolling(eventId: string, marketId: string, userId: string) {
-    timer(0, 3000) // Increased to 3 seconds to reduce server load
-      .pipe(
-        takeUntil(this.destroy$),
-        switchMap(() =>
-          this.http.get<any>(
-            `${this.baseUrl}Fancy2MarketAPI/LoadFancyMarketIN` +
-            `?EventID=${eventId}` +
-            `&MarketBookID=${marketId}` +
-            `&UserId=${this.userid || ''}`
-          ).pipe(
-            catchError(error => {
-              if (error.name === 'AbortError' || error.status === 0) {
-                console.log('Fancy polling request cancelled');
-                return [null]; // Return null to prevent errors
-              }
-              throw error;
-            })
-          )
+startPolling(eventId: string, marketId: string, userId: string) {
+
+  // Stop previous polling
+  this.stopPolling();
+
+  this.pollingSubscription = timer(0, 3000)
+    .pipe(
+      switchMap(() =>
+        this.http.get<any>(
+          `${this.baseUrl}Fancy2MarketAPI/LoadFancyMarketIN` +
+          `?EventID=${eventId}` +
+          `&MarketBookID=${marketId}` +
+          `&UserId=${userId}`
+        ).pipe(
+          catchError(err => {
+            console.error(err);
+            return of(null);
+          })
         )
       )
-      .subscribe({
-        next: res => {
-          if (res === null) return; // Skip cancelled requests
+    )
+    .subscribe(res => {
 
-          let parsed: any = {};
+      if (!res) return;
 
-          try {
-            parsed = res?.page ? JSON.parse(res.page) : {};
-          } catch {
-            parsed = {};
-          }
+      let parsed = {};
 
-          // ✅ Update global store
-          this.marketsSource.next(parsed);
-        },
-        error: err => {
-          console.error('Fancy polling error:', err);
-        }
-      });
-  }
+      try {
+        parsed = res.page ? JSON.parse(res.page) : {};
+      } catch {
+        parsed = {};
+      }
+
+      this.marketsSource.next(parsed);
+
+    });
+
+}
 
   // 🔥 Stop polling (important)
-  stopPolling() {
-    this.destroy$.next();
+ stopPolling() {
+
+  if (this.pollingSubscription) {
+    this.pollingSubscription.unsubscribe();
+    this.pollingSubscription = undefined;
   }
 
+}
+
   ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
+  this.stopPolling();
+}
   getMarkets(model: any): Observable<MarketBook> {
     return this.http.get<any>(
       `${this.baseUrl}MarketApi/MarketBookData` +
@@ -256,5 +256,25 @@ getVideoUrl(sportId: number, eventId: string): Observable<any[]> {
   return this.http.get<any[]>(
     `${this.baseUrl}MarketApi/GetCardLinks?eventId=${eventId}`
   );
+}
+
+showCompletedUserBetsFancyIN(
+    marketBookId: string,
+    selectionId: string
+) {
+  const info = this.storage.get<any>('userInfo');
+    this.userid = info?.user?.id;
+
+  return this.http.get<any>(
+    `${this.baseUrl}MarketApi/showcompleteduserbetsFancyIN`,
+    {
+      params: {
+        marektbookID: marketBookId,
+        selectionID: selectionId,
+        userID: this.userid || ''
+      }
+    }
+  );
+
 }
 }

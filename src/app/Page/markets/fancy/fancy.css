@@ -143,7 +143,7 @@ font-size: 16px;
 }
 
 .price-header{
-    width:160px;              /* Same width as Yes/No price columns */
+    width:145px;              /* Same width as Yes/No price columns */
     display:flex;
 }
 

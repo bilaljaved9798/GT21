@@ -1,0 +1,59 @@
+<div class="book-popup">
+
+  <div class="book-header">
+    <span>📖 Book Position</span>
+
+    <button mat-icon-button mat-dialog-close (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="book-body" *ngIf="bookData">
+
+    <table class="book-table">
+
+      <thead>
+        <tr> 
+          <th>Selection</th>
+          <th>P/L</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let runner of bookData.RunnersForindianFancy">
+
+          <td>
+            {{ runner.runnerName || runner.SelectionId }}
+          </td>
+
+          <td
+            [class.profit]="runner.ProfitandLoss > 0"
+            [class.loss]="runner.ProfitandLoss < 0">
+
+            {{ runner.ProfitandLoss | number:'1.0-2' }}
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="book-footer" (click)="close()">
+
+    <button
+      mat-raised-button
+      color="primary"
+      mat-dialog-close>
+
+      Close
+
+    </button>
+
+  </div>
+
+</div>

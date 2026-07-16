@@ -5,6 +5,8 @@ import { BetSlipService } from '../../Services/bet-slip-service';
 import { FormsModule } from '@angular/forms';
 import { effect } from '@angular/core';
 import { finalize, switchMap, throwError } from 'rxjs';
+import { StorageService } from '../../Services/storage-service';
+import { QuickStake } from '../../interface/BetSlipKeys ';
 
 @Component({
   selector: 'app-bet-slip',
@@ -20,7 +22,12 @@ private userId = 0;
 private userType = 0;
 userlimit: any = {};
 errorMessage = signal('');
-constructor(private userbetService: UserbetService,public betSlipService: BetSlipService) {
+stake = signal<number>(0);
+ submitting = signal<boolean>(false);
+
+ quickStakes: QuickStake[] = [];
+ 
+constructor(private userbetService: UserbetService,private storage: StorageService,public betSlipService: BetSlipService) {
     var info = JSON.parse(sessionStorage.getItem('userInfo') || '{}');
     this.userId = Number(info?.user?.id || 0);
     this.userType = Number(info?.user?.userTypeId || info?.user?.userTypeID || info?.user?.userType || 0);
@@ -32,16 +39,41 @@ constructor(private userbetService: UserbetService,public betSlipService: BetSli
     }
   });
     }
- stake = signal<number>(0);
- submitting = signal<boolean>(false);
 
-  quickStakes = [100, 500, 1000, 5000];
+ 
 
   setStake(val: number) {
     this.stake.set(Number(val) || 0);
   }
 
   ngOnInit() {
+     const result = this.storage.get<any>('userInfo')?.user?.result;
+
+  if (!result) return;
+
+  const buttons = [
+  result.simpleBtn1,
+  result.simpleBtn2,
+  result.simpleBtn3,
+  result.simpleBtn4,
+  result.simpleBtn5,
+  result.simpleBtn6,
+  result.simpleBtn7,
+  result.simpleBtn8,
+  result.simpleBtn9,
+  result.simpleBtn10,
+  result.simpleBtn11,
+  result.simpleBtn12
+];
+ 
+this.quickStakes = buttons
+  .filter(x => x)
+  .map(x => ({
+    label: x,                      // "500" or "+56242"
+    value: Number(x.replace('+', '')),
+    isAdd: x.startsWith('+')
+  }));
+
   }
   ngOnChanges(changes: SimpleChanges) {
     if (changes['type']) {

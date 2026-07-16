@@ -8,6 +8,9 @@
 .sporthighlightsuldiv2{
     max-height:320px;
     overflow:auto;
+    float: left;
+    width: 95%;
+    margin-left: 11px;
 }
 
 .inplaydatarow{

@@ -119,7 +119,7 @@
           class="submenu-event"
           [title]="match.marketBookName || match.todayHorseRace"
           [attr.aria-label]="match.marketBookName || match.todayHorseRace"
-          (click)="openMarket(match)">
+          (click)="openMarket(match, 'Cricket')">
           <span class="submenu-event-icon">›</span>
           <span class="submenu-event-name">
             {{ match.marketBookName || match.todayHorseRace }}
@@ -147,7 +147,7 @@
           class="submenu-event"
           [title]="match.marketBookName || match.todayHorseRace"
           [attr.aria-label]="match.marketBookName || match.todayHorseRace"
-          (click)="openMarket(match)">
+          (click)="openMarket(match, 'Soccer')">
           <span class="submenu-event-icon">›</span>
           <span class="submenu-event-name">
             {{ match.marketBookName || match.todayHorseRace }}
@@ -175,7 +175,7 @@
           class="submenu-event"
           [title]="match.marketBookName || match.todayHorseRace"
           [attr.aria-label]="match.marketBookName || match.todayHorseRace"
-          (click)="openMarket(match)">
+          (click)="openMarket(match, 'Tennis')">
           <span class="submenu-event-icon">›</span>
           <span class="submenu-event-name">
             {{ match.marketBookName || match.todayHorseRace }}
@@ -203,7 +203,7 @@
         class="submenu-event"
         [title]="match.marketBookName || match.todayHorseRace"
         [attr.aria-label]="match.marketBookName || match.todayHorseRace"
-        (click)="openMarket(match)">
+        (click)="openMarket(match, 'Cricket')">
         <span class="submenu-event-icon">›</span>
         <span class="submenu-event-name">
           {{ match.marketBookName || match.todayHorseRace }}
@@ -230,7 +230,7 @@
         class="submenu-event"
         [title]="match.marketBookName || match.todayHorseRace"
         [attr.aria-label]="match.marketBookName || match.todayHorseRace"
-        (click)="openMarket(match)">
+        (click)="openMarket(match, 'Horse Racing')">
         <span class="submenu-event-icon">›</span>
         <span class="submenu-event-name">
           {{ match.marketBookName || match.todayHorseRace }}
@@ -256,7 +256,7 @@
         class="submenu-event"
         [title]="match.marketBookName || match.todayHorseRace"
         [attr.aria-label]="match.marketBookName || match.todayHorseRace"
-        (click)="openMarket(match)">
+        (click)="openMarket(match, 'Greyhound')">
         <span class="submenu-event-icon">›</span>
         <span class="submenu-event-name">
           {{ match.marketBookName || match.todayHorseRace }}
