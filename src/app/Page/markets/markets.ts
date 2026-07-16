@@ -95,7 +95,6 @@ favoriteLaySize = '';
         }, 100);
       }
     });
-
   }
  setmarketOpen() {
   this.marketService.SetmarketOpen(this.model.selectedMarketId)
@@ -107,10 +106,6 @@ favoriteLaySize = '';
       console.error('Error:', err);
     }
   });
-}
-
-getothersccorMarket(){
-
 }
 private calculateMultipleOdds(): void {
 
@@ -181,35 +176,89 @@ private calculateMultipleOdds(): void {
   this.favoriteBackSize = lastRunner.backSize;
   this.favoriteLaySize = lastRunner.laySize;
 }
-  ngOnInit(): void {
-    this.model.selectedMarketBook = (this.storage.get('selectedMarket') as MarketBook)?.marketBookName || '';
-    this.model.selectedMarketStartTime = (this.storage.get('selectedMarket') as MarketBook)?.orignalOpenDate || '';
-    this.model.selectedSport = (this.storage.get('selectedMarket') as MarketBook)?.mainSportsname || '';
-    this.model.eventName = (this.storage.get('selectedMarket') as MarketBook)?.marketBookName || '';
-    this.model.mainSportsname = (this.storage.get('selectedMarket') as MarketBook)?.mainSportsname || '';
-    this.mainsportsname = this.model.mainSportsname;
-    this.checkScreen();
+ ngOnInit(): void {
 
-    if (isPlatformBrowser(this.platformId)) {
-      window.addEventListener('resize', this.onResize);
-    }
-    if (isPlatformBrowser(this.platformId)) {
-      this.matchStartTime = this.addHours((this.storage.get('selectedMarket') as MarketBook)?.orignalOpenDate || '', 5);
-      this.marketService.getMarkets(this.model).subscribe(res => {
-        this.market = res;
-        this.cdr.markForCheck();
-        this.loadMarkets()
-        if (this.mainsportsname === 'Cricket') {
-          this.marketService.startPolling(this.eventId, this.model.selectedMarketId, this.model.userId);
-        }
-      });
-    }
-        this.userbetService.betPlaced$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(() => this.refreshMarket());
+  this.checkScreen();
 
-      this.showTab('score');
+  if (isPlatformBrowser(this.platformId)) {
+    window.addEventListener('resize', this.onResize);
   }
+
+  // Load market whenever query parameter changes
+  this.route.queryParamMap
+    .pipe(takeUntil(this.destroy$))
+    .subscribe(params => {
+
+      const marketId = params.get('id');
+
+      if (!marketId) {
+        return;
+      }
+
+      this.loadMarket(marketId);
+
+    });
+
+  // Refresh after bet placed
+  this.userbetService.betPlaced$
+    .pipe(takeUntil(this.destroy$))
+    .subscribe(() => this.refreshMarket());
+
+  this.showTab('score');
+}
+
+private loadMarket(marketId: string): void {
+debugger;
+  const selectedMarket = this.storage.get('selectedMarket') as MarketBook;
+
+  if (!selectedMarket) {
+    return;
+  }
+
+  this.model.selectedMarketId = marketId;
+  this.model.selectedMarketBook = selectedMarket.marketBookName || '';
+  this.model.selectedMarketStartTime = selectedMarket.orignalOpenDate || '';
+  this.model.selectedSport = selectedMarket.mainSportsname || '';
+  this.model.eventName = selectedMarket.marketBookName || '';
+  this.model.mainSportsname = selectedMarket.mainSportsname || '';
+  this.marketId= selectedMarket.marketId;
+  this.mainsportsname = this.model.mainSportsname;
+  this.eventId = selectedMarket.eventID;
+
+  if (isPlatformBrowser(this.platformId)) {
+
+    this.matchStartTime = this.addHours(
+      selectedMarket.orignalOpenDate || '',
+      5
+    );
+
+    // Stop previous polling
+    this.marketService.stopPolling();
+
+    // Load selected market
+    this.marketService.getMarkets(this.model).subscribe(res => {
+
+      this.market = res;
+
+      this.cdr.markForCheck();
+
+      this.loadMarkets();
+
+      if (this.mainsportsname === 'Cricket') {
+
+        this.marketService.startPolling(
+          this.eventId,
+          marketId,
+          this.model.userId
+        );
+
+      }
+
+    });
+
+  }
+
+}
 
   addHours(dateValue: any, hours: number): Date {
     const date = new Date(dateValue);
@@ -259,7 +308,7 @@ private calculateMultipleOdds(): void {
 
   loadMarkets(): void {
     this.marketPollStop$.next();
-    timer(1000, 2000) // Increased initial delay and interval to reduce load
+    timer(0, 2000) // Increased initial delay and interval to reduce load
       .pipe(
         takeUntil(this.destroy$),
         takeUntil(this.marketPollStop$),

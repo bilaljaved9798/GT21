@@ -157,23 +157,25 @@ canUseAdminTools() {
   return this.userTypeId === 1;
 }
 
-  openMarket(match: any) {
-    debugger;
-    if (!this.marketbook) {
-      this.marketbook = {} as MarketBook;
+  openMarket(match: any,mainsportsname: string) {
+  debugger;
+  const market: MarketBook = {
+    marketId: match.marketId || match.marketCatalogueID,
+    eventID: match.eventID,
+    marketBookName: match.eventName,
+    mainSportsname: mainsportsname,
+    orignalOpenDate: match.eventOpenDate
+  } as MarketBook;
+
+  this.storage.set('selectedMarket', market);
+
+  this.router.navigate(['/market'], {
+    queryParams: {
+      id: match.marketId || match.marketCatalogueID
     }
+  });
 
-    this.marketbook.marketId = match.marketCatalogueID;
-    this.marketbook.eventID = match.eventID;
-    this.marketbook.mainSportsname = "Cricket"; // Assuming it's cricket for this example
-    this.marketbook.marketBookName = match.eventName;
-    this.marketbook.orignalOpenDate = match.eventOpenDate;
-
-    this.router.navigate(['/market'], {
-      state: { match: this.marketbook },
-      queryParams: { id: match.marketCatalogueID }
-    });
-  }
+}
 
   private loadEventType(menu: string, typeId: number) {
     if (this.openMenu === menu) {

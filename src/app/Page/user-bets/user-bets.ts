@@ -5,6 +5,8 @@ import { StorageService } from '../../Services/storage-service';
 import { CommonModule } from '@angular/common';
 import { UserbetSignalRService } from '../../Services/BetSignalRService';
 import { Subject, takeUntil } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { StackPopup } from '../../shared/stack-popup/stack-popup';
 
 @Component({
   selector: 'app-user-bets',
@@ -16,7 +18,7 @@ export class UserBets {
   private destroy$ = new Subject<void>();
 bets: UserBet[] = [];
 model: any = {};
-constructor(private betService: UserbetService,protected storage: StorageService,public betSignal : UserbetSignalRService) {
+constructor(private betService: UserbetService,protected storage: StorageService,public betSignal : UserbetSignalRService,private dialog: MatDialog) {
   const info = this.storage.get<any>('userInfo');
     this.model.userId = info?.user?.id;
    // this.loadBets();
@@ -70,5 +72,12 @@ loadBets() {
       this.loadBets();
     });
   }
+
+  openBetSlipSetting() {
+  this.dialog.open(StackPopup, {
+    width: '700px',
+    disableClose: true
+  });
+}
   
 }

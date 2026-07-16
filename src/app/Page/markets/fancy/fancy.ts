@@ -6,6 +6,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { StorageService } from '../../../Services/storage-service';
 import { CommonModule } from '@angular/common';
 import { BetSlipService } from '../../../Services/bet-slip-service';
+import { MatDialog } from '@angular/material/dialog';
+import { BookPopup } from '../../../shared/book-popup/book-popup';
 
 @Component({
   selector: 'app-fancy',
@@ -25,7 +27,7 @@ private timerText: string = '';
 private model: any = {};
  market: FancyMarket[] = [];
 
-constructor(private marketService: MarketService,private betSlipService: BetSlipService,private route: ActivatedRoute,private cdr: ChangeDetectorRef,private router: Router,private storage: StorageService) {
+constructor(private marketService: MarketService,private betSlipService: BetSlipService,private route: ActivatedRoute,private cdr: ChangeDetectorRef,private router: Router,private storage: StorageService,private dialog: MatDialog) {
  const info = this.storage.get<any>('userInfo');
   this.userid = info?.user?.id;
 }
@@ -119,4 +121,21 @@ showMarketRules(market: string, country: string, id: string) {
     categoryName: 'Fancy'
   });
   }
+  
+  openBook(
+    selectionId: string
+) {
+
+  this.dialog.open(BookPopup, {
+
+    width: '700px',
+
+    data: {
+      marketBookId: this.eventId,
+      selectionId
+    }
+
+  });
+
+}
 }

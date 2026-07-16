@@ -1,105 +1,107 @@
-<div class="market-header" style="background:linear-gradient( to top, rgb(0, 255, 138), rgb(0, 0, 0)) ">
-  <i class="fa fa-star-o" aria-hidden="true"></i>
+<div *ngIf="market.length>0">
+  <div class="market-header" style="background:linear-gradient( to top, rgb(0, 255, 138), rgb(0, 0, 0)) ">
+    <i class="fa fa-star-o" aria-hidden="true"></i>
 
   <div class="market-title" style="color:white">
     FANCY MARKET 2
   </div>
 
-</div>
-
-<div class="market-header">
-
-  <div class="market-title">
-
   </div>
 
-  <div class="price-header">
+  <div class="market-header">
 
-    <div class="price-col back" style="margin-left: 28px;">
-      <div class="title">Yes</div>
-      <i class="fa fa-arrow-circle-down backcircle"></i>
+    <div class="market-title">
+
     </div>
 
-    <div class="price-col lay">
-      <div class="title">No</div>
-      <i class="fa fa-arrow-circle-down laycircle"></i>
-    </div>
+    <div class="price-header">
 
-  </div>
-
-</div>
-
-<div *ngFor="let runner of market" class="row align-items-center mb-2 runner-row " style="margin-top:-3px">
-
-  <!-- Runner Info (Mobile full width, Desktop 8 cols) -->
-  <div class="col-8 col-md-8 runner-info" style="float: left;">
-
-    <a style="    margin-left: -5px;">
-      <img src="assets/images/Screenshot_2025-02-17_020603-removebg-preview.png" alt="Company Logo" height="18" width="18"> <br />
-      <i class="fas fa-caret-right" style="   margin-top: 5px;"></i>
-    </a>
-
-
-    <div class="d-flex justify-content-between align-items-center">
-
-
-
-
-      <!-- Runner Name -->
-      <div class="runner-name text-truncate" style="margin-top:4px">
-        {{ runner?.RunnerName }}
+      <div class="price-col back">
+        <div class="title">Yes</div>
+        <i class="fa fa-arrow-circle-down backcircle"></i>
       </div>
 
-      <!-- Right Side -->
-      <div class="d-flex align-items-center ms-2">
+      <div class="price-col lay">
+        <div class="title">No</div>
+        <i class="fa fa-arrow-circle-down laycircle"></i>
+      </div>
 
-        <!-- PnL -->
-        <!-- Button -->
-        <div class="bookbutton1" style="float: left;">
-          Book
+    </div>
+
+  </div>
+
+  <div *ngFor="let runner of market" class="row align-items-center mb-2 runner-row " style="margin-top:-3px">
+
+    <!-- Runner Info (Mobile full width, Desktop 8 cols) -->
+    <div class="col-8 col-md-8 runner-info" style="float: left;">
+
+      <a style="    margin-left: -5px;">
+        <img src="assets/images/Screenshot_2025-02-17_020603-removebg-preview.png" alt="Company Logo" height="18"
+          width="18"> <br />
+        <i class="fas fa-caret-right" style="   margin-top: 4px;"></i>
+      </a>
+
+      <div class="d-flex justify-content-between align-items-center">
+        <!-- Runner Name -->
+        <div class="runner-name text-truncate">
+          {{ runner?.RunnerName }}
         </div>
-        <div style="width: 90px; float: left;margin-top:6px"
-             class="pnl me-2">
-          <span *ngIf="(runner?.Profit ?? 0) > 0" class="profit">
-            {{ runner.Profit }}
-          </span>
-          <span *ngIf="(runner?.Loss ?? 0) < 0" class="loss">
-            {{ runner.Loss }}
-          </span>
+
+        <!-- Right Side -->
+        <div class="d-flex align-items-center ms-2">
+
+          <!-- PnL -->
+          <!-- Button -->
+         <div
+    class="bookbutton1"
+    (click)="openBook( runner.SelectionId.toString())">
+    Book
+</div>
+          <div style="width: 90px; float: left;margin-top:6px" class="pnl me-2">
+            <span *ngIf="(runner?.Profit ?? 0) > 0" class="profit">
+              {{ runner.Profit }}
+            </span>
+            <span *ngIf="(runner?.Loss ?? 0) < 0" class="loss">
+              {{ runner.Loss }}
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Prices / Status -->
+    <div class="col-4 col-md-4 price-width">
+
+      <!-- Status -->
+      <div *ngIf="runner?.MarketStatusStr === 'SUSPENDED' || runner?.MarketStatusStr === 'Ball Running'"
+        class="status-box text-center">
+        <div class="status-text">
+          {{ runner?.MarketStatusStr === 'SUSPENDED' ? 'SUSPENDED' : 'BALL RUNNING' }}
         </div>
       </div>
 
-    </div>
+      <!-- Prices -->
+      <div *ngIf="runner?.MarketStatusStr !== 'SUSPENDED' && runner?.MarketStatusStr !== 'Ball Running'"
+        class="d-flex justify-content-between mt-2">
 
-  </div>
-
-  <!-- Prices / Status -->
-  <div class="col-4 col-md-4 price-width">
-
-    <!-- Status -->
-    <div *ngIf="runner?.MarketStatusStr === 'SUSPENDED' || runner?.MarketStatusStr === 'Ball Running'"
-         class="status-box text-center">
-      <div class="status-text">
-        {{ runner?.MarketStatusStr === 'SUSPENDED' ? 'SUSPENDED' : 'BALL RUNNING' }}
-      </div>
-    </div>
-
-    <!-- Prices -->
-    <div *ngIf="runner?.MarketStatusStr !== 'SUSPENDED' && runner?.MarketStatusStr !== 'Ball Running'"
-         class="d-flex justify-content-between mt-2">
-
-      <!-- Back -->
-      <div class="price-box back-box text-center flex-fill me-1" style="float: left;margin-right:2px" (click)="showBetSlip(
+        <!-- Back -->
+        <div class="price-box back-box text-center flex-fill me-1" style="float: left;margin-right:2px"
+          (click)="showBetSlip(
          runner.SelectionId, runner.RunnerName, 'back', (runner.Backprice || 0), 0, runner.MarketBookID, 'Fancy', (runner.BackSize || 0), 0)">
-        <div class="price">{{ runner.Backprice }}</div>
-        <div class="size">{{ runner.BackSize }}</div>
-      </div>
+          <div class="price">{{ runner.Backprice }}</div>
+          <div class="size">{{ runner.BackSize }}</div>
+        </div>
 
-      <!-- Lay -->
-      <div class="price-box lay-box text-center flex-fill ms-1" (click)="showBetSlip(
+        <!-- Lay -->
+        <div class="price-box lay-box text-center flex-fill ms-1"
+          (click)="showBetSlip(
          runner.SelectionId, runner.RunnerName, 'lay', (runner.Layprice || 0), 0, runner.MarketBookID, 'Fancy', (runner.LaySize || 0), 0)" style="margin-left:2px">
-        <div class="price">{{ runner.Layprice }}</div>
-        <div class="size">{{ runner.LaySize }}</div>
+          <div class="price">{{ runner.Layprice }}</div>
+          <div class="size">{{ runner.LaySize }}</div>
+        </div>
+
       </div>
 
     </div>

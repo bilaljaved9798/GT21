@@ -43,8 +43,8 @@
 
     <div class="stake-buttons">
       @for (btn of quickStakes; track btn) {
-        <button type="button" (click)="setStake(btn)">
-          {{ btn }}
+        <button type="button" (click)="setStake(btn.value)">
+          {{ btn.value }}
         </button>
       }
     </div>

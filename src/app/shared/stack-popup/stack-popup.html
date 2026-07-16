@@ -1,0 +1,89 @@
+<h2 mat-dialog-title>
+    Bet Slip Settings
+</h2>
+
+<mat-dialog-content>
+
+<form [formGroup]="form">
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <mat-card>
+
+            <mat-card-title>
+                Simple Bet
+            </mat-card-title>
+
+            <div class="grid">
+
+                <mat-form-field appearance="outline"
+                    *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]">
+
+                    <mat-label>{{i}}</mat-label>
+
+                    <input matInput
+                           type="string"
+                           [formControlName]="'SimpleBtn' + i">
+
+                </mat-form-field>
+
+            </div>
+
+        </mat-card>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <mat-card>
+
+            <mat-card-title>
+                Jori Bet
+            </mat-card-title>
+
+            <div class="grid">
+
+                <mat-form-field appearance="outline"
+                    *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]">
+
+                    <mat-label>{{i}}</mat-label>
+
+                    <input matInput
+                           type="number"
+                           [formControlName]="'MutipleBtn'+i">
+
+                </mat-form-field>
+
+            </div>
+
+        </mat-card>
+
+    </div>
+
+</div>
+
+</form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+
+<button mat-button
+        (click)="dialogRef.close()">
+    Cancel
+</button>
+
+<button
+mat-raised-button
+color="primary"
+(click)="save()">
+
+<mat-icon>save</mat-icon>
+
+Save
+
+</button>
+
+</mat-dialog-actions>

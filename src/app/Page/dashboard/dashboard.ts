@@ -4,6 +4,7 @@ import { AuthService } from '../../Services/auth-service';
 import { Router } from '@angular/router';
 import { MarketBook } from '../../interface/MarketBook';
 import { CommonModule } from '@angular/common';
+import { StorageService } from '../../Services/storage-service';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +26,7 @@ export class Dashboard {
   constructor(
     private router: Router,
     private authService: AuthService,
-    public _dashboardServices: Dashboardservices, private cdr: ChangeDetectorRef
+    public _dashboardServices: Dashboardservices, private cdr: ChangeDetectorRef,private storage: StorageService,
   ) {
   }
 
@@ -108,12 +109,32 @@ addHours(dateValue: any, hours: number): Date {
     }
   }
 
+//  openMarket(match: any) {
+//   this.router.navigate(['/market'], {
+//     state: { match: match },
+//     queryParams: { id: match.marketId}
+//   });
+// }
+
  openMarket(match: any) {
-  this.router.navigate(['/market'], {
-    state: { match: match },
-    queryParams: { id: match.marketId}
-  });
-}
+
+    const market: MarketBook = {
+      marketId: match.marketId,
+      eventID: match.eventID,
+      marketBookName: match.marketBookName,
+      mainSportsname: match.mainSportsname,
+      orignalOpenDate: match.orignalOpenDate
+    } as MarketBook;
+
+    this.storage.set('selectedMarket', market);
+
+    this.router.navigate(['/market'], {
+      queryParams: {
+        id: match.marketId
+      }
+    });
+
+  }
 
 }
 
