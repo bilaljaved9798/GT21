@@ -43,7 +43,7 @@
 
       <br />
 
-      <div style="margin-bottom: -18px;">
+      <div style="margin-bottom: -18px; border-bottom: 1px solid #8080802e">
         <label style="font-weight: 500; border-top: 2px solid forestgreen; margin-top: 4px; ">
           Match Odds | Winner: 1
         </label>
@@ -154,11 +154,11 @@
       <!-- RUNNER NAME -->
       <div class="runner-row col-md-12 col-lg-12" *ngFor="let runner of market?.runners"
         [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)" [id]="'selection' + runner.selectionId"
-        style="background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%); text-overflow: ellipsis; overflow: hidden; white-space:nowrap;">
+        style="background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; border-bottom: 1px solid #80808085; height: 53px ">
         <a>
           <img src="assets/images/Screenshot_2025-02-17_020603-removebg-preview.png" alt="Company Logo" height="18"
             width="18"> <br />
-          <i class="fas fa-caret-right" style="   margin-top: 4px;"></i>
+          <i class="fas fa-caret-right" style="   margin-top: 6px;"></i>
         </a>
         <!-- RUNNER INFO -->
         <div class="runner-info col-md-6 col-lg-6">

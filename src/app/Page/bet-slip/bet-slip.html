@@ -14,17 +14,21 @@
         <span class="section-label">Selection</span>
         <span class="selection-name" [title]="selectionName()">
           {{ selectionName() }}
+
+
+          <span class="price-box"
+               [class.back]="type()?.toLowerCase() === 'back'"
+               [class.lay]="type()?.toLowerCase() === 'lay'"
+               [class.odds-up]="oddsChange() === 'up'"
+               [class.odds-down]="oddsChange() === 'down'">
+            <span>{{ type() }}</span>
+            <strong>{{ price() }}</strong>
+          </span>
+
         </span>
       </div>
 
-      <div class="price-box"
-        [class.back]="type()?.toLowerCase() === 'back'"
-        [class.lay]="type()?.toLowerCase() === 'lay'"
-        [class.odds-up]="oddsChange() === 'up'"
-        [class.odds-down]="oddsChange() === 'down'">
-        <span>{{ type() }}</span>
-        <strong>{{ price() }}</strong>
-      </div>
+     
     </div>
 
     <div class="form-row">

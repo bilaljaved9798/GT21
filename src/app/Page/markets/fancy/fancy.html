@@ -1,4 +1,4 @@
-<div *ngIf="market.length>0">
+<div *ngIf="market.length>0"style="margin-top: 12px;" >
   <div class="market-header" style="background:linear-gradient( to top, rgb(0, 255, 138), rgb(0, 0, 0)) ">
     <i class="fa fa-star-o" aria-hidden="true"></i>
 
@@ -8,13 +8,13 @@
 
   </div>
 
-  <div class="market-header">
+  <div class="market-header" style="border-bottom: 1px solid #80808085;">
 
     <div class="market-title">
 
     </div>
 
-    <div class="price-header">
+    <div class="price-header" style="">
 
       <div class="price-col back">
         <div class="title">Yes</div>
@@ -30,7 +30,7 @@
 
   </div>
 
-  <div *ngFor="let runner of market" class="row align-items-center mb-2 runner-row " style="margin-top:-3px">
+  <div *ngFor="let runner of market" class="row align-items-center mb-2 runner-row " style="margin-top: -3px; border-bottom: 1px solid #80808063 ">
 
     <!-- Runner Info (Mobile full width, Desktop 8 cols) -->
     <div class="col-8 col-md-8 runner-info" style="float: left;">

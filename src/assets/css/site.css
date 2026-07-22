@@ -1143,7 +1143,7 @@ cta-8:hover {
 }
 
 .relatedname {
-    background: white;
+    
     width: 99%;
 }
 
@@ -4113,7 +4113,9 @@ float: left;
 }
 
 .inplaydatarow {
-  box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px, rgba(200, 255, 250, 0.25) 0px -12px 30px, rgba(255, 255, 255, 0.2) 0px 4px 6px, rgba(150, 255, 240, 0.3) 0px 12px 13px, rgba(255, 255, 255, 0.15) 0px -3px 5px; float: left;
+  border-bottom: 1px solid #80808069;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px, rgba(200, 255, 250, 0.25) 0px -12px 30px, rgba(255, 255, 255, 0.2) 0px 4px 6px, rgba(150, 255, 240, 0.3) 0px 12px 13px, rgba(255, 255, 255, 0.15) 0px -3px 5px;
+  float: left;
   font-size: 16px;
   font-weight: bold;
   border-bottom: 1px solid #e2e1e1;
@@ -4155,7 +4157,7 @@ float: left;
     float: left;
     width: 55%;
     margin-right: 2px;
-    padding: 7px;
+    padding: 2px;
 }
 
 
@@ -7099,7 +7101,7 @@ float: left;
     box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px, rgba(200, 255, 250, 0.25) 0px -12px 30px, rgba(255, 255, 255, 0.2) 0px 4px 6px, rgba(150, 255, 240, 0.3) 0px 12px 13px, rgba(255, 255, 255, 0.15) 0px -3px 5px; background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
 
   background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
-  padding: 2px 2px;
+  padding: 2px 1px;
   font-family: 'Times New Roman';
 }
 
@@ -7171,7 +7173,7 @@ float: left;
 }
 
   .back-box:hover {
-    background-color: #FF8A8E;
+    background-color: #72bbef;
   }
 
 /* LAY = Pink */
@@ -7283,16 +7285,14 @@ float: left;
   font-weight: 600;
 }
 .status-box {
-    
-    height:44px;
+  height: 44px;
   height: 100%;
-  background: white;
+  background: transparent;
   opacity: 0.98;
   color: red;
   font-weight: bold;
   display: flex;
   align-items: center;
-  
 }
 .profit {
   color: #28a745; /* Bootstrap green */
@@ -7312,7 +7312,7 @@ float: left;
   background: #ffffff;
   border-radius: 6px;
   box-shadow: 0 0 6px rgba(0,0,0,0.1);
-  padding: 10px;
+  padding: 1px;
 }
 
 .betslip-header {
@@ -7328,7 +7328,7 @@ float: left;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .price-box {
@@ -7415,8 +7415,8 @@ float: left;
 
 .modal-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 35%;
+  left: 49%;
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 400px;

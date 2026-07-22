@@ -151,7 +151,7 @@
 .content {
   flex: 1;
   min-width: 0;
-  padding: 3px !important;
+  padding: 0px !important;
   overflow-x: hidden;
 }
 
