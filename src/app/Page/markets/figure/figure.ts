@@ -14,8 +14,8 @@ import { BetSlipService } from '../../../Services/bet-slip-service';
   styleUrl: './figure.css',
 })
 export class Figure {
-   @Input() eventId!: string;
- @Input() marketId!: string
+  @Input() eventId!: string;
+  @Input() marketId!: string
   market: any=[];
    marketboos: Datum[] =[];
   userid: any;

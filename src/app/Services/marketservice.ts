@@ -277,4 +277,11 @@ showCompletedUserBetsFancyIN(
   );
 
 }
+
+GetOtherSoccer(eventId: string): Observable<any[]> {
+  const info = this.storage.get<any>('userInfo');
+  return this.http.get<any[]>(
+    `${this.baseUrl}Fancy2MarketAPI/GetOtherSoccer?EventID=${eventId}&UserId=${info?.user?.id || ''}`
+  );
+}
 }
