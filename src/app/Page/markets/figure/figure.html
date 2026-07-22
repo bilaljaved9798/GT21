@@ -1,8 +1,8 @@
-<div *ngFor="let marketbook of marketboos">
+<div *ngFor="let marketbook of marketboos" style="margin-top:12px">
   <div style="font-weight: bold; color: white; align-content: center; height: 35px; background: linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0)) ">
 
     <div style="margin-left:11px">
-      Last Figure {{ marketbook?.mname }}
+      Last Figure {{ getLastFigureName(marketbook?.mname) }}
     </div>
   </div>
   <table>
@@ -39,7 +39,7 @@
 
   </table>
 
-  <div class="runner-row col-md-12 col-lg-12" *ngFor="let runner of marketbook?.section; let k = index" style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
+  <div class="runner-row col-md-12 col-lg-12" *ngFor="let runner of marketbook?.section; let k = index" style="background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%); border-bottom: 1px solid #80808066">
    
     <div class="runner-info col-md-8 col-8">
        <a>

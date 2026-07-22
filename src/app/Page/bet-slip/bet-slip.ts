@@ -60,10 +60,7 @@ constructor(private userbetService: UserbetService,private storage: StorageServi
   result.simpleBtn6,
   result.simpleBtn7,
   result.simpleBtn8,
-  result.simpleBtn9,
-  result.simpleBtn10,
-  result.simpleBtn11,
-  result.simpleBtn12
+
 ];
  
 this.quickStakes = buttons

@@ -12,7 +12,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8 col-lg-8" style="padding: 2px;">
+    <div class="col-md-8 col-lg-8" style="padding: 0px;">
       <div class="col-md-12 no-padding marketinfo">
 
         <div class="marketname">
@@ -24,11 +24,11 @@
 
           <span class="namestyle">
             <span style="margin-top:3px !important;" title="Rules" class="rule active1"
-              (click)="showMarketRules(market?.mainSportsname ?? '', market?.marketBookName ?? '', market?.runners?.length ?? 0)">
+                  (click)="showMarketRules(market?.mainSportsname ?? '', market?.marketBookName ?? '', market?.runners?.length ?? 0)">
             </span>
 
             <img class="timrimg" [src]="getMarketImages(market?.mainSportsname || '')"
-              *ngIf="getMarketImages(market?.mainSportsname || '')" style="height:35px" />
+                 *ngIf="getMarketImages(market?.mainSportsname || '')" style="height:35px" />
 
             {{ market?.marketBookName || '' }}
           </span>
@@ -36,12 +36,43 @@
       </div>
 
 
-      <br />
+   
 
       <app-score-update *ngIf="mainsportsname != 'Cricket' "
-        [status]="market?.marketStatusstr || ''"></app-score-update>
+                        [status]="market?.marketStatusstr || ''"></app-score-update>
 
-      <br />
+
+
+      <div class="match-header" style="background:#01e11d17">
+        <div>{{ market?.runners?.[0]?.runnerName }}</div>
+
+        <div class="live-dot"></div>
+
+        <div>{{ score.score }}</div>
+
+        <!-- Show only when expanded -->
+        <div *ngIf="isExpanded">
+          {{ score.over }}
+        </div>
+
+
+        <div style="text-align:center;">
+
+
+          <!-- Toggle Button -->
+          <button class="toggle-btn" (click)="toggleExpand()" style="border: none; background: transparent; color:darkred">
+            <span *ngIf="!isExpanded"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span *ngIf="isExpanded">
+              <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            </span>
+          </button>
+
+        </div>
+      </div>
+
+
+
+
 
       <div style="margin-bottom: -18px; border-bottom: 1px solid #8080802e">
         <label style="font-weight: 500; border-top: 2px solid forestgreen; margin-top: 4px; ">
@@ -53,17 +84,10 @@
         </label>
       </div>
       <br />
-      <div class="match-header">
 
-        <div>{{ market?.runners?.[0]?.runnerName }}</div>
 
-        <div class="live-dot"></div>
 
-        <div>{{score.score}}</div>
 
-        <div>{{score.over}}</div>
-
-      </div>
       <div class="market-header col-md-12 col-lg-12">
 
         <div class="market-title col-md-6 col-lg-6">
@@ -86,7 +110,7 @@
 
       </div>
       <div class="favoriteselection" *ngIf="selectedRunners.length > 0"
-        [style.display]="selectedRunners.length > 1 ? 'block' : 'none'">
+           [style.display]="selectedRunners.length > 1 ? 'block' : 'none'">
 
         <div class="favoriteselectionname">
           {{ favoriteSelectionName }}
@@ -124,11 +148,11 @@
       </div>
       <!-- RUNNER NAME -->
       <div class="runner-row col-md-12 col-lg-12" *ngFor="let runner of market?.runners"
-        [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)" [id]="'selection' + runner.selectionId"
-        style="background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; border-bottom: 1px solid #80808085; height: 53px ">
+           [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)" [id]="'selection' + runner.selectionId"
+           style="background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; border-bottom: 1px solid #80808085;">
         <a>
           <img src="assets/images/Screenshot_2025-02-17_020603-removebg-preview.png" alt="Company Logo" height="18"
-            width="18"> <br />
+               width="18"> <br />
           <i class="fas fa-caret-right" style="   margin-top: 6px;"></i>
         </a>
         <!-- RUNNER INFO -->
@@ -137,8 +161,8 @@
           <div *ngIf="runner.wearingURL" class="clothnumstalldrawimg" (click)="onRunnerClick(runner)">
             <img class="runnerwearing" [src]="getWearingUrl(runner.wearingURL)" (error)="onImageError($event)" />
           </div>
-          <div class="runner-name" style="width: 100%; margin-top: -2px; margin-left: 0px;"
-            [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)" (click)="onRunnerClick(runner)">
+          <div class="runner-name" style="width: 100%; margin-top: 1px; margin-left: 0px;"
+               [class.runnerselectedhorse]="isRunnerSelected(runner.selectionId)" (click)="onRunnerClick(runner)">
             {{ runner.runnerName }}
             <span *ngIf="isRunnerSelected(runner.selectionId)" class="selected-icon">
               ✓
@@ -167,8 +191,8 @@
           <!-- BACK -->
           <div class="prices-group back-group">
             <div class="price-box back-box"
-              *ngFor="let back of (isMobile ? (getBackPrices(runner).slice() | slice:0:1) : getBackPrices(runner).slice()); let i = index"
-              [class.empty]="!back" [class.bet-disabled]="back && !isBettingAllowed()" (click)="back && showBetSlip(
+                 *ngFor="let back of (isMobile ? (getBackPrices(runner).slice() | slice:0:1) : getBackPrices(runner).slice()); let i = index"
+                 [class.empty]="!back" [class.bet-disabled]="back && !isBettingAllowed()" (click)="back && showBetSlip(
          runner.selectionId,
          runner.runnerName,
          'back',
@@ -191,8 +215,8 @@
           <!-- LAY -->
           <div class="prices-group lay-group" style="margin-left: 2px;">
             <div class="price-box lay-box"
-              *ngFor="let lay of (isMobile ? (getLayPrices(runner) | slice:0:1) : getLayPrices(runner)); let i = index"
-              [class.empty]="!lay" [class.bet-disabled]="lay && !isBettingAllowed()" (click)="lay && showBetSlip(
+                 *ngFor="let lay of (isMobile ? (getLayPrices(runner) | slice:0:1) : getLayPrices(runner)); let i = index"
+                 [class.empty]="!lay" [class.bet-disabled]="lay && !isBettingAllowed()" (click)="lay && showBetSlip(
          runner.selectionId,
          runner.runnerName,
          'lay',
@@ -216,25 +240,31 @@
 
       <!-- <app-toss [eventId]="eventId" *ngIf="mainsportsname=='Cricket'"></app-toss> -->
       <!-- <div class="runner-row col-md-12 col-lg-12" *ngIf="mainsportsname=='Cricket'">
-        <app-line-market [eventId]="eventId || ''">
-        </app-line-market>
-      </div> -->
+    <app-line-market [eventId]="eventId || ''">
+    </app-line-market>
+  </div> -->
 
       <div class="col-md-12 col-lg-12" *ngIf="mainsportsname=='Cricket'">
+
+        <div class="col-sm-12  col-md-6 col-lg-6 no-padding">
+          <app-even-odd [eventId]="eventId || ''" [marketId]="model.selectedMarketId|| ''"></app-even-odd>
+        </div>
+
         <div class="col-sm-12 col-md-6 col-lg-6 no-padding">
+
+
+
           <app-fancy [eventId]="eventId || ''" [marketId]="model.selectedMarketId|| ''">
           </app-fancy>
         </div>
         <div class="col-sm-12  col-md-6 col-lg-6 no-padding">
           <app-figure [eventId]="eventId || ''" [marketId]="model.selectedMarketId|| ''"></app-figure>
         </div>
-        <div class="col-sm-12  col-md-6 col-lg-6 no-padding">
-          <app-even-odd [eventId]="eventId || ''" [marketId]="model.selectedMarketId|| ''"></app-even-odd>
-        </div>
+
       </div>
 
       <app-tied-market *ngIf="mainsportsname=='Cricket'" [eventId]="eventId || ''"
-        [marketId]="model.selectedMarketId|| ''">
+                       [marketId]="model.selectedMarketId|| ''">
       </app-tied-market>
 
       <app-goal-market *ngIf="mainsportsname=='Soccer'" [eventId]="eventId || ''">
@@ -245,7 +275,7 @@
     <div class="col-md-4 col-lg-4">
 
       <div class="no-padding" id="multimedia"
-        style="margin-bottom:-4px;background:linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0));;z-index:100">
+        style="margin-bottom:-4px;background:linear-gradient(to top, rgb(0, 255, 138), rgb(0, 0, 0));;z-index:100; margin-top:12px;">
 
         <!-- LIVE VIDEO -->
         <button type="button" class="col-sm-6 tvmbl btntvcard buttonlove" [class.active-btn]="activeTab === 'video'"

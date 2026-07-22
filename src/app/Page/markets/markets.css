@@ -43,13 +43,14 @@
   height: 28px;
   object-fit: contain;
 }
-.market-header{
-    display:flex;
-    margin-bottom:-3px;
-    justify-content:space-between;
-    align-items:center;
-    padding:2px 0px;
-    width:100%;
+.market-header {
+  border-bottom: 1px solid #8080805e;
+  display:flex;
+  margin-bottom: -3px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0px;
+  width: 100%;
 }
 
 .market-title{

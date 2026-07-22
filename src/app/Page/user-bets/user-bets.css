@@ -1,3 +1,9 @@
+.cross {
+  padding: 9px;
+  border-right: 1px solid white;
+  
+}
+
 .matched-bets {
   width: 100%;
   font-size: 17px;
@@ -23,7 +29,7 @@
 .bets-row {
   display: flex;
   align-items: center;
-  border-radius: 6px;
+  border-radius: 0px;
   overflow: hidden;
   min-height: 42px;
 }
@@ -53,6 +59,7 @@
 
 /* 50% */
 .selection {
+    border-right: 1px solid white;
   width: 50%;
   font-weight: 500;
 
@@ -63,6 +70,7 @@
 
 /* 25% */
 .odd {
+  border-right: 1px solid white;
   width: 25%;
   justify-content: center;
   text-align: center;

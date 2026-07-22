@@ -10,49 +10,32 @@
 
   <div class="betslip-body" *ngIf="bet(); else emptySlip">
     <div class="selection-section">
-      <div class="selection-copy">
+      <div class="selection-copy"
+           [class.back-bet]="type()?.toLowerCase() === 'back'"
+           [class.lay-bet]="type()?.toLowerCase() === 'lay'">
+
         <span class="section-label">Selection</span>
+
         <span class="selection-name" [title]="selectionName()">
           {{ selectionName() }}
 
-
           <span class="price-box"
-               [class.back]="type()?.toLowerCase() === 'back'"
-               [class.lay]="type()?.toLowerCase() === 'lay'"
-               [class.odds-up]="oddsChange() === 'up'"
-               [class.odds-down]="oddsChange() === 'down'">
-            <span>{{ type() }}</span>
+                [class.odds-up]="oddsChange() === 'up'"
+                [class.odds-down]="oddsChange() === 'down'">
+            <span>{{ type() }}</span> <br/>
             <strong>{{ price() }}</strong>
+
           </span>
 
+
+
+
         </span>
+
       </div>
 
-     
-    </div>
 
-    <div class="form-row">
-      <label for="stakeAmount">Stake</label>
-      <div class="stake-input-wrap">
-        <span>Rs</span>
-        <input
-          id="stakeAmount"
-          type="number"
-          min="0"
-          [ngModel]="stake()"
-          (ngModelChange)="stake.set($event)"
-          class="form-control" />
-      </div>
     </div>
-
-    <div class="stake-buttons">
-      @for (btn of quickStakes; track btn) {
-        <button type="button" (click)="setStake(btn.value)">
-          {{ btn.value }}
-        </button>
-      }
-    </div>
-
     <div class="summary-grid">
       <div class="summary-item profit">
         <span>Profit</span>
@@ -63,9 +46,32 @@
         <strong>{{ loss().toFixed(2) }}</strong>
       </div>
     </div>
-<div class="bet-error" *ngIf="errorMessage()">
-  {{ errorMessage() }}
-</div>
+
+    <div class="form-row">
+      <label for="stakeAmount" style="font-size:17px">Stake</label>
+      <div class="stake-input-wrap">
+        <span>Rs</span>
+        <input id="stakeAmount"
+               type="number"
+               min="0"
+               [ngModel]="stake()"
+               (ngModelChange)="stake.set($event)"
+               class="form-control" />
+      </div>
+    </div>
+
+    <div class="stake-buttons" style="margin-top:1px">
+      @for (btn of quickStakes; track btn) {
+      <button type="button" (click)="setStake(btn.value)">
+        {{ btn.value }}
+      </button>
+      }
+    </div>
+
+
+    <div class="bet-error" *ngIf="errorMessage()">
+      {{ errorMessage() }}
+    </div>
     <div class="actions">
       <button type="button" class="btn-cancel" (click)="close()">Cancel</button>
       <button type="button" class="btn-submit" [disabled]="stake() <= 0 || submitting()" (click)="submitBet()">
