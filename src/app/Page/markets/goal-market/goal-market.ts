@@ -6,6 +6,7 @@ import { MarketBook } from '../../../interface/MarketBook';
 import { Subject } from 'rxjs';
 import { BetSlipService } from '../../../Services/bet-slip-service';
 import { Dashboardservices } from '../../../Services/dashboardservices';
+import { MarketService } from '../../../Services/marketservice';
 
 @Component({
   selector: 'app-goal-market',
@@ -15,7 +16,7 @@ import { Dashboardservices } from '../../../Services/dashboardservices';
 })
 export class GoalMarket implements OnInit {
 @Input() eventId!: string;
-market: MarketBook | null = null;
+market: MarketBook [] = [];
  private destroy$ = new Subject<void>();
   private marketPollStop$ = new Subject<void>();
    readonly priceSlots = 3;
@@ -23,11 +24,10 @@ market: MarketBook | null = null;
   showBetSlipModal = false;
     betNotAllowedMessage = '';
     MarketIDs:any;
-constructor(private betSlipService: BetSlipService,private cdr: ChangeDetectorRef,private dashboardService: Dashboardservices) { }
+constructor(private betSlipService: BetSlipService,private marketService: MarketService,private cdr: ChangeDetectorRef,private dashboardService: Dashboardservices) { }
 
   ngOnInit(): void {
-    debugger;
-    this.dashboardService.GetSoccerMarkets(this.eventId).subscribe({
+    this.marketService.GetOtherSoccer(this.eventId).subscribe({
     next: res => {
       if (res && res.length > 0) {  
         this.MarketIDs=res;
@@ -35,7 +35,8 @@ constructor(private betSlipService: BetSlipService,private cdr: ChangeDetectorRe
       }
     })
   }
- getBackPrices(runner: any) {
+
+  getBackPrices(runner: any) {
     const arr = runner?.exchangePrices?.availableToBack ?? [];
 
     const prices = arr
@@ -91,12 +92,13 @@ constructor(private betSlipService: BetSlipService,private cdr: ChangeDetectorRe
       size: size,
       stack: 0,
       Clickedlocation: 0,
-      runnersCount: this.market?.runners?.length || 0,
-      categoryName: this.market?.mainSportsname || ''
+      runnersCount: this.market?.[0]?.runners?.length || 0,
+      categoryName: this.market?.[0] ?.mainSportsname || ''
     });
   }
+  
     isBettingAllowed(): boolean {
-    return !!this.market?.bettingAllowed;
+    return !!this.market?.[0]?.bettingAllowed;
   }
 }
 

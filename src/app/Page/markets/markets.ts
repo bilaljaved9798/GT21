@@ -20,10 +20,11 @@ import { MultipleBetSlipService } from '../../Services/multiple-bet-slip-service
 import { ScoreService } from '../../Services/score-service';
 import { GoalMarket } from "./goal-market/goal-market";
 import { Reletedevent } from "../reletedevent/reletedevent";
+import { EvenOdd } from "./even-odd/even-odd";
 
 @Component({
   selector: 'app-markets',
-  imports: [TiedMarket, Figure, BetSlip, Fancy, NumberFormatPipe, CommonModule, UserBets, ScoreUpdate, GoalMarket, Reletedevent],
+  imports: [TiedMarket, Figure, BetSlip, Fancy, NumberFormatPipe, CommonModule, UserBets, ScoreUpdate, GoalMarket, Reletedevent, EvenOdd],
   templateUrl: './markets.html',
   styleUrl: './markets.css',
 })
@@ -59,6 +60,7 @@ favoriteLaySize = '';
   videoUrl!: SafeResourceUrl;
   scoreCardUrl!: SafeResourceUrl;
   eventType:number = 4;
+  score: any = {};
   constructor(private marketService: MarketService, private sanitizer: DomSanitizer, public betSlipService: BetSlipService, private userbetService: UserbetService,private scoreService: ScoreService,
     private route: ActivatedRoute,public multiSlip: MultipleBetSlipService, private cdr: ChangeDetectorRef, private router: Router, private storage: StorageService, @Inject(PLATFORM_ID) private platformId: Object) {
     debugger;
@@ -205,6 +207,14 @@ private calculateMultipleOdds(): void {
     .subscribe(() => this.refreshMarket());
 
   this.showTab('score');
+
+  this.score.matchName='billions vs kings';
+  this.score.score='115/3 (10.0)';
+  this.score.over='20';
+  this.score.RR='5.75';
+  this.score.wickets='3';
+  this.score.overs='20.0';
+
 }
 
 private loadMarket(marketId: string): void {
@@ -403,27 +413,27 @@ debugger;
       default: return '';
     }
   }
-  getBackPrices(runner: any) {
-    const arr = runner?.exchangePrices?.availableToBack ?? [];
+getBackPrices(runner: any) {
+  const arr = [...(runner?.exchangePrices?.availableToBack ?? [])]
+    .slice(0, this.priceSlots)
+    .reverse(); // highest back price nearest center
 
-    const prices = arr
-      .slice(0, this.priceSlots)
-    // 👈 reverse here
+  return [
+    ...Array(this.priceSlots - arr.length).fill(null),
+    ...arr
+  ];
+}
+ getLayPrices(runner: any) {
+  const prices = runner?.exchangePrices?.availableToLay ?? [];
 
-    return [
-      ...Array(Math.max(0, this.priceSlots - prices.length)).fill(null),
-      ...prices
-    ];
-  }
-  getLayPrices(runner: any) {
-    const arr = runner?.exchangePrices?.availableToLay ?? [];
+  const arr = prices.slice(0, this.priceSlots);
 
-    // pad at END
-    return [
-      ...arr.slice(0, this.priceSlots),
-      ...Array(Math.max(0, this.priceSlots - arr.length)).fill(null)
-    ];
-  }
+  // Left align
+  return [
+    ...arr,
+    ...Array(this.priceSlots - arr.length).fill(null)
+  ];
+}
   showMarketRules(sport: string, marketBookName: string, runnersCount: number) {
     console.log('Show rules', sport, marketBookName, runnersCount);
     // Implement your rule popup logic

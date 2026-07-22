@@ -52,54 +52,25 @@
           {{ getStatusText(market?.marketStatusstr) }}
         </label>
       </div>
-
       <br />
+      <div class="match-header">
 
-      <!-- <table>
-        <thead>
-          <tr>
-            <th style="    width: 17%; font-weight:600">
-              <span style="font-size:15px">
-                Total Matched:
-              </span>
-            </th>
+        <div>{{ market?.runners?.[0]?.runnerName }}</div>
 
-            <th style="  width: 20%;  ">
-            </th>
-            <th style="width: 10%;text-align: center;">
-              <span style="font-size:medium">
-                Back
-              </span>
-              <br />
-              <span>
-                <i style="color: #2797e6;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"></i>
-              </span>
+        <div class="live-dot"></div>
 
-            </th>
+        <div>{{score.score}}</div>
 
-            <th style="width: 10%;text-align: center;">
+        <div>{{score.over}}</div>
 
-              <span style="font-size:medium">
-                Lay
-
-              </span>
-              <br />
-              <span>
-                <i style="color: #f994a9;" _ngcontent-wqh-c196="" class="back-color fa fa-arrow-circle-down" aria-hidden="true"> </i>
-              </span>
-            </th>
-          </tr>
-        </thead>
-
-      </table> -->
-
+      </div>
       <div class="market-header col-md-12 col-lg-12">
 
         <div class="market-title col-md-6 col-lg-6">
-            Total Matched: 
+          Total Matched:
         </div>
 
-        <div class="price-header col-md-6 col-lg-6" >
+        <div class="price-header col-md-6 col-lg-6">
 
           <div class="price-col back col-md-6 col-lg-6">
             <div class="title">BACK</div>
@@ -196,7 +167,7 @@
           <!-- BACK -->
           <div class="prices-group back-group">
             <div class="price-box back-box"
-              *ngFor="let back of (isMobile ? (getBackPrices(runner).slice().reverse() | slice:0:1) : getBackPrices(runner).slice().reverse()); let i = index"
+              *ngFor="let back of (isMobile ? (getBackPrices(runner).slice() | slice:0:1) : getBackPrices(runner).slice()); let i = index"
               [class.empty]="!back" [class.bet-disabled]="back && !isBettingAllowed()" (click)="back && showBetSlip(
          runner.selectionId,
          runner.runnerName,
@@ -257,6 +228,9 @@
         <div class="col-sm-12  col-md-6 col-lg-6 no-padding">
           <app-figure [eventId]="eventId || ''" [marketId]="model.selectedMarketId|| ''"></app-figure>
         </div>
+        <div class="col-sm-12  col-md-6 col-lg-6 no-padding">
+          <app-even-odd [eventId]="eventId || ''" [marketId]="model.selectedMarketId|| ''"></app-even-odd>
+        </div>
       </div>
 
       <app-tied-market *ngIf="mainsportsname=='Cricket'" [eventId]="eventId || ''"
@@ -316,7 +290,7 @@
     </div>
     <div class="col-md-4 col-lg-4 d-none d-md-block" style="float: inline-end;">
       <app-user-bets></app-user-bets>
-       <app-reletedevent  [eventType]="mainsportsname" [marketId]="marketId"></app-reletedevent>
+      <app-reletedevent [eventType]="mainsportsname" [marketId]="marketId"></app-reletedevent>
     </div>
-   
+
   </div>

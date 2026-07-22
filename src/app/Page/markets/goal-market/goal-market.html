@@ -4,10 +4,10 @@
     </div>
   
 
-
+<div class="market-container"  *ngFor="let mrkt of market" >
     <!-- RUNNER NAME -->
     <div class="runner-row col-md-12 col-lg-12"
-         *ngFor="let runner of market?.runners"
+         *ngFor="let runner of mrkt?.runners"
          
          style="background:linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%)">
 
@@ -53,8 +53,8 @@
          'back',
          back.price,
          2000,
-         market?.marketId ?? '',
-         market?.marketBookName ?? '',
+         mrkt?.marketId ?? '',
+         mrkt?.marketBookName ?? '',
          back.size,
          i
        )">
@@ -79,8 +79,8 @@
          'lay',
          lay.price,
          2000,
-         market?.marketId ?? '',
-         market?.marketBookName ?? '',
+         mrkt?.marketId ?? '',
+         mrkt?.marketBookName ?? '',
          lay.size,
          i
        )">
@@ -94,3 +94,5 @@
         </div>
       </div>
     </div>
+    
+</div>
