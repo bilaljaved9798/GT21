@@ -19,14 +19,15 @@
             <div class="grid">
 
                 <mat-form-field appearance="outline"
-                    *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]">
+                    *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
 
                     <mat-label>{{i}}</mat-label>
 
-                    <input matInput
+                    <input matInput                          
                            type="string"
+                           numberFormat
                            [formControlName]="'SimpleBtn' + i">
-
+                       
                 </mat-form-field>
 
             </div>
@@ -46,7 +47,7 @@
             <div class="grid">
 
                 <mat-form-field appearance="outline"
-                    *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]">
+                    *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
 
                     <mat-label>{{i}}</mat-label>
 

@@ -1,8 +1,12 @@
 <div class="betslip-card">
-
+   
   <div class="betslip-header">
     <div>
-      <span class="betslip-title">Bet Slip</span>
+      <div class="betslip-title">Bet Slip
+       <button style="margin-right: 7px;" class="btn btn-primary" (click)="openBetSlipSetting()">
+            <i class="fa fa-edit"></i>    
+       </button>
+      </div>
       <span class="betslip-subtitle">Review your selection</span>
     </div>
     <button type="button" class="header-close" title="Close" (click)="close()">×</button>
@@ -10,31 +14,19 @@
 
   <div class="betslip-body" *ngIf="bet(); else emptySlip">
     <div class="selection-section">
-      <div class="selection-copy"
-           [class.back-bet]="type()?.toLowerCase() === 'back'"
-           [class.lay-bet]="type()?.toLowerCase() === 'lay'">
+      <div class="selection-copy" [class.back-bet]="type()?.toLowerCase() === 'back'"
+        [class.lay-bet]="type()?.toLowerCase() === 'lay'">
 
         <span class="section-label">Selection</span>
 
         <span class="selection-name" [title]="selectionName()">
           {{ selectionName() }}
-
-          <span class="price-box"
-                [class.odds-up]="oddsChange() === 'up'"
-                [class.odds-down]="oddsChange() === 'down'">
-            <span>{{ type() }}</span> <br/>
+          <span class="price-box" [class.odds-up]="oddsChange() === 'up'" [class.odds-down]="oddsChange() === 'down'">
+            <span>{{ type() }}</span>
             <strong>{{ price() }}</strong>
-
           </span>
-
-
-
-
         </span>
-
       </div>
-
-
     </div>
     <div class="summary-grid">
       <div class="summary-item profit">
@@ -51,12 +43,8 @@
       <label for="stakeAmount" style="font-size:17px">Stake</label>
       <div class="stake-input-wrap">
         <span>Rs</span>
-        <input id="stakeAmount"
-               type="number"
-               min="0"
-               [ngModel]="stake()"
-               (ngModelChange)="stake.set($event)"
-               class="form-control" />
+        <input id="stakeAmount" type="number" min="0" [ngModel]="stake()" (ngModelChange)="stake.set($event)"
+          class="form-control" />
       </div>
     </div>
 

@@ -1,0 +1,49 @@
+<div class="bets-header-row">
+
+    <div class="selection">
+      Runner
+    </div>
+
+    <div class="odd">
+      Size
+    </div>
+
+    <div class="amount">
+      Price
+    </div>
+
+  </div>
+
+  <!-- Rows -->
+  <div *ngFor="let item of allUserBets">
+
+    <div
+      class="bets-row"
+      [ngClass]="{
+        'back': item.betType === 'back',
+        'lay': item.betType === 'lay'
+      }"
+    >
+
+      <div class="selection">
+        {{ item.selectionName }}
+      </div>
+
+      <div class="odd">
+        {{ item.userOdd }}
+      </div>
+
+      <div class="amount">
+        {{ item.amount }}
+      </div>
+
+    </div>
+
+  </div>
+<mat-dialog-actions align="end">
+  <button mat-button
+        (click)="dialogRef.close()">
+    Cancel
+</button>
+
+</mat-dialog-actions>

@@ -7,6 +7,7 @@ import { UserbetSignalRService } from '../../Services/BetSignalRService';
 import { Subject, takeUntil } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { StackPopup } from '../../shared/stack-popup/stack-popup';
+import { AllUserBet } from '../all-user-bet/all-user-bet';
 
 @Component({
   selector: 'app-user-bets',
@@ -75,6 +76,13 @@ loadBets() {
 
   openBetSlipSetting() {
   this.dialog.open(StackPopup, {
+    width: '700px',
+    disableClose: true
+  });
+}
+
+openViewAllBet() {
+  this.dialog.open(AllUserBet, {
     width: '700px',
     disableClose: true
   });

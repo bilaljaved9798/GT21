@@ -7,6 +7,8 @@ import { effect } from '@angular/core';
 import { finalize, switchMap, throwError } from 'rxjs';
 import { StorageService } from '../../Services/storage-service';
 import { QuickStake } from '../../interface/BetSlipKeys ';
+import { StackPopup } from '../../shared/stack-popup/stack-popup';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-bet-slip',
@@ -27,7 +29,7 @@ stake = signal<number>(0);
 
  quickStakes: QuickStake[] = [];
  
-constructor(private userbetService: UserbetService,private storage: StorageService,public betSlipService: BetSlipService) {
+constructor(private userbetService: UserbetService,private storage: StorageService,public betSlipService: BetSlipService,private dialog: MatDialog) {
     var info = JSON.parse(sessionStorage.getItem('userInfo') || '{}');
     this.userId = Number(info?.user?.id || 0);
     this.userType = Number(info?.user?.userTypeId || info?.user?.userTypeID || info?.user?.userType || 0);
@@ -355,5 +357,11 @@ getBetLimits(categoryname: string, marketbookname: string) {
     lowerbetlimit,
     betupperlimit
   };
+}
+  openBetSlipSetting() {
+  this.dialog.open(StackPopup, {
+    width: '700px',
+    disableClose: true
+  });
 }
 }

@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { OtherMarketServices } from '../../../Services/other-market-services';
+import { StorageService } from '../../../Services/storage-service';
 
 @Component({
   selector: 'app-even-odd',
@@ -12,4 +14,11 @@ export class EvenOdd {
  @Input() eventId!: string;
  @Input() marketId!: string
   marketboos: any=[];
+  constructor(private otherMarketServices: OtherMarketServices,private storage: StorageService) {}
+
+  ngOnInit() {
+    this.otherMarketServices.GetEvenOdd(this.eventId).subscribe((data) => {
+      this.marketboos = data;
+    });
+  }
 }

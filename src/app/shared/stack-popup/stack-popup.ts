@@ -35,7 +35,7 @@ import { Router } from '@angular/router';
 export class StackPopup {
  form!: FormGroup;
  constructor(
-  public dialogRef: MatDialogRef<BookPopup>,
+  public dialogRef: MatDialogRef<StackPopup>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder,
     private service: AccountService,
@@ -94,9 +94,9 @@ export class StackPopup {
     SimpleBtn7: result.simpleBtn7,
     SimpleBtn8: result.simpleBtn8,
     SimpleBtn9: result.simpleBtn9,
-    SimpleBtn10: result.simpleBtn10,
-    SimpleBtn11: result.simpleBtn11,
-    SimpleBtn12: result.simpleBtn12,
+    // SimpleBtn10: result.simpleBtn10,
+    // SimpleBtn11: result.simpleBtn11,
+    // SimpleBtn12: result.simpleBtn12,
 
     MutipleBtn1: result.mutipleBtn1,
     MutipleBtn2: result.mutipleBtn2,
@@ -106,10 +106,10 @@ export class StackPopup {
     MutipleBtn6: result.mutipleBtn6,
     MutipleBtn7: result.mutipleBtn7,
     MutipleBtn8: result.mutipleBtn8,
-    MutipleBtn9: result.mutipleBtn9,
-    MutipleBtn10: result.MutipleBtn10,
-    MutipleBtn11: result.MutipleBtn11,
-    MutipleBtn12: result.MutipleBtn12
+    MutipleBtn9: result.mutipleBtn9
+    // MutipleBtn10: result.MutipleBtn10,
+    // MutipleBtn11: result.MutipleBtn11,
+    // MutipleBtn12: result.MutipleBtn12
   });
 }
 

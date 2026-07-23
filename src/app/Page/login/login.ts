@@ -7,22 +7,22 @@ import { Loaderservice } from '../../Services/loaderservice';
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule,FormsModule,ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
 export class Login {
-   loginForm: FormGroup ;
+  loginForm: FormGroup;
   showPassword = false;
   public loading: boolean = false;
   errorMessage: string = '';
-   constructor(private router: Router, private authService: AuthService,public _loaderservice:Loaderservice,private fb: FormBuilder){
-      this.loginForm = this.fb.group({
+  constructor(private router: Router, private authService: AuthService, public _loaderservice: Loaderservice, private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
       rememberMe: [false]
     });
-   }
+  }
 
   ngOnInit() {
     if (this.authService.isLoggedIn()) {
@@ -30,15 +30,14 @@ export class Login {
     }
   }
 
-   togglePassword(): void {
+  togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
 
   login() {
     this._loaderservice.show();
-      const username = this.loginForm.value.username;
-      const password = this.loginForm.value.password;
-
+    const username = this.loginForm.value.username;
+    const password = this.loginForm.value.password;
     this.authService.login(username, password).subscribe(
       result => {
         this._loaderservice.hide();
@@ -50,6 +49,6 @@ export class Login {
       }
     );
   }
-  
-  }
+
+}
 
