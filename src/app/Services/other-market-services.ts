@@ -14,7 +14,7 @@ export class OtherMarketServices {
   GetEvenOdd(eventId: string): Observable<any[]> {
     const info = this.storage.get<any>('userInfo');
     return this.http.get<any[]>(
-      `${this.baseUrl}FigureApi/GetEvenOdd?eventID=${eventId}}`
+      `${this.baseUrl}FigureApi/GetEvenOdd?eventID=${eventId}`
     );
   }
 }

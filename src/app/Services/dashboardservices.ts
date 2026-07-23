@@ -16,11 +16,11 @@ export class Dashboardservices {
 
   getDefultDashboards() {
     return this.http.get<any>(
-      `${this.baseUrl}DashBoardApi/GetDefaultPageData?userid=160`);
+      `${this.baseUrl}DashBoardApi/GetDefaultPageData`);
   }
 
   getUserBalance(userId: number) {
-    return this.http.get<any>(`${this.baseUrl}DashBoardApi/GetBalnceDetails?userId=${userId}`);
+    return this.http.get<any>(`${this.baseUrl}DashBoardApi/GetBalnceDetails`);
   }
 
   getInPlaySoccer(userid: number, typeId: number) {

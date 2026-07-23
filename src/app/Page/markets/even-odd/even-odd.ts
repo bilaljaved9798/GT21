@@ -13,12 +13,12 @@ import { StorageService } from '../../../Services/storage-service';
 export class EvenOdd {
  @Input() eventId!: string;
  @Input() marketId!: string
-  marketboos: any=[];
+  marketbooks: any=[];
   constructor(private otherMarketServices: OtherMarketServices,private storage: StorageService) {}
 
   ngOnInit() {
     this.otherMarketServices.GetEvenOdd(this.eventId).subscribe((data) => {
-      this.marketboos = data;
+      this.marketbooks = data;
     });
   }
 }

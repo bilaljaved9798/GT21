@@ -262,8 +262,7 @@ export class Markets {
 
           this.marketService.startPolling(
             this.eventId,
-            marketId,
-            this.model.userId
+            marketId
           );
 
         }

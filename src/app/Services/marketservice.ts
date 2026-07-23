@@ -18,11 +18,9 @@ private pollingSubscription?: Subscription;
 
   AllMarkets: any[] = []; // Store all markets for later use
   constructor(private http: HttpClient, protected storage: StorageService) {
-    const info = this.storage.get<any>('userInfo');
-    this.userid = info?.user?.id;
   }
 
-startPolling(eventId: string, marketId: string, userId: string) {
+startPolling(eventId: string, marketId: string) {
 
   // Stop previous polling
   this.stopPolling();
@@ -33,8 +31,7 @@ startPolling(eventId: string, marketId: string, userId: string) {
         this.http.get<any>(
           `${this.baseUrl}Fancy2MarketAPI/LoadFancyMarketIN` +
           `?EventID=${eventId}` +
-          `&MarketBookID=${marketId}` +
-          `&UserId=${userId}`
+          `&MarketBookID=${marketId}`
         ).pipe(
           catchError(err => {
             console.error(err);
@@ -79,8 +76,7 @@ startPolling(eventId: string, marketId: string, userId: string) {
       `${this.baseUrl}MarketApi/MarketBookData` +
       `?ID=${model.selectedMarketId}` +
       `&sheetname=${model.selectedMarketBook}` +
-      `&MainSportsCategory=${model.selectedSport}` +
-      `&userId=${this.userid || ''}`
+      `&MainSportsCategory=${model.selectedSport}}`
     ).pipe(
       map(res => {
         const marketBook = Array.isArray(res)
@@ -148,12 +144,11 @@ startPolling(eventId: string, marketId: string, userId: string) {
   );
 }
 
-  getMarketsLine(eventId: string, userId: string): Observable<MarketBook[]> {
+  getMarketsLine(eventId: string): Observable<MarketBook[]> {
 
     return this.http.get<any[]>(
       `${this.baseUrl}FancyApi/GetFancyMarket` +
-      `?EventID=${eventId}` +
-      `&UserId=${this.userid || ''}`
+      `?EventID=${eventId}}`
     ).pipe(
       map(res => res.map(m => ({
         openDate: m.OpenDate,
@@ -209,13 +204,12 @@ startPolling(eventId: string, marketId: string, userId: string) {
       ));
   }
 
-  gettoss(eventId: string, marketId: string, userId: string): Observable<any[]> {
+  gettoss(eventId: string, marketId: string): Observable<any[]> {
 
     return this.http.get<any>(
       `${this.baseUrl}Fancy2MarketAPI/LoadFancyMarketIN` +
       `?EventID=${eventId}` +
-      `&MarketBookID=${marketId}` +
-      `&UserId=${this.userid || ''}`
+      `&MarketBookID=${marketId}}`
     ).pipe(
       map(res => {
 
@@ -230,13 +224,12 @@ startPolling(eventId: string, marketId: string, userId: string) {
       })
     );
   }
-  gettied(eventId: string, marketId: string, userId: string): Observable<any[]> {
+  gettied(eventId: string, marketId: string): Observable<any[]> {
 
     return this.http.get<any>(
       `${this.baseUrl}Fancy2MarketAPI/LoadFancyMarketIN` +
       `?EventID=${eventId}` +
-      `&MarketBookID=${marketId}` +
-      `&UserId=${userId || ''}`
+      `&MarketBookID=${marketId}}`
     ).pipe(
       map(res => {
 
@@ -262,16 +255,12 @@ showCompletedUserBetsFancyIN(
     marketBookId: string,
     selectionId: string
 ) {
-  const info = this.storage.get<any>('userInfo');
-    this.userid = info?.user?.id;
-
   return this.http.get<any>(
     `${this.baseUrl}MarketApi/showcompleteduserbetsFancyIN`,
     {
       params: {
         marektbookID: marketBookId,
-        selectionID: selectionId,
-        userID: this.userid || ''
+        selectionID: selectionId
       }
     }
   );
@@ -279,9 +268,8 @@ showCompletedUserBetsFancyIN(
 }
 
 GetOtherSoccer(eventId: string): Observable<any[]> {
-  const info = this.storage.get<any>('userInfo');
   return this.http.get<any[]>(
-    `${this.baseUrl}Fancy2MarketAPI/GetOtherSoccer?EventID=${eventId}&UserId=${info?.user?.id || ''}`
+    `${this.baseUrl}Fancy2MarketAPI/GetOtherSoccer?EventID=${eventId}}`
   );
 }
 }

@@ -30,7 +30,7 @@ userid: any;
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('resize', this.onResize);
     }
-          this.marketService.getMarketsLine(this.eventId, this.userid)
+          this.marketService.getMarketsLine(this.eventId)
         .pipe(
           catchError(error => {
             if (error.name === 'AbortError' || error.status === 0) {
@@ -56,7 +56,7 @@ userid: any;
     interval(5000) // Increased to 5 seconds to reduce load
         .pipe(
           takeUntil(this.destroy$),
-          switchMap(() => this.marketService.getMarketsLine(this.eventId, this.userid).pipe(
+          switchMap(() => this.marketService.getMarketsLine(this.eventId).pipe(
             catchError(error => {
               if (error.name === 'AbortError' || error.status === 0) {
                 console.log('Line market polling request cancelled');

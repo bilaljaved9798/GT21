@@ -1,40 +1,6 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div>
-
-
-
-
-
-
-
   <!-- Markets -->
   <div *ngFor="let item of marketBooks" class="marketbook" [attr.data-marketid]="item.marketId">
-
-
-
-
-
     <!-- Runners -->
     <div class="runner-row col-md-12 col-lg-12"
          *ngFor="let runner of item?.runners; let valueid = index"
@@ -56,13 +22,6 @@
             {{ runner.profitandLoss }}
           </div>
         </div>
-
-
-
-
-
-
-
         <!-- Last Price -->
         <div class="runner-price-box">
           <div class="last-price">
@@ -74,13 +33,6 @@
         </div>
 
       </div>
-
-
-
-
-
-
-
       <!-- Back / Lay -->
       <div class="col-md-6 col-lg-6 margin">
 

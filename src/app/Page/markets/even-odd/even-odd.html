@@ -39,7 +39,7 @@
 
   </table>
 
-  <div class="runner-row col-md-12 col-lg-12"  style="background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%); border-bottom: 1px solid #b9b2b2">
+  <div class="runner-row col-md-12 col-lg-12"  *ngFor="let runner of marketbooks"  style="background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%); border-bottom: 1px solid #b9b2b2">
    
     <div class="runner-info col-md-8 col-8" style="width:63%">
        <a>
@@ -47,9 +47,8 @@
       <i class="fas fa-caret-right" style="   margin-top: 4px;"></i>
     </a>
       <div class="runner-name" style="  margin-top: -18px; margin-left: 5px;">
-
-
-        TOSS TEAM A
+       {{runner.marketBookName}}
+       
        <!-- <div
   class="pnl"
   [ngClass]="{
@@ -58,8 +57,8 @@
     'neutral': runner.pnl == 0
   }"
 >
-
 </div> -->
+
       </div>
     </div>
 
