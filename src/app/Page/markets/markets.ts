@@ -30,6 +30,13 @@ import { EvenOdd } from "./even-odd/even-odd";
 })
 
 export class Markets {
+
+  isExpanded: boolean = false;
+
+  toggleExpand() {
+    this.isExpanded = !this.isExpanded;
+  }
+
  selectedRunners: any[] = [];
 
 favoriteSelectionName = '';

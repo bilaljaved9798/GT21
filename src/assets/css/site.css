@@ -7096,7 +7096,7 @@ float: left;
 }
 .runner-row {
   display: -webkit-box;
-  margin-bottom: -1px;
+  margin-bottom: -2px;
   align-items: center;
     box-shadow: rgba(255, 255, 255, 0.35) 0px 54px 55px, rgba(200, 255, 250, 0.25) 0px -12px 30px, rgba(255, 255, 255, 0.2) 0px 4px 6px, rgba(150, 255, 240, 0.3) 0px 12px 13px, rgba(255, 255, 255, 0.15) 0px -3px 5px; background: linear-gradient(to top, #ffffff2b 92%, #00ff451f 53%) !important;
 
@@ -7271,7 +7271,7 @@ float: left;
 
 
 .pnl {
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 2px;
 }
 
@@ -7346,7 +7346,7 @@ float: left;
 }
 
 .form-row {
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .profit-section {
@@ -7391,7 +7391,8 @@ float: left;
 }
 
 .btn-cancel {
-  background: #ccc;
+  background: #dc3545;
+  color:white;
   border: none;
   padding: 6px 12px;
   border-radius: 4px;

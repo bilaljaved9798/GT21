@@ -14,6 +14,15 @@ import { BetSlipService } from '../../../Services/bet-slip-service';
   styleUrl: './figure.css',
 })
 export class Figure {
+
+  getLastFigureName(name?: string): string {
+    if (!name) {
+      return '';
+    }
+
+    return name.replace(/\s+[A-Za-z0-9&.-]+\s+VS\s+.+$/i, '').trim();
+  }
+
   @Input() eventId!: string;
   @Input() marketId!: string
   market: any=[];
