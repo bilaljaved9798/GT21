@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { UserBet } from '../interface/userbets';
 import { Subject, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { BetValidationResponse } from '../interface/betvalidationresponse';
 
 @Injectable({
   providedIn: 'root',
@@ -11,10 +10,13 @@ import { BetValidationResponse } from '../interface/betvalidationresponse';
 export class UserbetService {
    private baseUrl = environment.apiBaseUrl;
     private userBetsSource = new Subject<any>();
+    private userAllBetsSource = new Subject<any>();
+    
     private betPlacedSource = new Subject<void>();
    
      // Public observable
      userBets$ = this.userBetsSource.asObservable();
+     userAllBets$ = this.userAllBetsSource.asObservable();
      betPlaced$ = this.betPlacedSource.asObservable();
   constructor(private http: HttpClient) { }
 
@@ -26,7 +28,6 @@ getUserBets1(userId: string) {
 }
 
  getUserBets(userId: string) {
-
     this.http.get<any>(
       `${this.baseUrl}UserBetApi/UserBets?UserId=${userId}`
     )
@@ -64,4 +65,10 @@ getUserBets1(userId: string) {
     payload
   );
 }
+ getAllUserBets(userId: string) {
+   return this.http.get<any>(
+      `${this.baseUrl}UserBetApi/UserAllBets?UserId=${userId}`
+    )
+  }
+
 }

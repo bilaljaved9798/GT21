@@ -43,7 +43,7 @@
 
 
 
-      <div class="match-header" style="background:#01e11d17">
+      <div class="match-header" style="background:#01e11d17"  *ngIf="mainsportsname=='Cricket'">
         <div>{{ market?.runners?.[0]?.runnerName }}</div>
 
         <div class="live-dot"></div>
@@ -245,22 +245,16 @@
   </div> -->
 
       <div class="col-md-12 col-lg-12" *ngIf="mainsportsname=='Cricket'">
-
-        <div class="col-sm-12  col-md-6 col-lg-6 no-padding">
-          <app-even-odd [eventId]="eventId || ''" [marketId]="model.selectedMarketId|| ''"></app-even-odd>
-        </div>
-
         <div class="col-sm-12 col-md-6 col-lg-6 no-padding">
-
-
-
           <app-fancy [eventId]="eventId || ''" [marketId]="model.selectedMarketId|| ''">
           </app-fancy>
         </div>
         <div class="col-sm-12  col-md-6 col-lg-6 no-padding">
           <app-figure [eventId]="eventId || ''" [marketId]="model.selectedMarketId|| ''"></app-figure>
         </div>
-
+        <div class="col-sm-12  col-md-6 col-lg-6 no-padding">
+          <app-even-odd [eventId]="eventId || ''" [marketId]="model.selectedMarketId|| ''"></app-even-odd>
+        </div>
       </div>
 
       <app-tied-market *ngIf="mainsportsname=='Cricket'" [eventId]="eventId || ''"

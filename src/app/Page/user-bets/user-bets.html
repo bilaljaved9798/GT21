@@ -5,9 +5,9 @@
   <div class="matched-unmatched-heading">
     <label>Unmatched Bets {{ unmatched.length }}</label>
 
-    <button style="margin-right: 7px;" class="btn btn-primary" (click)="openBetSlipSetting()">
+    <!-- <button style="margin-right: 7px;" class="btn btn-primary" (click)="openBetSlipSetting()">
             <i class="fa fa-edit"></i>    
-    </button>
+    </button> -->
       <button style="float: right;margin-right: 0px;" class="btn btn-danger"
             (click)="cancelAll()">
       Cancel All
@@ -50,6 +50,11 @@
 
   <div class="matched-unmatched-heading">
     <label>Matched Bets {{ matched.length }}</label>
+     <button style="float: right;margin-right: 0px;" class="btn btn-success"
+      style="color: white; background: -webkit-linear-gradient(bottom, #000000, #36ff00) !important;float:right;margin-right: 0px;"
+            (click)="openViewAllBet()">
+      View All
+    </button>
   </div>
 
   <!-- Header -->
